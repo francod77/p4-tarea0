@@ -1,9 +1,8 @@
 class Mascota{
-
-	private:{
+	private:
 		string nombre;
 		Genero genero;
-		float peso;}
+		float peso;
 	public:
 		float obtenerRacionDiaria();
 }
@@ -11,25 +10,51 @@ class Mascota{
 class Gato:public Mascota {
 	private:
 		TipoPelo tipoPelo;
+	public:
+		void settipopelo(Tipopelo);
+		Tipopelo gettipopelo();
 }
 
+
+
 class Perro:public Mascota {
-	private:{
+	private:
 		Raza raza;
-		bool vacunaCachorro;}
-}
+		bool vacunaCachorro;
+	public:
+		Raza getraza();
+		bool getvacuna();
+		void setraza(Raza);
+		void setvacuna(bool);
+};
 class Consulta{
-	private:{
-		fecha fechaConsulta;
-		string motivo;}
+	private:
+		Fecha fechaConsulta;
+		string motivo;
+	public:
+    		fecha get_fechaconsulta();
+    		string get_motivocons();
+				void setfechaconsulta(fecha);
+				void setmotivo(string);
 }
 
 class DataMascota{
-private:{
-	string nombre;
-	Genero genero;
-	float peso;
-	float racionDiaria;}
+	private:{
+		string nombre;
+		Genero genero;
+		float peso;
+		float racionDiaria;
+	}
+	public:
+		void setnombre(string);
+		string getnombre();
+		void setgenero(Genero);
+		Genero getgenero();
+		void setpeso(float);
+		void setraciondiaria(float peso, string genero); //la racion diaria se calcula segun el peso y el genero(gato o perro)
+		float getpeso();
+		float getraciondiaria();
+
 }
 
 class DataPerro:public DataMascota{
@@ -45,18 +70,22 @@ private:
 }
 
 class DataConsulta{
-	private:{
-	fecha fechaConsulta;
-	string motivo;
-	}
+	private:
+		fecha fechaConsulta;
+		string motivo;
+	
 }
 
 class Fecha{
-	private:{
+	private:
 		int dia;
 		int mes;
 		int anio;
-	}
+public:
+	void setfecha(int,int,int);
+	int getdia();
+	int getmes();
+	int getanio();
 }
 
 enum RazaPerro
