@@ -7,36 +7,6 @@ class Mascota{
 		float obtenerRacionDiaria();
 }
 
-class Gato:public Mascota {
-	private:
-		TipoPelo tipoPelo;
-	public:
-		void settipopelo(Tipopelo);
-		Tipopelo gettipopelo();
-}
-
-
-
-class Perro:public Mascota {
-	private:
-		Raza raza;
-		bool vacunaCachorro;
-	public:
-		Raza getraza();
-		bool getvacuna();
-		void setraza(Raza);
-		void setvacuna(bool);
-};
-class Consulta{
-	private:
-		Fecha fechaConsulta;
-		string motivo;
-	public:
-    		fecha get_fechaconsulta();
-    		string get_motivocons();
-				void setfechaconsulta(fecha);
-				void setmotivo(string);
-}
 
 class DataMascota{
 	private:{
@@ -73,7 +43,7 @@ class DataConsulta{
 	private:
 		fecha fechaConsulta;
 		string motivo;
-	
+
 }
 
 class Fecha{
@@ -111,3 +81,4 @@ enum TipoPelo
 	Mediano;
 	Largo;
 };
+
