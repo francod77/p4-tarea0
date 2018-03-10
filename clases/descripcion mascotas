@@ -1,9 +1,9 @@
 class Mascota{
 
-	private:
+	private:{
 		string nombre;
 		Genero genero;
-		float peso;
+		float peso;}
 	public:
 		float obtenerRacionDiaria();
 }
@@ -14,11 +14,50 @@ class Gato:public Mascota {
 }
 
 class Perro:public Mascota {
-	private:
+	private:{
 		Raza raza;
-		bool vacunaCachorro;
+		bool vacunaCachorro;}
+}
+class Consulta{
+	private:{
+		fecha fechaConsulta;
+		string motivo;}
 }
 
+class DataMascota{
+private:{
+	string nombre;
+	Genero genero;
+	float peso;
+	float racionDiaria;}
+}
+
+class DataPerro:public DataMascota{
+private:{
+	RazaPerro raza;
+	bool vacunaCachorro;
+	}
+}
+
+class DataGato:public DataMascota{
+private:
+	TipoPelo tipoPelo;
+}
+
+class DataConsulta{
+	private:{
+	fecha fechaConsulta;
+	string motivo;
+	}
+}
+
+class Fecha{
+	private:{
+		int dia;
+		int mes;
+		int anio;
+	}
+}
 
 enum RazaPerro
 {
