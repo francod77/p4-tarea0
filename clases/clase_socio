@@ -10,15 +10,7 @@ private  {
     fecha get_fechaingreso();
   }
 }
-class consulta {
-  private{
-    fecha fechaconsulta;
-    string motivo;
-  }
-  public {
-    fecha get_fechaconsulta();
-    string get_motivocons();
-  }
-}
+
+
   
 
