@@ -44,6 +44,7 @@ void agregarConsulta(std::string motivo, Fecha fecha){
 
 }
 
-void agregarMascota(DataMascota mascota){
-
+void Socio::agregarMascota(DataMascota mascota){
+    nuevo = new Mascota(mascota.getNombre(), mascota.getGenero(), mascota.getPeso(), mascota.getRacionDiaria());
+    Socio.listaMascotas.add(nuevo);
 }
