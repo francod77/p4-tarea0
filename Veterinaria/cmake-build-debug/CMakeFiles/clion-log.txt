@@ -1,0 +1,4 @@
+C:\Users\juanr.INFODOM\.CLion2017.3\system\cygwin_cmake\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /cygdrive/d/fing/Veterinaria
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /cygdrive/d/fing/Veterinaria/cmake-build-debug
