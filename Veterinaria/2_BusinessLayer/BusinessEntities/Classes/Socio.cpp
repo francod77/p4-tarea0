@@ -39,9 +39,9 @@ const Fecha &Socio::getFechaIngfreso() const {
 void Socio::setFechaIngfreso(const Fecha &fechaIngfreso) {
     Socio::fechaIngfreso = fechaIngfreso;
 }
-
-void agregarConsulta(std::string motivo, Fecha fecha){
-
+void Socio::agregarConsulta(std::string motivo, Fecha fecha){
+    Consulta nuevacons=new Consulta(motivo,fecha);
+    this.listaConsultas.add(nuevacons);
 }
 
 void Socio::agregarMascota(DataMascota mascota){
