@@ -1,3 +1,0 @@
-/cygdrive/d/fing/Veterinaria/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/cygdrive/d/fing/Veterinaria/cmake-build-debug/CMakeFiles/edit_cache.dir
-/cygdrive/d/fing/Veterinaria/cmake-build-debug/CMakeFiles/Veterinaria.dir
