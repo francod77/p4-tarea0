@@ -14,4 +14,4 @@ add_executable(
         2_BusinessLayer/BusinessEntities/Classes/Mascota.cpp 2_BusinessLayer/BusinessEntities/Classes/Mascota.h
         2_BusinessLayer/BusinessEntities/Classes/Gato.cpp 2_BusinessLayer/BusinessEntities/Classes/Gato.h
         2_BusinessLayer/BusinessEntities/Classes/Perro.cpp 2_BusinessLayer/BusinessEntities/Classes/Perro.h
-)
+        1_PresentationLayer/Controls/Menu.cpp 1_PresentationLayer/Controls/Menu.h 2_BusinessLayer/BusinessComponents/VeterinariaAdministration.cpp 2_BusinessLayer/BusinessComponents/VeterinariaAdministration.h)

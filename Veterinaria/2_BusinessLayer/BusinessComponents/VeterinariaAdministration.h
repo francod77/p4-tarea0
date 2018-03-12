@@ -1,0 +1,14 @@
+//
+// Created by juanr on 11/3/2018.
+//
+
+#ifndef VETERINARIA_VETERINARIAADMINISTRATION_H
+#define VETERINARIA_VETERINARIAADMINISTRATION_H
+
+
+class VeterinariaAdministration {
+
+};
+
+
+#endif //VETERINARIA_VETERINARIAADMINISTRATION_H
