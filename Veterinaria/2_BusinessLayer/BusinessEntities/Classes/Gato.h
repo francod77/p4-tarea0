@@ -1,7 +1,3 @@
-//
-// Created by juanr on 11/3/2018.
-//
-
 #ifndef VETERINARIA_GATO_H
 #define VETERINARIA_GATO_H
 
