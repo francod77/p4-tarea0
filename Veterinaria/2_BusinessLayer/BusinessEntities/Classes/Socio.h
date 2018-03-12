@@ -12,16 +12,19 @@
 #include "Mascota.h"
 #include "ListaConsultas.h"
 #include "ListaMascotas.h"
+#include "../../../Cross-Cutting/DataTypes/DataMascota.h"
 
 class Socio {
 private:
     std::string ci;
     std::string nombre;
     Fecha fechaIngfreso;
-    ListaConsultas listaConsultas;
-    ListaMascotas listaMascotas;
+    ListaConsultas* listaConsultas;
+    ListaMascotas* listaMascotas;
 public:
     Socio();
+
+    Socio(const std::string &ci, const std::string &nombre, const Fecha &fechaIngfreso);
 
     virtual ~Socio();
 
@@ -36,6 +39,10 @@ public:
     const Fecha &getFechaIngfreso() const;
 
     void setFechaIngfreso(const Fecha &fechaIngfreso);
+
+    void agregarConsulta(std::string motivo, Fecha fecha);
+
+    void agregarMascota(DataMascota mascota);
 };
 
 

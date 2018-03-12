@@ -8,11 +8,11 @@
 
 static class Const {
 public:
-    int MAX_SOCIOS = 1000;
-    int MIN_MASCOTAS = 1;
-    int MAX_MASCOTAS = 10;
-    float FACTOR_ALIMENTO_GATO = 0.015;
-    float FACTOR_ALIMENTO_PERRO = 0.025;
+    static int MAX_SOCIOS = 1000;
+    static int MIN_MASCOTAS = 1;
+    static int MAX_MASCOTAS = 10;
+    static float FACTOR_ALIMENTO_GATO = 0.015;
+    static float FACTOR_ALIMENTO_PERRO = 0.025;
 
     Const();
 

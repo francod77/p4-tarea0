@@ -3,8 +3,20 @@
 //
 
 #include "Socio.h"
+#include "../../../Cross-Cutting/Const.h"
 
-Socio::Socio() {}
+Socio::Socio() {
+    this->listaMascotas = new ListaMascotas(10);
+    this->listaConsultas = new ListaConsultas(1000);
+}
+
+Socio::Socio(const std::string &ci, const std::string &nombre, const Fecha &fechaIngfreso) : ci(ci), nombre(nombre),
+                                                                                             fechaIngfreso(
+                                                                                                     fechaIngfreso) {
+    this->listaMascotas = new ListaMascotas(10);
+    this->listaConsultas = new ListaConsultas(1000);
+}
+
 
 Socio::~Socio() {
 
@@ -32,4 +44,12 @@ const Fecha &Socio::getFechaIngfreso() const {
 
 void Socio::setFechaIngfreso(const Fecha &fechaIngfreso) {
     Socio::fechaIngfreso = fechaIngfreso;
+}
+
+void agregarConsulta(std::string motivo, Fecha fecha){
+
+}
+
+void agregarMascota(DataMascota mascota){
+
 }
