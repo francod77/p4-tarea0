@@ -10,13 +10,13 @@
 
 class ListaMascotas {
 private:
-    Mascota* mascotas;
+    Mascota** mascotas;
     int length;
 public:
-    ListaMascotas(int length){};
+    ListaMascotas(int length);
     ~ListaMascotas();
-    Mascota get(int);
-    void add(Mascota mascota);
+    Mascota* get(int posicion);
+    void add(Mascota* mascota);
 };
 
 

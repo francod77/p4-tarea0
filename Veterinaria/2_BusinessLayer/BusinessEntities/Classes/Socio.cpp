@@ -1,20 +1,14 @@
-//
-// Created by juanr on 11/3/2018.
-//
-
 #include "Socio.h"
 #include "../../../Cross-Cutting/Const.h"
 
 Socio::Socio() {
-    this->listaMascotas = new ListaMascotas(10);
-    this->listaConsultas = new ListaConsultas(1000);
+    Const c;
 }
 
 Socio::Socio(const std::string &ci, const std::string &nombre, const Fecha &fechaIngfreso) : ci(ci), nombre(nombre),
                                                                                              fechaIngfreso(
                                                                                                      fechaIngfreso) {
-    this->listaMascotas = new ListaMascotas(10);
-    this->listaConsultas = new ListaConsultas(1000);
+
 }
 
 
