@@ -6,7 +6,6 @@ Mascota::Mascota(const std::string &nombre, Genero genero, float peso, float rac
                                                                                              genero(genero), peso(peso),
                                                                                              racionDiaria(
                                                                                                      racionDiaria) {}
-
 Mascota::~Mascota() {
 
 }
