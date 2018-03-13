@@ -10,10 +10,12 @@
 
 class VeterinariaAdministration {
 private:
-    Socio* socios[MAX_SOCIOS];
-    int cantsocios=0;//cant de socios actual
+    Socio socios[1000];//aca va MAX_SOCIOS
+    int cantsocios;//cant de socios actual
 public:
-    Socio busqueda(Socio* socios,std::string ci,int cant_socios);
+    VeterinariaAdministration();
+    virtual ~VeterinariaAdministration();
+    Socio busqueda(std::string ci,int cant_socios);
     void registrarSocio(std::string ci, std::string nombre, const DataMascota& dtMascota);
     void eliminar_socio(std::string ci);
     void agregarMascota(std::string ci, DataMascota dtmascota);
