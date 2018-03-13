@@ -1,14 +1,23 @@
 #include "Socio.h"
 #include "../../../Cross-Cutting/Const.h"
 
+#include "Socio.h"
+#include "../../../Cross-Cutting/Const.h"
+#include "../../../Cross-Cutting/DataTypes/DataMascota.h"
+#include "ListaConsultas.h"
+#include "ListaMascotas.h"
+#include "Mascota.h"
+
 Socio::Socio() {
-    Const c;
+    this->listaMascotas = new ListaMascotas(10);
+    this->listaConsultas = new ListaConsultas(1000);
 }
 
-Socio::Socio(const std::string &ci, const std::string &nombre, const Fecha &fechaIngfreso) : ci(ci), nombre(nombre),
-                                                                                             fechaIngfreso(
-                                                                                                     fechaIngfreso) {
-
+Socio::Socio(const std::string &ci, const std::string &nombre, const Fecha &fechaIngreso) : ci(ci), nombre(nombre),
+                                                                                             fechaIngreso(
+                                                                                                     fechaIngreso) {
+    this->listaMascotas = new ListaMascotas(10);
+    this->listaConsultas = new ListaConsultas(1000);
 }
 
 
@@ -32,19 +41,27 @@ void Socio::setNombre(const std::string &nombre) {
     Socio::nombre = nombre;
 }
 
-const Fecha &Socio::getFechaIngfreso() const {
-    return fechaIngfreso;
+const Fecha &Socio::getFechaIngreso() const {
+    return fechaIngreso;
 }
 
-void Socio::setFechaIngfreso(const Fecha &fechaIngfreso) {
-    Socio::fechaIngfreso = fechaIngfreso;
-}
-void Socio::agregarConsulta(std::string motivo, Fecha fecha){
-    Consulta nuevacons=new Consulta(motivo,fecha);
-    this.listaConsultas.add(nuevacons);
+void Socio::setFechaIngreso(const Fecha &fechaIngreso) {
+    Socio::fechaIngreso = fechaIngreso;
 }
 
-void Socio::agregarMascota(DataMascota mascota){
-    nuevo = new Mascota(mascota.getNombre(), mascota.getGenero(), mascota.getPeso(), mascota.getRacionDiaria());
-    Socio.listaMascotas.add(nuevo);
+ void Socio::agregar_Consulta(std::string motivo, Fecha fecha){
+    Consulta* nuevacons=new Consulta(motivo,fecha);
+    Socio->listaConsultas.add(nuevacons);
 }
+
+void Socio::agregar_Mascota(DataMascota mascota){
+    if(this->listaMascotas->getlength()<MAX_MASCOTAS) {
+        Mascota *nuevo = new Mascota(mascota.getNombre(), mascota.getGenero(), mascota.getPeso(),
+                                     mascota.getRacionDiaria());
+        Socio->listaMascotas.add(nuevo);
+    } else //exception ???
+}
+
+DataMascota** Socio::getlistamascotas(int cant){
+
+};
