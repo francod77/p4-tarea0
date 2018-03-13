@@ -43,6 +43,8 @@ public:
     void agregarConsulta(std::string motivo, Fecha fecha);
 
     void agregarMascota(DataMascota mascota);
+    /*devuelve array de punteros datamascota sin comparrtir memoria!! es para usarse en obtener mascotas*/
+    DataMascota** getlistamascotas(int cant);
 };
 
 
