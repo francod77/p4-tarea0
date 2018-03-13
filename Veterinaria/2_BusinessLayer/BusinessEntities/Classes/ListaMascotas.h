@@ -16,6 +16,7 @@ public:
     ListaMascotas(int length);
     ~ListaMascotas();
     Mascota* get(int posicion);
+    int getlength();
     void add(Mascota* mascota);
 };
 
