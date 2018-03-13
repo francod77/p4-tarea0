@@ -22,3 +22,6 @@ void ListaMascotas::add(Mascota* mascota){
     this->mascotas[this->length] = mascota;
     this->length++;
 };
+int ListaMascotas::getlength() {
+    return this->length;
+};
