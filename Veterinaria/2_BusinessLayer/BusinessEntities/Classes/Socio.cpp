@@ -75,3 +75,7 @@ DataMascota** Socio::getlistamascotas(int cant){
     };
     return res;
 };
+
+ListaConsultas* Socio::getlistaConsultas() {
+    return this->listaConsultas;
+}
