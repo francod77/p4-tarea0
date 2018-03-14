@@ -17,6 +17,7 @@ public:
     ~ListaConsultas();
     Consulta* get(int num);
     void add(Consulta* consulta);
+    int getlength();
 };
 
 
