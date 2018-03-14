@@ -1,63 +1,59 @@
+#include <stdexcept>
 #include "VeterinariaAdministration.h"
 
 
 VeterinariaAdministration::VeterinariaAdministration() {
-    //this->socios= new Socio[MAX_SOCIOS]; ya se declara en .h
+    this->socios = new Socio*[MAX_SOCIOS];
     this->cantsocios=0;
 };
 
 VeterinariaAdministration::~VeterinariaAdministration(){};
 
 Socio* VeterinariaAdministration::busqueda(std::string ci) {
-    try {
-        int i = 0;
-        bool encontre = false;
-        while ((!encontre && i <= Constantes.MAX_SOCIO) && i <= this->cantsocios) {
-            encontre = (ci == this->socios[i]->getCi());
-            i++;
-        }
-        if (i < cant)
-            return this->socios[i - 1];
-        else
-            throw std::invalid_argument("No existe un socio registrado con esa cédula");
+    int i = 0;
+    while (i < this->cantsocios && ci.compare(this->socios[i]->getCi()) == 0){
+        i++;
     }
+    if(i < this->cantsocios){
+        return this->socios[i];
+    }else{
+        throw std::invalid_argument("No existe un socio registrado con esa cédula");
+    }
+    return NULL;
 };
 
 void VeterinariaAdministration::registrarSocio(std::string ci, std::string nombre, const DataMascota& dtMascota){
-    Socio* nuevo(ci,nombre,fecha);
+    Fecha f;
+    f.setAnio(2018);
+    f.setMes(3);
+    f.setDia(14);
+    Socio* nuevo = new Socio(ci,nombre,f);
     nuevo->agregar_Mascota(dtMascota);//agregamos la primer mascota
     this->socios[this->cantsocios]=nuevo;
     this->cantsocios++;
 }
 void VeterinariaAdministration::eliminar_socio(std::string ci){
-    try {
-        Socio *elsocio = busqueda(ci);
-        elsocio->listaConsultas->~ListaConsultas();
-        elsocio->listaMascotas->~ListaMascotas();
-        elsocio = this->socios[this->cantsocios-1];//copio el ultimo sobre el que quiero borrar
-        delete this->socios[this->cantsocios-1]; //borro el ultimo, sin borrar sus arreglos(verificar)
-        this->cantsocios--;
-    }
-    catch(const std::invalid_argument &error){
-        //haces algo
-    }
+    Socio *elsocio = busqueda(ci);
+    elsocio = this->socios[this->cantsocios-1];//copio el ultimo sobre el que quiero borrar
+    delete this->socios[this->cantsocios-1]; //borro el ultimo, sin borrar sus arreglos(verificar)
+    this->cantsocios--;
 };
 
 void VeterinariaAdministration::agregarMascota(std::string ci, DataMascota dtmascota){
     Socio* cliente = busqueda(ci);
     if (cliente != nullptr){
         cliente->agregar_Mascota(dtmascota);
-    }else
-        //excepcion std::invalid argument
+    }else{
+        throw std::invalid_argument("No existe un socio registrado con esa cédula");
+    }
 };
 void VeterinariaAdministration::ingresarConsulta(std::string motivo,std::string ci){
-    try{
-        Socio *elsocio = busqueda(ci);
-        elsocio->agregar_Consulta(motivo, fecha);
-    }
-    catch (const std::invalid_argument &error){
-        //haces algo
-    }
+    Socio *elsocio = busqueda(ci);
+    Fecha f;
+    f.setAnio(2018);
+    f.setMes(3);
+    f.setDia(14);
+    elsocio->agregar_Consulta(motivo, f);
 };
 
 int VeterinariaAdministration::getcantsocios(){
@@ -76,7 +72,9 @@ DataConsulta** VeterinariaAdministration::verConsultasAntesDeFecha(const Fecha& 
 DataMascota** VeterinariaAdministration::obtenerMascotas(std::string ci, int& cantMascotas){
     Socio* cliente= busqueda(ci);
     //falta implementar la excepcion
-    if (cliente!= nullptr)
+    if (cliente!= nullptr) {
         return cliente->getlistamascotas(cantMascotas);
-    else //excepcion
+    }else{
+        throw std::invalid_argument("No existe un socio registrado con esa cédula");
+    }
 };

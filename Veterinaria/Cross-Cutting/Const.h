@@ -5,15 +5,11 @@
 #ifndef VETERINARIA_CONST_H
 #define VETERINARIA_CONST_H
 
-
-const class Constantes {
- public:
-     int MAX_SOCIOS = 1000;
-     int MIN_MASCOTAS = 1;
-     int MAX_MASCOTAS = 10;
-     float FACTOR_ALIMENTO_GATO = 0.015;
-     float FACTOR_ALIMENTO_PERRO = 0.025;
-};
-
+#define MAX_SOCIOS 1000
+#define MIN_MASCOTAS 1
+#define MAX_MASCOTAS 10
+#define MAX_CONSULTAS 100000
+#define FACTOR_ALIMENTO_GATO 0.015
+#define FACTOR_ALIMENTO_PERRO 0.025
 
 #endif //VETERINARIA_CONST_H

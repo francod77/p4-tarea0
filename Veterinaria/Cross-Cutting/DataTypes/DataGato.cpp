@@ -2,7 +2,7 @@
 
 DataGato::DataGato() {}
 
-DataGato::DataGato(const std::string &nombre, Genero genero, float peso, float racionDiaria, TipoPelo tipoPelo)
+DataGato::DataGato(std::string nombre, Genero genero, float peso, float racionDiaria, TipoPelo tipoPelo)
         : DataMascota(nombre, genero, peso, racionDiaria), tipoPelo(tipoPelo) {}
 
 DataGato::~DataGato() {

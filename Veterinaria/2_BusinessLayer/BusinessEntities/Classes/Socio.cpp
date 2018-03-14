@@ -2,6 +2,7 @@
 // Created by juanr on 11/3/2018.
 //
 
+#include <stdexcept>
 #include "Socio.h"
 #include "../../../Cross-Cutting/Const.h"
 #include "../../../Cross-Cutting/DataTypes/DataMascota.h"
@@ -10,8 +11,8 @@
 #include "Mascota.h"
 
 Socio::Socio() {
-    this->listaMascotas = new ListaMascotas(10);
-    this->listaConsultas = new ListaConsultas(1000);
+    this->listaMascotas = new ListaMascotas(MAX_MASCOTAS);
+    this->listaConsultas = new ListaConsultas(MAX_CONSULTAS);
 }
 
 Socio::Socio(const std::string &ci, const std::string &nombre, const Fecha &fechaIngreso) : ci(ci), nombre(nombre),
@@ -53,15 +54,17 @@ void Socio::setFechaIngreso(const Fecha &fechaIngreso) {
 
  void Socio::agregar_Consulta(std::string motivo, Fecha fecha){
     Consulta* nuevacons=new Consulta(motivo,fecha);
-    Socio->listaConsultas.add(nuevacons);
+    this->listaConsultas->add(nuevacons);
 }
 
 void Socio::agregar_Mascota(DataMascota mascota){
     if(this->listaMascotas->getlength()<MAX_MASCOTAS) {
         Mascota *nuevo = new Mascota(mascota.getNombre(), mascota.getGenero(), mascota.getPeso(),
                                      mascota.getRacionDiaria());
-        Socio->listaMascotas.add(nuevo);
-    } else //exception ???
+        this->listaMascotas->add(nuevo);
+    } else {
+        throw std::invalid_argument("No puede agregar más mascotas");
+    }
 }
 
 DataMascota** Socio::getlistamascotas(int cant){

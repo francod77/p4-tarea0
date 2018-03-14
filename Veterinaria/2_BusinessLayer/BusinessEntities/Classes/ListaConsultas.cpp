@@ -5,8 +5,8 @@
 #include "ListaConsultas.h"
 #include "Consulta.h"
 
-ListaConsultas::ListaConsultas(){
-
+ListaConsultas::ListaConsultas(int length){
+    this->consultas = new Consulta*[length];
     this->length = 0;//Reserve el tamaño en memoria pero no tengo ningún objeto
 };
 ListaConsultas::~ListaConsultas(){

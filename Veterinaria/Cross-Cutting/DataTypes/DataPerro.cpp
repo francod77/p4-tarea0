@@ -2,7 +2,7 @@
 
 DataPerro::DataPerro() {}
 
-DataPerro::DataPerro(const std::string &nombre, Genero genero, float peso, float racionDiaria, RazaPerro raza,
+DataPerro::DataPerro(std::string nombre, Genero genero, float peso, float racionDiaria, RazaPerro raza,
                      bool vacunaCachorro) : DataMascota(nombre, genero, peso, racionDiaria), raza(raza),
                                             vacunaCachorro(vacunaCachorro) {}
 

@@ -11,7 +11,7 @@ private:
 public:
     DataGato();
 
-    DataGato(const std::string &nombre, Genero genero, float peso, float racionDiaria, TipoPelo tipoPelo);
+    DataGato(std::string nombre, Genero genero, float peso, float racionDiaria, TipoPelo tipoPelo);
 
     virtual ~DataGato();
 

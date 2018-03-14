@@ -13,7 +13,7 @@ private:
     Consulta** consultas;
     int length;
 public:
-    ListaConsultas();
+    ListaConsultas(int length);
     ~ListaConsultas();
     Consulta* get(int num);
     void add(Consulta* consulta);

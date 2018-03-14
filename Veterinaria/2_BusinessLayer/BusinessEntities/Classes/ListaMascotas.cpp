@@ -6,8 +6,8 @@
 #include "Mascota.h"
 #include "../../../Cross-Cutting/Const.h"
 
-void ListaMascotas::ListaMascotas(int length){
-    this->mascotas = new Mascota[Constantes.MAX_MASCOTAS];
+ListaMascotas::ListaMascotas(int length){
+    this->mascotas = new Mascota*[length];
     this->length = 0;//Reserve el tamaño en memoria pero no tengo ningún objeto
 };
 
@@ -18,18 +18,19 @@ ListaMascotas::~ListaMascotas(){
     delete this->mascotas;
 };
 
-Mascota ListaMascotas::get(int num){
-    return this->consultas[num];
+Mascota* ListaMascotas::get(int num){
+    return this->mascotas[num];
 };
 int ListaMascotas::getlength() {
     return this->length;
 };
-void ListaMascotas::add(Mascota mascota){
-    this->mascotas[this->length]=mascota;
+void ListaMascotas::add(Mascota* mascota){
+    this->mascotas[this->length] = mascota;
     this->length++;
 };
 DataMascota* ListaMascotas::getmascota(int num){
-    DataMascota* datos(mascotas[num]->getNombre(),mascotas[num]->getGenero(),mascotas[num]->getPeso(),mascotas[num]->getRacionDiaria());
+    Genero genero = this->mascotas[num]->getGenero();
+    DataMascota* datos = new DataMascota(this->mascotas[num]->getNombre(),genero,this->mascotas[num]->getPeso(),this->mascotas[num]->getRacionDiaria());
     //creo el tipo de datos a partir de los datos en mascotas
     return datos;
 };

@@ -14,7 +14,7 @@ private:
 public:
     DataMascota();
 
-    DataMascota(const std::string &nombre, Genero genero, float peso, float racionDiaria);
+    DataMascota(std::string nombre, Genero genero, float peso, float racionDiaria);
 
     virtual ~DataMascota();
 

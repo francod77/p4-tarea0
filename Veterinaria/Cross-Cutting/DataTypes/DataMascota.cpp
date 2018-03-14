@@ -2,11 +2,7 @@
 
 DataMascota::DataMascota() {}
 
-DataMascota::DataMascota(const std::string &nombre, Genero genero, float peso, float racionDiaria) : nombre(nombre),
-                                                                                                     genero(genero),
-                                                                                                     peso(peso),
-                                                                                                     racionDiaria(
-                                                                                                             racionDiaria) {}
+DataMascota::DataMascota(std::string nombre, Genero genero, float peso, float racionDiaria) : nombre(nombre), genero(genero), peso(peso), racionDiaria(racionDiaria) {}
 
 DataMascota::~DataMascota() {
 

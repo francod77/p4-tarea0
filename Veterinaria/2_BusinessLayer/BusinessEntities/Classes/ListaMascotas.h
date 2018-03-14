@@ -11,15 +11,15 @@
 
 class ListaMascotas {
 private:
-    Mascota* mascotas[10];//aca va MAX_MASCOTAS
+    Mascota** mascotas;
     int length;
 public:
-    void ListaMascotas(int length);
+    ListaMascotas(int length);
     ~ListaMascotas();
-    Mascota get(int num);
+    Mascota* get(int num);
     int getlength();
     DataMascota* getmascota(int);
-    void add(Mascota mascota);
+    void add(Mascota* mascota);
 };
 
 

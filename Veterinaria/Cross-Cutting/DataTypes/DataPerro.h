@@ -12,7 +12,7 @@ private:
 public:
     DataPerro();
 
-    DataPerro(const std::string &nombre, Genero genero, float peso, float racionDiaria, RazaPerro raza,
+    DataPerro(std::string nombre, Genero genero, float peso, float racionDiaria, RazaPerro raza,
               bool vacunaCachorro);
 
     virtual ~DataPerro();
