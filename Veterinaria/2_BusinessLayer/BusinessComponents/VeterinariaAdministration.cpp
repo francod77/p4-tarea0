@@ -33,10 +33,19 @@ void VeterinariaAdministration::registrarSocio(std::string ci, std::string nombr
     this->cantsocios++;
 }
 void VeterinariaAdministration::eliminar_socio(std::string ci){
-    Socio *elsocio = busqueda(ci);
-    elsocio = this->socios[this->cantsocios-1];//copio el ultimo sobre el que quiero borrar
-    delete this->socios[this->cantsocios-1]; //borro el ultimo, sin borrar sus arreglos(verificar)
-    this->cantsocios--;
+    int i = 0;
+    while (i < this->cantsocios && ci.compare(this->socios[i]->getCi()) == 0){
+        i++;
+    }
+    if(i < this->cantsocios){
+        Socio *elsocio = this->socios[i];
+        this->socios[i] = this->socios[this->cantsocios-1];
+        this->socios[this->cantsocios-1] = NULL;
+        this->cantsocios--;
+        delete elsocio;
+    }else{
+        throw std::invalid_argument("No existe un socio registrado con esa cédula");
+    }
 };
 
 void VeterinariaAdministration::agregarMascota(std::string ci, DataMascota dtmascota){
