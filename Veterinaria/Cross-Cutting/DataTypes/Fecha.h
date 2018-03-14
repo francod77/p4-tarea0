@@ -25,6 +25,8 @@ public:
     int getAnio() const;
 
     void setAnio(int anio);
+    
+    bool operator<(Fecha);
 };
 
 
