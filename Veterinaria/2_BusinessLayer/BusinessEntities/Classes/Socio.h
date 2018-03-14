@@ -46,6 +46,7 @@ public:
 
     /*devuelve array de punteros datamascota sin comparrtir memoria!! es para usarse en obtener mascotas*/
     DataMascota** getlistamascotas(int );
+    ListaConsultas* getlistaConsultas();
 };
 
 
