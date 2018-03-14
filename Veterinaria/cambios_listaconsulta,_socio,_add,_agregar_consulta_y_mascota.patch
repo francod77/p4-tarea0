@@ -1,0 +1,193 @@
+Index: Veterinaria/2_BusinessLayer/BusinessComponents/VeterinariaAdministration.cpp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Veterinaria/2_BusinessLayer/BusinessComponents/VeterinariaAdministration.cpp	(date 1520886564000)
++++ Veterinaria/2_BusinessLayer/BusinessComponents/VeterinariaAdministration.cpp	(date 1520886564000)
+@@ -1,6 +1,14 @@
+ #include "VeterinariaAdministration.h"
+ 
+-Socio busqueda(Socio *arreglo,std::string ci,int cant){
++
++VeterinariaAdministration::VeterinariaAdministration() {
++    this->socios= new Socio[MAX_SOCIOS];
++    this->cantsocios=0;
++}
++
++VeterinariaAdministration::~VeterinariaAdministration(){}
++
++Socio VeterinariaAdministration::busqueda(Socio* arreglo,std::string ci,int cant){
+     int i=0;
+     bool encontre=false;
+     while ((!encontre && i<=Constantes.MAX_SOCIO) && i<=cant) {
+@@ -15,12 +23,15 @@
+ 
+ void VeterinariaAdministration::registrarSocio(std::string ci, std::string nombre, const DataMascota& dtMascota){
+     Socio nuevo=new Socio(ci,nombre,fecha);
+-    agregar_mascota(ci,dtMascota);//agregamos la primer mascota
+-    VeterinariaAdministration.socios[VeterinariaAdministration.cantsocios]=nuevo;
+-    VeterinariaAdministration.cantsocios++;
++    nuevo.agregar_Mascota(dtMascota);//agregamos la primer mascota
++    this->socios[this->cantsocios]=nuevo;
++    this->cantsocios++;
++}
++void eliminar_socio(std::string ci){};
++
++void VeterinariaAdministration::agregarMascota(std::string ci, DataMascota dtmascota){
++    Socio niery = busqueda(this->socios,ci,this->cantsocios);
+ };
+-void eliminar_socio(std::string ci);
+-void agregarMascota(std::string ci, DataMascota dtmascota);
+-void ingresarConsultas(std::string motivo,std::string ci);
+-DataConsulta** verConsultasAntesDeFecha(const Fecha& Fecha, std::string ci, int& cantConsultas);
++void ingresarConsultas(std::string motivo,std::string ci){};
++DataConsulta** verConsultasAntesDeFecha(const Fecha& Fecha, std::string ci, int& cantConsultas){};
+ DataMascota** obtenerMascotas(std::string ci, int& cantMascotas){};
+\ No newline at end of file
+Index: Veterinaria/2_BusinessLayer/BusinessEntities/Classes/ListaConsultas.cpp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Veterinaria/2_BusinessLayer/BusinessEntities/Classes/ListaConsultas.cpp	(date 1520886564000)
++++ Veterinaria/2_BusinessLayer/BusinessEntities/Classes/ListaConsultas.cpp	(date 1520886564000)
+@@ -20,7 +20,7 @@
+ 
+ };
+ void ListaConsultas::add(Consulta consulta){
+-//hay que aumentar longitud
++
+     this->consultas[this->length]=consulta;
+     this->length++;
+ };
+\ No newline at end of file
+Index: Veterinaria/2_BusinessLayer/BusinessEntities/Classes/ListaMascotas.cpp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Veterinaria/2_BusinessLayer/BusinessEntities/Classes/ListaMascotas.cpp	(date 1520886564000)
++++ Veterinaria/2_BusinessLayer/BusinessEntities/Classes/ListaMascotas.cpp	(date 1520886572000)
+@@ -4,9 +4,10 @@
+ 
+ #include "ListaMascotas.h"
+ #include "Mascota.h"
++#include "../../../Cross-Cutting/Const.h"
+ 
+-ListaMascotas::ListaMascotas(int length){
+-    this->mascotas = new Mascota*[length];
++void ListaMascotas::ListaMascotas(int length){
++    this->mascotas = new Mascota[Constantes.MAX_MASCOTAS];
+     this->length = 0;//Reserve el tamaño en memoria pero no tengo ningún objeto
+ };
+ 
+@@ -14,12 +15,12 @@
+     for (int i = 0; i < this->length ; ++i) {
+         delete this->mascotas[i];
+     }
+-    delete( this->mascotas );
++    delete this->mascotas;
+ };
+-Mascota* ListaMascotas::get(int posicion){
+-    return this->mascotas[posicion];
++Mascota ListaMascotas::get(int num){
++    return this->consultas[num];
+ };
+-void ListaMascotas::add(Mascota* mascota){
+-    this->mascotas[this->length] = mascota;
++void ListaMascotas::add(Mascota mascota){
++    this->mascotas[this->length]=mascota;
+     this->length++;
+ };
+\ No newline at end of file
+Index: Veterinaria/2_BusinessLayer/BusinessEntities/Classes/ListaMascotas.h
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Veterinaria/2_BusinessLayer/BusinessEntities/Classes/ListaMascotas.h	(date 1520886564000)
++++ Veterinaria/2_BusinessLayer/BusinessEntities/Classes/ListaMascotas.h	(date 1520886572000)
+@@ -10,13 +10,13 @@
+ 
+ class ListaMascotas {
+ private:
+-    Mascota** mascotas;
++    Mascota* mascotas;
+     int length;
+ public:
+-    ListaMascotas(int length);
++    void ListaMascotas(int length);
+     ~ListaMascotas();
+-    Mascota* get(int posicion);
+-    void add(Mascota* mascota);
++    Mascota get(int num);
++    void add(Mascota mascota);
+ };
+ 
+ 
+Index: Veterinaria/2_BusinessLayer/BusinessEntities/Classes/Socio.cpp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Veterinaria/2_BusinessLayer/BusinessEntities/Classes/Socio.cpp	(date 1520886564000)
++++ Veterinaria/2_BusinessLayer/BusinessEntities/Classes/Socio.cpp	(date 1520886564000)
+@@ -5,6 +5,8 @@
+ #include "Socio.h"
+ #include "../../../Cross-Cutting/Const.h"
+ #include "ListaConsultas.h"
++#include "ListaMascotas.h"
++#include "Mascota.h"
+ 
+ Socio::Socio() {
+     this->listaMascotas = new ListaMascotas(10);
+@@ -48,10 +50,11 @@
+ }
+ 
+  void Socio::agregarConsulta(std::string motivo, Fecha fecha){
+-    Consulta nuevacons=new Consulta(motivo,fecha);
+-    this.listaConsultas.add(nuevacons);
+-     this.listaConsultas.
++    Consulta* nuevacons=new Consulta(motivo,fecha);
++    Socio->listaConsultas.add(nuevacons);
+ }
+ 
+ void Socio::agregar_Mascota(DataMascota mascota){
++    Mascota* nuevo = new Mascota(mascota.getNombre(), mascota.getGenero(), mascota.getPeso(), mascota.getRacionDiaria());
++    Socio->listaMascotas.add(nuevo);
+ }
+\ No newline at end of file
+Index: Veterinaria/2_BusinessLayer/BusinessEntities/Classes/Socio.h
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Veterinaria/2_BusinessLayer/BusinessEntities/Classes/Socio.h	(date 1520886564000)
++++ Veterinaria/2_BusinessLayer/BusinessEntities/Classes/Socio.h	(date 1520886564000)
+@@ -37,7 +37,7 @@
+     void setNombre(const std::string &nombre);
+ 
+     const Fecha &getFechaIngreso() const;
+-    
++
+     void setFechaIngreso(const Fecha &fechaIngreso);
+ 
+     void agregar_Consulta(std::string motivo, Fecha fecha);
+Index: Veterinaria/Cross-Cutting/Const.h
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Veterinaria/Cross-Cutting/Const.h	(date 1520886564000)
++++ Veterinaria/Cross-Cutting/Const.h	(date 1520886564000)
+@@ -6,7 +6,8 @@
+ #define VETERINARIA_CONST_H
+ 
+ 
+- struct Constantes {
++const class Constantes {
++ public:
+      int MAX_SOCIOS = 1000;
+      int MIN_MASCOTAS = 1;
+      int MAX_MASCOTAS = 10;

@@ -18,13 +18,13 @@ class Socio {
 private:
     std::string ci;
     std::string nombre;
-    Fecha fechaIngfreso;
+    Fecha fechaIngreso;
     ListaConsultas* listaConsultas;
     ListaMascotas* listaMascotas;
 public:
     Socio();
 
-    Socio(const std::string &ci, const std::string &nombre, const Fecha &fechaIngfreso);
+    Socio(const std::string &ci, const std::string &nombre, const Fecha &fechaIngreso);
 
     virtual ~Socio();
 
@@ -36,15 +36,16 @@ public:
 
     void setNombre(const std::string &nombre);
 
-    const Fecha &getFechaIngfreso() const;
+    const Fecha &getFechaIngreso() const;
 
-    void setFechaIngfreso(const Fecha &fechaIngfreso);
+    void setFechaIngreso(const Fecha &fechaIngreso);
 
-    void agregarConsulta(std::string motivo, Fecha fecha);
+    void agregar_Consulta(std::string motivo, Fecha fecha);
 
-    void agregarMascota(DataMascota mascota);
+    void agregar_Mascota(DataMascota );
+
     /*devuelve array de punteros datamascota sin comparrtir memoria!! es para usarse en obtener mascotas*/
-    DataMascota** getlistamascotas(int cant);
+    DataMascota** getlistamascotas(int );
 };
 
 

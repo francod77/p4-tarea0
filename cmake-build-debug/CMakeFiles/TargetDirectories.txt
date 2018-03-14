@@ -1,0 +1,3 @@
+/Users/franco/Documents/p4-tarea0/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/franco/Documents/p4-tarea0/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/franco/Documents/p4-tarea0/cmake-build-debug/CMakeFiles/p4_tarea0.dir

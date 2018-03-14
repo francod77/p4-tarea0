@@ -7,17 +7,19 @@
 
 
 #include "Mascota.h"
+#include "../../../Cross-Cutting/DataTypes/DataMascota.h"
 
 class ListaMascotas {
 private:
-    Mascota** mascotas;
+    Mascota* mascotas[10];//aca va MAX_MASCOTAS
     int length;
 public:
-    ListaMascotas(int length);
+    void ListaMascotas(int length);
     ~ListaMascotas();
-    Mascota* get(int posicion);
+    Mascota get(int num);
     int getlength();
-    void add(Mascota* mascota);
+    DataMascota* getmascota(int);
+    void add(Mascota mascota);
 };
 
 

@@ -1,5 +1,6 @@
-#include "Socio.h"
-#include "../../../Cross-Cutting/Const.h"
+//
+// Created by juanr on 11/3/2018.
+//
 
 #include "Socio.h"
 #include "../../../Cross-Cutting/Const.h"
@@ -63,5 +64,10 @@ void Socio::agregar_Mascota(DataMascota mascota){
 }
 
 DataMascota** Socio::getlistamascotas(int cant){
-
+    DataMascota** res;//arreglo de punteros a datamascota de largo cant
+    //hay que inicializar res
+    for (int i = 0; i <cant ; ++i) {
+        res[i]=this->listaMascotas->getmascota(i);
+    };
+    return res;
 };
