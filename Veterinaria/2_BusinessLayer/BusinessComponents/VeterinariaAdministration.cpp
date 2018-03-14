@@ -32,8 +32,10 @@ void VeterinariaAdministration::registrarSocio(std::string ci, std::string nombr
 void VeterinariaAdministration::eliminar_socio(std::string ci){
     try {
         Socio *elsocio = busqueda(ci);
+        elsocio->listaConsultas->~ListaConsultas();
+        elsocio->listaMascotas->~ListaMascotas();
         elsocio = this->socios[this->cantsocios-1];//copio el ultimo sobre el que quiero borrar
-        delete this->socios[this->cantsocios-1]; //borro el ultimo, sin borrar sus arreglos(verificar!)
+        delete this->socios[this->cantsocios-1]; //borro el ultimo, sin borrar sus arreglos(verificar)
         this->cantsocios--;
     }
     catch(const std::invalid_argument &error){
