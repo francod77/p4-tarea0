@@ -28,3 +28,18 @@ int Fecha::getAnio() const {
 void Fecha::setAnio(int anio) {
     Fecha::anio = anio;
 }
+
+bool Fecha::operator<(Fecha fecha2){
+    if(getAnio(this)<getAnio(fecha2))
+        return true;
+    if(getAnio(this)==getAnio(fecha2)){
+        if(getMes(this)<getMes(fecha2)){
+            return true;
+        }
+        if(getMes(this)==getMes(fecha2)){
+            if(getDia(this)<getDia(fecha2))
+                return true;
+        }
+    }
+    return false;
+}
