@@ -75,6 +75,26 @@ void VeterinariaAdministration::setcantsocios(bool agrega){
 };
 
 DataConsulta** VeterinariaAdministration::verConsultasAntesDeFecha(const Fecha& Fecha, std::string ci, int& cantConsultas){
+    DataConsulta** res= new DataConsulta[cantConsultas];
+    Socio* cliente= busqueda(ci);
+    ListaConsultas tirabase=cliente->getlistaConsultas();
+    Consulta candidato;
+    Fecha fechacandidato;
+    int i=0;
+    int tope=tirabase.getlength()
+    /*ahora hay que transformar todas las consultas en dataconsultas rip*/
+    while(i<=tope){
+        candidato=tirabase.get(i);
+        fechacandidato=candidato.getFecha();
+        if(fechacandidato<Fecha){
+            res[i]->setFechaConsulta(fechacandidato);
+            res[i]->setMotivo(candidato.getMotivo());
+
+        }
+        i++;
+
+    }
+    return res;
 
 };
 
