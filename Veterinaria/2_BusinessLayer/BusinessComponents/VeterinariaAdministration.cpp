@@ -8,17 +8,19 @@ VeterinariaAdministration::VeterinariaAdministration() {
 
 VeterinariaAdministration::~VeterinariaAdministration(){};
 
-Socio* VeterinariaAdministration::busqueda(std::string ci){
-    int i=0;
-    bool encontre=false;
-    while ((!encontre && i<=Constantes.MAX_SOCIO) && i<=this->cantsocios) {
-        encontre=(ci==this->socios[i]->getCi());
-        i++;
+Socio* VeterinariaAdministration::busqueda(std::string ci) {
+    try {
+        int i = 0;
+        bool encontre = false;
+        while ((!encontre && i <= Constantes.MAX_SOCIO) && i <= this->cantsocios) {
+            encontre = (ci == this->socios[i]->getCi());
+            i++;
+        }
+        if (i < cant)
+            return this->socios[i - 1];
+        else
+            throw std::invalid_argument("No existe un socio registrado con esa cédula");
     }
-    if(i<cant)
-        return this->socios[i-1];
-    else
-        return nullptr;
 };
 
 void VeterinariaAdministration::registrarSocio(std::string ci, std::string nombre, const DataMascota& dtMascota){
@@ -28,7 +30,15 @@ void VeterinariaAdministration::registrarSocio(std::string ci, std::string nombr
     this->cantsocios++;
 }
 void VeterinariaAdministration::eliminar_socio(std::string ci){
-
+    try {
+        Socio *elsocio = busqueda(ci);
+        elsocio = this->socios[this->cantsocios-1];//copio el ultimo sobre el que quiero borrar
+        delete this->socios[this->cantsocios-1]; //borro el ultimo, sin borrar sus arreglos(verificar!)
+        this->cantsocios--;
+    }
+    catch(const std::invalid_argument &error){
+        //haces algo
+    }
 };
 
 void VeterinariaAdministration::agregarMascota(std::string ci, DataMascota dtmascota){
@@ -39,7 +49,13 @@ void VeterinariaAdministration::agregarMascota(std::string ci, DataMascota dtmas
         //excepcion std::invalid argument
 };
 void VeterinariaAdministration::ingresarConsulta(std::string motivo,std::string ci){
-
+    try{
+        Socio *elsocio = busqueda(ci);
+        elsocio->agregar_Consulta(motivo, fecha);
+    }
+    catch (const std::invalid_argument &error){
+        //haces algo
+    }
 };
 
 int VeterinariaAdministration::getcantsocios(){
