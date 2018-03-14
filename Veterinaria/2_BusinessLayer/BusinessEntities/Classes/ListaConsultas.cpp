@@ -5,8 +5,8 @@
 #include "ListaConsultas.h"
 #include "Consulta.h"
 
-ListaConsultas::ListaConsultas(int length){
-    this->consultas = new Consulta[length];
+ListaConsultas::ListaConsultas(){
+
     this->length = 0;//Reserve el tamaño en memoria pero no tengo ningún objeto
 };
 ListaConsultas::~ListaConsultas(){
@@ -15,12 +15,10 @@ ListaConsultas::~ListaConsultas(){
     }
     delete this->consultas;
 };
-Consulta ListaConsultas::get(int num){
+Consulta* ListaConsultas::get(int num){
     return this->consultas[num];
-
 };
-void ListaConsultas::add(Consulta consulta){
-
+void ListaConsultas::add(Consulta* consulta){
     this->consultas[this->length]=consulta;
     this->length++;
 };
