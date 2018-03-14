@@ -23,7 +23,8 @@ Socio::Socio(const std::string &ci, const std::string &nombre, const Fecha &fech
 
 
 Socio::~Socio() {
-
+ this->listaConsultas->~ListaConsultas();
+ this->listaMascotas->~ListaMascotas();
 }
 
 const std::string &Socio::getCi() const {
