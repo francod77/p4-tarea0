@@ -31,11 +31,14 @@ void VeterinariaAdministration::registrarSocio(std::string ci, std::string nombr
 }
 void VeterinariaAdministration::eliminar_socio(std::string ci){
     try {
-        Socio *elsocio = busqueda(ci);
-        elsocio->listaConsultas->~ListaConsultas();
-        elsocio->listaMascotas->~ListaMascotas();
-        elsocio = this->socios[this->cantsocios-1];//copio el ultimo sobre el que quiero borrar
-        delete this->socios[this->cantsocios-1]; //borro el ultimo, sin borrar sus arreglos(verificar)
+        int pos=5;//tiene que ser !=0
+        Socio *elsocio = busqueda(ci,pos);
+        elsocio->~Socio();//borramos elsocio
+        if(pos<= (this->cantsocios-1) ) {
+            elsocio = this->socios[this->cantsocios - 1];//elsocio ahora es el ultimo
+            this->socios[pos] = elsocio;
+            //delete this->socios[this->cantsocios - 1];//no es necesario, simplemente sobreescribimos en la proxima?
+        }
         this->cantsocios--;
     }
     catch(const std::invalid_argument &error){
