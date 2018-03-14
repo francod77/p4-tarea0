@@ -22,3 +22,6 @@ void ListaConsultas::add(Consulta* consulta){
     this->consultas[this->length]=consulta;
     this->length++;
 };
+int ListaConsultas::getlength() {
+    return this->length;
+};
