@@ -17,7 +17,7 @@ ListaMascotas::~ListaMascotas(){
     }
     delete this->mascotas;
 };
-//esta como llego aca? no sirve y esta mal hecha
+
 Mascota ListaMascotas::get(int num){
     return this->consultas[num];
 };
