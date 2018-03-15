@@ -50,7 +50,20 @@ int main() {
                 menu.imprimir_dtconsulta(lista, cantconsultas);
             }
                 break;
-            case 5:
+            
+            case 5:{
+                std::string ci;
+                menu.leerOpcionEliminarSocio(ci);
+                try {
+                    administration->eliminar_socio(ci);
+                }
+                catch (std::invalid_argument error){
+
+                    std::cout<<error<<std::endl;
+                    std::cout<<"error 5"<<std::endl;
+                }
+                break;
+            }
             case 6: {
                 int cantmascotas;
                 menu.leer_obtenermascotas(ci, cantmascotas);
