@@ -5,6 +5,7 @@
 #include "../../Cross-Cutting/DataTypes/DataMascota.h"
 #include "../../Cross-Cutting/DataTypes/DataGato.h"
 #include "../../Cross-Cutting/DataTypes/DataPerro.h"
+#include "../../Cross-Cutting/Const.h"
 #include "../../Cross-Cutting/DataTypes/DataConsulta.h"
 
 Menu::Menu(){
@@ -38,6 +39,7 @@ void Menu::leerOpcionRegistrarSocio(std::string &ci,std::string &nombre, DataMas
     bool datoValido;
     bool mascotaPerro;
     std::string dato;
+    float datoFloat;
     std::smatch match;
 
     std::cout << "Registrar socio:" << std::endl;
@@ -55,16 +57,12 @@ void Menu::leerOpcionRegistrarSocio(std::string &ci,std::string &nombre, DataMas
     while (!datoValido){
         std::cout << "\tIndique que tipo de mascota va a registrar (gato o perro): ";
         std::cin >> dato;
-        std::regex  r("\\s*(perro|gato)\\s*");
-        if(regex_match(dato,match,r)){
-            std::regex  r{R"(\s*gato\s*)"};
-            if(regex_match(dato,match,r)){
+        if(regex_match(dato,match,std::regex("\\s*(perro|gato)\\s*"))){
+            if(regex_match(dato,match,std::regex("\\s*gato\\s*"))){
                 dataMascota = new DataGato();
-                ((DataGato*)dataMascota)->setTipoPelo(largo);
                 mascotaPerro = false;
             }else{
                 dataMascota = new DataPerro();
-                ((DataPerro*)dataMascota)->setRaza(labrador);
                 mascotaPerro = true;
             }
             datoValido = true;
@@ -74,19 +72,17 @@ void Menu::leerOpcionRegistrarSocio(std::string &ci,std::string &nombre, DataMas
     }
 
     //Lectura del nombre de la mascota
-    std::cout << "\tIngrese el nombre de la mascota del socio (masculino o femenino): ";//#### no va la opcion M o F
+    std::cout << "\tIngrese el nombre de la mascota del socio: ";
     std::cin >> dato;
     dataMascota->setNombre(dato);
 
     //Lectura del genero de la mascota
     datoValido = false;
     while (!datoValido){
-        std::cout << "\tIndique el genero de la mascota: ";
+        std::cout << "\tIndique el genero de la mascota (masculino o femenino): ";
         std::cin >> dato;
-        std::regex  r("\\s*(masculino|femenino)\\s*");
-        if(regex_match(dato,match,r)){
-            std::regex  r{R"(\s*masculino\s*)"};
-            if(regex_match(dato,match,r)){
+        if(regex_match(dato,match,std::regex ("\\s*(masculino|femenino)\\s*"))){
+            if(regex_match(dato,match,std::regex ("\\s*masculino\\s*"))){
                 dataMascota->setGenero(masculino);
             }else{
                 dataMascota->setGenero(femenino);
@@ -96,8 +92,212 @@ void Menu::leerOpcionRegistrarSocio(std::string &ci,std::string &nombre, DataMas
             std::cout << "\tDato Incorrecto!!!"<< std::endl;
         }
     }
+
+    //Lectura del peso de la mascota
+    std::cout << "\tIndique el peso de la mascota en kg: ";
+    std::cin >> datoFloat;
+    dataMascota->setPeso(datoFloat);
+    if(mascotaPerro){
+        dataMascota->setRacionDiaria(datoFloat * FACTOR_ALIMENTO_PERRO);
+
+        //Lectura raza del perro
+        datoValido = false;
+        while (!datoValido){
+            std::cout << "\tIndique la raza del perro (labrador, ovejero, bulldog, pitbull, collie, pekines u otro: ";
+            std::cin >> dato;
+            std::regex  r("\\s*(labrador|ovejero|bulldog|pitbull|collie|pekines|otro)\\s*");
+            if(regex_match(dato,match,r)){
+                if(regex_match(dato,match,std::regex ("\\s*labrador\\s*"))){
+                    ((DataPerro*)dataMascota)->setRaza(labrador);
+                }else if(regex_match(dato,match,std::regex ("\\s*ovejero\\s*"))){
+                    ((DataPerro*)dataMascota)->setRaza(ovejero);
+                }else if(regex_match(dato,match,std::regex ("\\s*bulldog\\s*"))){
+                    ((DataPerro*)dataMascota)->setRaza(bulldog);
+                }else if(regex_match(dato,match,std::regex ("\\s*pitbull\\s*"))){
+                    ((DataPerro*)dataMascota)->setRaza(pitbull);
+                }else if(regex_match(dato,match,std::regex ("\\s*collie\\s*"))){
+                    ((DataPerro*)dataMascota)->setRaza(collie);
+                }else if(regex_match(dato,match,std::regex ("\\s*pekines\\s*"))){
+                    ((DataPerro*)dataMascota)->setRaza(pekines);
+                }else if(regex_match(dato,match,std::regex ("\\s*otro\\s*"))){
+                    ((DataPerro*)dataMascota)->setRaza(otro);
+                }
+                datoValido = true;
+            }else{
+                std::cout << "\tDato Incorrecto!!!"<< std::endl;
+            }
+        }
+
+        //Lectura vacuna mascota
+        datoValido = false;
+        while (!datoValido){
+            std::cout << "\tIndique si el perro tiene la vacuna de cachorro: ";
+            std::cin >> dato;
+            std::regex  r("\\s*(si|no)\\s*");
+            if(regex_match(dato,match,r)){
+                if(regex_match(dato,match,std::regex ("\\s*si\\s*"))){
+                    ((DataPerro*)dataMascota)->setVacunaCachorro(true);
+                }else{
+                    ((DataPerro*)dataMascota)->setVacunaCachorro(false);
+                }
+                datoValido = true;
+            }else{
+                std::cout << "\tDato Incorrecto!!!"<< std::endl;
+            }
+        }
+    }else{
+        dataMascota->setRacionDiaria(datoFloat * FACTOR_ALIMENTO_GATO);
+        //Lectura vacuna mascota
+        datoValido = false;
+        while (!datoValido){
+            std::cout << "\tIndique si el tipo de pelo del gato: ";
+            std::cin >> dato;
+            std::regex  r("\\s*(largo|mediano|corto)\\s*");
+            if(regex_match(dato,match,r)){
+                if(regex_match(dato,match,std::regex ("\\s*largo\\s*"))){
+                    ((DataGato*)dataMascota)->setTipoPelo(largo);
+                }else if(regex_match(dato,match,std::regex ("\\s*mediano\\s*"))){
+                    ((DataGato*)dataMascota)->setTipoPelo(mediano);
+                }else{
+                    ((DataGato*)dataMascota)->setTipoPelo(corto);
+                }
+                datoValido = true;
+            }else{
+                std::cout << "\tDato Incorrecto!!!"<< std::endl;
+            }
+        }
+    }
 }
 
+void Menu::leerOpcionAgregarMascota(std::string &ci, DataMascota* &dataMascota){
+    bool datoValido;
+    bool mascotaPerro;
+    std::string dato;
+    float datoFloat;
+    std::smatch match;
+
+    std::cout << "Agregar mascota a socio:" << std::endl;
+
+    //Lectura del documento del socio
+    std::cout << "\tIngrese el número de documento del socio: ";
+    std::cin >> ci;
+
+    //Lectura del tipo de mascota del socio
+    datoValido = false;
+    while (!datoValido){
+        std::cout << "\tIndique que tipo de mascota va a registrar (gato o perro): ";
+        std::cin >> dato;
+        if(regex_match(dato,match,std::regex("\\s*(perro|gato)\\s*"))){
+            if(regex_match(dato,match,std::regex("\\s*gato\\s*"))){
+                dataMascota = new DataGato();
+                mascotaPerro = false;
+            }else{
+                dataMascota = new DataPerro();
+                mascotaPerro = true;
+            }
+            datoValido = true;
+        }else{
+            std::cout << "\tDato Incorrecto!!!"<< std::endl;
+        }
+    }
+
+    //Lectura del nombre de la mascota
+    std::cout << "\tIngrese el nombre de la mascota del socio: ";
+    std::cin >> dato;
+    dataMascota->setNombre(dato);
+
+    //Lectura del genero de la mascota
+    datoValido = false;
+    while (!datoValido){
+        std::cout << "\tIndique el genero de la mascota (masculino o femenino): ";
+        std::cin >> dato;
+        if(regex_match(dato,match,std::regex ("\\s*(masculino|femenino)\\s*"))){
+            if(regex_match(dato,match,std::regex ("\\s*masculino\\s*"))){
+                dataMascota->setGenero(masculino);
+            }else{
+                dataMascota->setGenero(femenino);
+            }
+            datoValido = true;
+        }else{
+            std::cout << "\tDato Incorrecto!!!"<< std::endl;
+        }
+    }
+
+    //Lectura del peso de la mascota
+    std::cout << "\tIndique el peso de la mascota en kg: ";
+    std::cin >> datoFloat;
+    dataMascota->setPeso(datoFloat);
+    if(mascotaPerro){
+        dataMascota->setRacionDiaria(datoFloat * FACTOR_ALIMENTO_PERRO);
+
+        //Lectura raza del perro
+        datoValido = false;
+        while (!datoValido){
+            std::cout << "\tIndique la raza del perro (labrador, ovejero, bulldog, pitbull, collie, pekines u otro: ";
+            std::cin >> dato;
+            std::regex  r("\\s*(labrador|ovejero|bulldog|pitbull|collie|pekines|otro)\\s*");
+            if(regex_match(dato,match,r)){
+                if(regex_match(dato,match,std::regex ("\\s*labrador\\s*"))){
+                    ((DataPerro*)dataMascota)->setRaza(labrador);
+                }else if(regex_match(dato,match,std::regex ("\\s*ovejero\\s*"))){
+                    ((DataPerro*)dataMascota)->setRaza(ovejero);
+                }else if(regex_match(dato,match,std::regex ("\\s*bulldog\\s*"))){
+                    ((DataPerro*)dataMascota)->setRaza(bulldog);
+                }else if(regex_match(dato,match,std::regex ("\\s*pitbull\\s*"))){
+                    ((DataPerro*)dataMascota)->setRaza(pitbull);
+                }else if(regex_match(dato,match,std::regex ("\\s*collie\\s*"))){
+                    ((DataPerro*)dataMascota)->setRaza(collie);
+                }else if(regex_match(dato,match,std::regex ("\\s*pekines\\s*"))){
+                    ((DataPerro*)dataMascota)->setRaza(pekines);
+                }else if(regex_match(dato,match,std::regex ("\\s*otro\\s*"))){
+                    ((DataPerro*)dataMascota)->setRaza(otro);
+                }
+                datoValido = true;
+            }else{
+                std::cout << "\tDato Incorrecto!!!"<< std::endl;
+            }
+        }
+
+        //Lectura vacuna mascota
+        datoValido = false;
+        while (!datoValido){
+            std::cout << "\tIndique si el perro tiene la vacuna de cachorro: ";
+            std::cin >> dato;
+            std::regex  r("\\s*(si|no)\\s*");
+            if(regex_match(dato,match,r)){
+                if(regex_match(dato,match,std::regex ("\\s*si\\s*"))){
+                    ((DataPerro*)dataMascota)->setVacunaCachorro(true);
+                }else{
+                    ((DataPerro*)dataMascota)->setVacunaCachorro(false);
+                }
+                datoValido = true;
+            }else{
+                std::cout << "\tDato Incorrecto!!!"<< std::endl;
+            }
+        }
+    }else{
+        dataMascota->setRacionDiaria(datoFloat * FACTOR_ALIMENTO_GATO);
+        //Lectura vacuna mascota
+        datoValido = false;
+        while (!datoValido){
+            std::cout << "\tIndique si el tipo de pelo del gato: ";
+            std::cin >> dato;
+            std::regex  r("\\s*(largo|mediano|corto)\\s*");
+            if(regex_match(dato,match,r)){
+                if(regex_match(dato,match,std::regex ("\\s*largo\\s*"))){
+                    ((DataGato*)dataMascota)->setTipoPelo(largo);
+                }else if(regex_match(dato,match,std::regex ("\\s*mediano\\s*"))){
+                    ((DataGato*)dataMascota)->setTipoPelo(mediano);
+                }else{
+                    ((DataGato*)dataMascota)->setTipoPelo(corto);
+                }
+                datoValido = true;
+            }else{
+                std::cout << "\tDato Incorrecto!!!"<< std::endl;
+            }
+        }
+    }
+}
 void Menu::leer_consulta_nueva(std::string &motivo, std::string &ci) {
     std::cout << "Ingresar Consulta:" << std::endl;
 

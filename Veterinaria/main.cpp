@@ -6,6 +6,11 @@ int main() {
     VeterinariaAdministration *administration = new VeterinariaAdministration();
     Menu menu = *new Menu();
     int option;
+
+    std::string ci;
+    std::string nombre;
+    DataMascota* dataMascota;
+
     std::cout << "-------------------------------------------------------" << std::endl;
     std::cout << "Bienvenido al sistema de administración de Veterinarias" << std::endl;
     std::cout << "-------------------------------------------------------\n\n" << std::endl;
@@ -19,12 +24,15 @@ int main() {
                 return 0;
             }
                 break;
-            case 1:{
-                std::string nombre;
-                DataMascota *dataMascota;
+            case 1:
                 menu.leerOpcionRegistrarSocio(ci, nombre, dataMascota);
                 administration->registrarSocio(ci, nombre, *dataMascota);
-        }
+                std::cout << "El socio se registro con éxito." << std::endl;
+                break;
+            case 2:
+                menu.leerOpcionAgregarMascota(ci, dataMascota);
+                administration->registrarSocio(ci, nombre, *dataMascota);
+                std::cout << "Se agrego una masconta nueva la socio con éxito." << std::endl;
                 break;
             case 3: {
                 std::string motivo;
