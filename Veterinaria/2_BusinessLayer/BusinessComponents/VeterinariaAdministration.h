@@ -9,20 +9,26 @@
 
 class VeterinariaAdministration {
 private:
-    Socio** socios;
+    Socio **socios;
     int cantsocios;//cant de socios actual
 public:
     VeterinariaAdministration();
+
     virtual ~VeterinariaAdministration();
-    Socio* busqueda(std::string ci);
-    void registrarSocio(std::string ci, std::string nombre, const DataMascota& dtMascota);
+
+    Socio *busqueda(std::string ci);
+
+    void registrarSocio(std::string ci, std::string nombre, const DataMascota &dtMascota);
+
     void eliminar_socio(std::string ci);
+
     void agregarMascota(std::string ci, DataMascota dtmascota);
-    void ingresarConsulta(std::string motivo,std::string ci);
-    void setcantsocios(bool agrega);//agrega uno o saca uno a cantsocios
-    int getcantsocios();
-    DataConsulta** verConsultasAntesDeFecha(const Fecha& Fecha, std::string ci, int& cantConsultas);
-    DataMascota** obtenerMascotas(std::string ci, int& cantMascotas);
+
+    void ingresarConsulta(std::string motivo, std::string ci);
+
+    DataConsulta **verConsultasAntesDeFecha(const Fecha &Fecha, std::string ci, int &cantConsultas);
+
+    DataMascota **obtenerMascotas(std::string ci, int &cantMascotas);
 };
 
 

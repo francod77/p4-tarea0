@@ -5,10 +5,6 @@
 #include <stdexcept>
 #include "Socio.h"
 #include "../../../Cross-Cutting/Const.h"
-#include "../../../Cross-Cutting/DataTypes/DataMascota.h"
-#include "ListaConsultas.h"
-#include "ListaMascotas.h"
-#include "Mascota.h"
 
 Socio::Socio() {
     this->listaMascotas = new ListaMascotas(MAX_MASCOTAS);
@@ -16,16 +12,16 @@ Socio::Socio() {
 }
 
 Socio::Socio(const std::string &ci, const std::string &nombre, const Fecha &fechaIngreso) : ci(ci), nombre(nombre),
-                                                                                             fechaIngreso(
-                                                                                                     fechaIngreso) {
-    this->listaMascotas = new ListaMascotas(10);
-    this->listaConsultas = new ListaConsultas(1000);
+                                                                                            fechaIngreso(
+                                                                                                    fechaIngreso) {
+    this->listaMascotas = new ListaMascotas(MAX_MASCOTAS);
+    this->listaConsultas = new ListaConsultas(MAX_CONSULTAS);
 }
 
 
 Socio::~Socio() {
- this->listaConsultas->~ListaConsultas();
- this->listaMascotas->~ListaMascotas();
+    delete this->listaConsultas;
+    delete this->listaMascotas;
 }
 
 const std::string &Socio::getCi() const {
@@ -52,13 +48,17 @@ void Socio::setFechaIngreso(const Fecha &fechaIngreso) {
     Socio::fechaIngreso = fechaIngreso;
 }
 
- void Socio::agregar_Consulta(std::string motivo, Fecha fecha){
-    Consulta* nuevacons=new Consulta(motivo,fecha);
-    this->listaConsultas->add(nuevacons);
+void Socio::agregar_Consulta(std::string motivo, Fecha fecha) {
+    if (this->listaConsultas->getlength() < MAX_CONSULTAS) {
+        Consulta *nuevacons = new Consulta(motivo, fecha);
+        this->listaConsultas->add(nuevacons);
+    } else {
+        throw std::invalid_argument("No puede agregar más consultas");
+    }
 }
 
-void Socio::agregar_Mascota(DataMascota mascota){
-    if(this->listaMascotas->getlength()<MAX_MASCOTAS) {
+void Socio::agregar_Mascota(DataMascota mascota) {
+    if (this->listaMascotas->getlength() < MAX_MASCOTAS) {
         Mascota *nuevo = new Mascota(mascota.getNombre(), mascota.getGenero(), mascota.getPeso(),
                                      mascota.getRacionDiaria());
         this->listaMascotas->add(nuevo);
@@ -67,15 +67,36 @@ void Socio::agregar_Mascota(DataMascota mascota){
     }
 }
 
-DataMascota** Socio::getlistamascotas(int cant){
-    DataMascota** res;//arreglo de punteros a datamascota de largo cant
-    //hay que inicializar res
-    for (int i = 0; i <cant ; ++i) {
-        res[i]=this->listaMascotas->getmascota(i);
+DataConsulta **Socio::getConsultasAntesDeFecha(Fecha f){
+    int cantConsultas = 0;
+    for (int i = 0; i < cantConsultas; ++i) {
+        if(this->listaConsultas->get(i)->getFecha() < f) {
+            cantConsultas++;
+        }
+    };
+    DataConsulta **res = new DataConsulta*[cantConsultas];
+    for (int i = 0; i < cantConsultas; ++i) {
+        if(this->listaConsultas->get(i)->getFecha() < f) {
+            res[i] = this->listaConsultas->get(i)->getDataConsulta();
+        }
+    };
+    return res;
+}
+
+DataMascota **Socio::getListaMascotas() {
+    int cantMascotasSocio = this->listaMascotas->getlength();
+    DataMascota **res = new DataMascota*[cantMascotasSocio];
+    for (int i = 0; i < cantMascotasSocio; ++i) {
+        res[i] = this->listaMascotas->get(i)->getDataMascota();
     };
     return res;
 };
 
-ListaConsultas* Socio::getlistaConsultas() {
-    return this->listaConsultas;
+DataConsulta **Socio::getListaConsultas() {
+    int cantConsultas = this->listaConsultas->getlength();
+    DataConsulta **res = new DataConsulta*[cantConsultas];
+    for (int i = 0; i < cantConsultas; ++i) {
+        res[i] = this->listaConsultas->get(i)->getDataConsulta();
+    };
+    return res;
 }

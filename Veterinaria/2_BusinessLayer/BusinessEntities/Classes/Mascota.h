@@ -4,6 +4,7 @@
 
 #include <string>
 #include "../../../Cross-Cutting/Enums/Genero.h"
+#include "../../../Cross-Cutting/DataTypes/DataMascota.h"
 
 class Mascota {
 private:
@@ -33,6 +34,8 @@ public:
     float getRacionDiaria() const;
 
     void setRacionDiaria(float racionDiaria);
+
+    DataMascota* getDataMascota();
 };
 
 

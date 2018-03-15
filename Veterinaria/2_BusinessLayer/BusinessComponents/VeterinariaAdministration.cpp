@@ -3,107 +3,79 @@
 
 
 VeterinariaAdministration::VeterinariaAdministration() {
-    this->socios = new Socio*[MAX_SOCIOS];
-    this->cantsocios=0;
+    this->socios = new Socio *[MAX_SOCIOS];
+    for (int i = 0; i < MAX_SOCIOS; i++) {
+        this->socios[i] = NULL;
+    }
+    this->cantsocios = 0;
 };
 
-VeterinariaAdministration::~VeterinariaAdministration(){};
+VeterinariaAdministration::~VeterinariaAdministration() {};
 
-Socio* VeterinariaAdministration::busqueda(std::string ci) {
+Socio *VeterinariaAdministration::busqueda(std::string ci) {
     int i = 0;
-    while (i < this->cantsocios && ci.compare(this->socios[i]->getCi()) == 0){
+    while (i < this->cantsocios && ci.compare(this->socios[i]->getCi()) == 0) {
         i++;
     }
-    if(i < this->cantsocios){
+    if (i < this->cantsocios) {
         return this->socios[i];
-    }else{
+    } else {
         throw std::invalid_argument("No existe un socio registrado con esa cédula");
     }
-    return NULL;
 };
 
-void VeterinariaAdministration::registrarSocio(std::string ci, std::string nombre, const DataMascota& dtMascota){
-    Fecha f;
-    f.setAnio(2018);
-    f.setMes(3);
-    f.setDia(14);
-    Socio* nuevo = new Socio(ci,nombre,f);
+void VeterinariaAdministration::registrarSocio(std::string ci, std::string nombre, const DataMascota &dtMascota) {
+    Fecha *f = new Fecha(14, 3, 2018);
+    Socio *nuevo = new Socio(ci, nombre, *f);
     nuevo->agregar_Mascota(dtMascota);//agregamos la primer mascota
-    this->socios[this->cantsocios]=nuevo;
+    this->socios[this->cantsocios] = nuevo;
     this->cantsocios++;
 }
-void VeterinariaAdministration::eliminar_socio(std::string ci){
+
+void VeterinariaAdministration::eliminar_socio(std::string ci) {
     int i = 0;
-    while (i < this->cantsocios && ci.compare(this->socios[i]->getCi()) == 0){
+    while (i < this->cantsocios && ci.compare(this->socios[i]->getCi()) == 0) {
         i++;
     }
-    if(i < this->cantsocios){
+    if (i < this->cantsocios) {
         Socio *elsocio = this->socios[i];
-        this->socios[i] = this->socios[this->cantsocios-1];
-        this->socios[this->cantsocios-1] = NULL;
+        this->socios[i] = this->socios[this->cantsocios - 1];
+        this->socios[this->cantsocios - 1] = NULL;
         this->cantsocios--;
         delete elsocio;
-    }else{
+    } else {
         throw std::invalid_argument("No existe un socio registrado con esa cédula");
     }
 };
 
-void VeterinariaAdministration::agregarMascota(std::string ci, DataMascota dtmascota){
-    Socio* cliente = busqueda(ci);
-    if (cliente != nullptr){
+void VeterinariaAdministration::agregarMascota(std::string ci, DataMascota dtmascota) {
+    Socio *cliente = busqueda(ci);
+    if (cliente != nullptr) {
         cliente->agregar_Mascota(dtmascota);
-    }else{
+    } else {
         throw std::invalid_argument("No existe un socio registrado con esa cédula");
     }
 };
-void VeterinariaAdministration::ingresarConsulta(std::string motivo,std::string ci){
+
+void VeterinariaAdministration::ingresarConsulta(std::string motivo, std::string ci) {
     Socio *elsocio = busqueda(ci);
-    Fecha f;
-    f.setAnio(2018);
-    f.setMes(3);
-    f.setDia(14);
-    elsocio->agregar_Consulta(motivo, f);
+    Fecha *f = new Fecha(14, 3, 2018);
+    elsocio->agregar_Consulta(motivo, *f);
 };
 
-int VeterinariaAdministration::getcantsocios(){
-    return this->cantsocios;
+DataConsulta **
+VeterinariaAdministration::verConsultasAntesDeFecha(const Fecha &Fecha, std::string ci, int &cantConsultas) {
+    DataConsulta *res = new DataConsulta[cantConsultas];
+    Socio *cliente = busqueda(ci);
+    return cliente->getConsultasAntesDeFecha(Fecha);
 };
 
-void VeterinariaAdministration::setcantsocios(bool agrega){
-    if(agrega)  this->cantsocios++;
-    else  this->cantsocios--;
-};
-
-DataConsulta** VeterinariaAdministration::verConsultasAntesDeFecha(const Fecha& Fecha, std::string ci, int& cantConsultas){
-    DataConsulta** res= new DataConsulta[cantConsultas];
-    Socio* cliente= busqueda(ci);
-    ListaConsultas tirabase=cliente->getlistaConsultas();
-    Consulta candidato;
-    Fecha fechacandidato;
-    int i=0;
-    int tope=tirabase.getlength()
-    /*ahora hay que transformar todas las consultas en dataconsultas rip*/
-    while(i<=tope){
-        candidato=tirabase.get(i);
-        fechacandidato=candidato.getFecha();
-        if(fechacandidato<Fecha){
-            res[i]->setFechaConsulta(fechacandidato);
-            res[i]->setMotivo(candidato.getMotivo());
-
-        }
-        i++;
-
-    }
-    return res;
-
-};
-
-DataMascota** VeterinariaAdministration::obtenerMascotas(std::string ci, int& cantMascotas){
-    Socio* cliente= busqueda(ci);
+DataMascota **VeterinariaAdministration::obtenerMascotas(std::string ci, int &cantMascotas) {
+    Socio *cliente = busqueda(ci);
     //falta implementar la excepcion
-    if (cliente!= nullptr) {
-        return cliente->getlistamascotas(cantMascotas);
-    }else{
+    if (cliente != nullptr) {
+        return cliente->getListaMascotas();
+    } else {
         throw std::invalid_argument("No existe un socio registrado con esa cédula");
     }
 };

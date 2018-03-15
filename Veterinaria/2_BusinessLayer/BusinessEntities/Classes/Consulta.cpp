@@ -16,10 +16,14 @@ void Consulta::setMotivo(const std::string &motivo) {
     Consulta::motivo = motivo;
 }
 
-const Fecha &Consulta::getFecha() const {
+Fecha Consulta::getFecha(){
     return fecha;
 }
 
-void Consulta::setFecha(const Fecha &fecha) {
+void Consulta::setFecha(Fecha fecha) {
     Consulta::fecha = fecha;
+}
+
+DataConsulta* Consulta::getDataConsulta(){
+    return new DataConsulta(this->fecha, this->motivo);
 }

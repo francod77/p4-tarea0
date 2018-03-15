@@ -13,14 +13,15 @@
 #include "ListaConsultas.h"
 #include "ListaMascotas.h"
 #include "../../../Cross-Cutting/DataTypes/DataMascota.h"
+#include "../../../Cross-Cutting/DataTypes/DataConsulta.h"
 
 class Socio {
 private:
     std::string ci;
     std::string nombre;
     Fecha fechaIngreso;
-    ListaConsultas* listaConsultas;
-    ListaMascotas* listaMascotas;
+    ListaConsultas *listaConsultas;
+    ListaMascotas *listaMascotas;
 public:
     Socio();
 
@@ -42,11 +43,14 @@ public:
 
     void agregar_Consulta(std::string motivo, Fecha fecha);
 
-    void agregar_Mascota(DataMascota );
+    void agregar_Mascota(DataMascota);
+
+    DataConsulta **getConsultasAntesDeFecha(Fecha f);
 
     /*devuelve array de punteros datamascota sin comparrtir memoria!! es para usarse en obtener mascotas*/
-    DataMascota** getlistamascotas(int );
-    ListaConsultas* getlistaConsultas();
+    DataMascota **getListaMascotas();
+
+    DataConsulta **getListaConsultas();
 };
 
 

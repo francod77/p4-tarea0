@@ -30,15 +30,16 @@ void Fecha::setAnio(int anio) {
 }
 
 bool Fecha::operator<(Fecha fecha2){
-    if(getAnio(this)<getAnio(fecha2))
+    if(this->getAnio()<fecha2.getAnio())
         return true;
-    if(getAnio(this)==getAnio(fecha2)){
-        if(getMes(this)<getMes(fecha2)){
+    if(this->getAnio()==fecha2.getAnio()){
+        if(this->getMes()<fecha2.getMes()){
             return true;
         }
-        if(getMes(this)==getMes(fecha2)){
-            if(getDia(this)<getDia(fecha2))
+        if(this->getMes()==fecha2.getMes()){
+            if(this->getDia()<fecha2.getDia()) {
                 return true;
+            }
         }
     }
     return false;

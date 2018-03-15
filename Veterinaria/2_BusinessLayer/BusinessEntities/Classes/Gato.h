@@ -4,7 +4,7 @@
 #include "Mascota.h"
 #include "../../../Cross-Cutting/Enums/TipoPelo.h"
 
-class Gato: public Mascota {
+class Gato : public Mascota {
 private:
     TipoPelo tipoPelo;
 public:

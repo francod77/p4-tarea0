@@ -5,23 +5,30 @@
 #include "ListaConsultas.h"
 #include "Consulta.h"
 
-ListaConsultas::ListaConsultas(int length){
-    this->consultas = new Consulta*[length];
+ListaConsultas::ListaConsultas(int length) {
+    this->consultas = new Consulta *[length];
+    for (int i = 0; i < length; i++) {
+        this->consultas[i] = NULL;
+    }
     this->length = 0;//Reserve el tamaño en memoria pero no tengo ningún objeto
 };
-ListaConsultas::~ListaConsultas(){
-    for (int i = 0; i < this->length ; ++i) {
+
+ListaConsultas::~ListaConsultas() {
+    for (int i = 0; i < this->length; ++i) {
         delete this->consultas[i];
     }
     delete this->consultas;
 };
-Consulta* ListaConsultas::get(int num){
+
+Consulta *ListaConsultas::get(int num) {
     return this->consultas[num];
 };
-void ListaConsultas::add(Consulta* consulta){
-    this->consultas[this->length]=consulta;
+
+void ListaConsultas::add(Consulta *consulta) {
+    this->consultas[this->length] = consulta;
     this->length++;
 };
+
 int ListaConsultas::getlength() {
     return this->length;
 };

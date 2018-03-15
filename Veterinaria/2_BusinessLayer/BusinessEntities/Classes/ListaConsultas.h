@@ -10,13 +10,17 @@
 
 class ListaConsultas {
 private:
-    Consulta** consultas;
+    Consulta **consultas;
     int length;
 public:
     ListaConsultas(int length);
+
     ~ListaConsultas();
-    Consulta* get(int num);
-    void add(Consulta* consulta);
+
+    Consulta *get(int num);
+
+    void add(Consulta *consulta);
+
     int getlength();
 };
 

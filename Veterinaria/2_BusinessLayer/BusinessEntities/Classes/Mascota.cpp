@@ -6,6 +6,7 @@ Mascota::Mascota(const std::string &nombre, Genero genero, float peso, float rac
                                                                                              genero(genero), peso(peso),
                                                                                              racionDiaria(
                                                                                                      racionDiaria) {}
+
 Mascota::~Mascota() {
 
 }
@@ -40,4 +41,8 @@ float Mascota::getRacionDiaria() const {
 
 void Mascota::setRacionDiaria(float racionDiaria) {
     Mascota::racionDiaria = racionDiaria;
+}
+
+DataMascota* Mascota::getDataMascota() {
+    return new DataMascota(this->nombre, this->genero, this->peso, this->racionDiaria);
 }

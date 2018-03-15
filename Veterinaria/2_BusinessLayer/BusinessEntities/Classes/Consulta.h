@@ -4,6 +4,7 @@
 
 #include <string>
 #include "../../../Cross-Cutting/DataTypes/Fecha.h"
+#include "../../../Cross-Cutting/DataTypes/DataConsulta.h"
 
 class Consulta {
 private:
@@ -21,9 +22,11 @@ public:
 
     void setMotivo(const std::string &motivo);
 
-    const Fecha &getFecha() const;
+    Fecha getFecha();
 
-    void setFecha(const Fecha &fecha);
+    void setFecha(Fecha fecha);
+
+    DataConsulta* getDataConsulta();
 };
 
 
