@@ -20,6 +20,7 @@ public:
     void imprimir_dtconsulta(DataConsulta** dtcons,int cantconsultas);
     void leer_obtenermascotas(std::string &ci,int &cantmascotas);
     void imprimir_dtmascotas(DataMascota** dtmascotas,int cant);
+    void leerOpcionEliminarSocio(std::string &ci);
 };
 
 
