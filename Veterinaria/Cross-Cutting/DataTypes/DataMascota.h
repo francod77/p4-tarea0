@@ -33,7 +33,9 @@ public:
     float getRacionDiaria() const;
 
     void setRacionDiaria(float racionDiaria);
-};
 
+    virtual void print();
+};
+std::ostream& operator<< (std::ostream& stream, DataMascota dataMascota);
 
 #endif //VETERINARIA_DATAMASCOTA_H

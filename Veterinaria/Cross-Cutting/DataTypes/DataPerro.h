@@ -5,7 +5,7 @@
 #include "DataMascota.h"
 #include "../Enums/RazaPerro.h"
 
-class DataPerro : DataMascota{
+class DataPerro: public DataMascota {
 private:
     RazaPerro raza;
     bool vacunaCachorro;
@@ -24,7 +24,10 @@ public:
     bool isVacunaCachorro() const;
 
     void setVacunaCachorro(bool vacunaCachorro);
+
+    void print();
 };
 
+std::ostream &operator<<(std::ostream &stream, DataPerro dataPerro);
 
 #endif //VETERINARIA_DATAPERRO_H

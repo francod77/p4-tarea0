@@ -43,9 +43,9 @@ public:
 
     void agregar_Consulta(std::string motivo, Fecha fecha);
 
-    void agregar_Mascota(DataMascota);
+    void agregar_Mascota(const DataMascota &mascota);
 
-    DataConsulta ** getConsultasAntesDeFecha(Fecha f);
+    DataConsulta **getConsultasAntesDeFecha(Fecha f, int maxConsultas);
 
     /*devuelve array de punteros datamascota sin comparrtir memoria!! es para usarse en obtener mascotas*/
     DataMascota **getListaMascotas();

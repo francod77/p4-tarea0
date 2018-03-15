@@ -3,8 +3,13 @@
 //
 
 #include <stdexcept>
+#include <typeinfo>
 #include "Socio.h"
 #include "../../../Cross-Cutting/Const.h"
+#include "../../../Cross-Cutting/DataTypes/DataPerro.h"
+#include "Perro.h"
+#include "../../../Cross-Cutting/DataTypes/DataGato.h"
+#include "Gato.h"
 
 Socio::Socio() {
     this->listaMascotas = new ListaMascotas(MAX_MASCOTAS);
@@ -57,24 +62,39 @@ void Socio::agregar_Consulta(std::string motivo, Fecha fecha) {
     }
 }
 
-void Socio::agregar_Mascota(DataMascota mascota) {
+void Socio::agregar_Mascota(const DataMascota &mascota) {
     if (this->listaMascotas->getlength() < MAX_MASCOTAS) {
-        Mascota *nuevo = new Mascota(mascota.getNombre(), mascota.getGenero(), mascota.getPeso(),
-                                     mascota.getRacionDiaria());
+        Mascota *nuevo;
+        if(typeid(mascota) == typeid(DataPerro)){
+            DataPerro dp = (DataPerro&)mascota;
+            nuevo = new Perro(mascota.getNombre(), mascota.getGenero(), mascota.getPeso(),
+                                         mascota.getRacionDiaria(),dp.getRaza(), dp.isVacunaCachorro() );
+        }else{
+            DataGato dg = (DataGato&)mascota;
+            nuevo = new Gato(mascota.getNombre(), mascota.getGenero(), mascota.getPeso(),
+                              mascota.getRacionDiaria(),dg.getTipoPelo());
+        }
+
         this->listaMascotas->add(nuevo);
     } else {
         throw std::invalid_argument("No puede agregar más mascotas");
     }
 }
 
-DataConsulta** Socio::getConsultasAntesDeFecha(Fecha f) {
-    int cant = 0;
-    DataConsulta **res = new DataConsulta*[cant];
-    for (int i = 0; i < cant; ++i) {
-        //esta comparacion se puede hacer??
+DataConsulta **Socio::getConsultasAntesDeFecha(Fecha f, int maxConsultas) {
+    int cantConsultas = 0;
+    for (int i = 0; i < cantConsultas; ++i) {
         if (this->listaConsultas->get(i)->getFecha() < f) {
-            res[cant] = this->listaConsultas->get(i)->getDataConsulta();
-            cant++;
+            cantConsultas++;
+        }
+    };
+    if (cantConsultas > maxConsultas) {
+        cantConsultas = maxConsultas;
+    }
+    DataConsulta **res = new DataConsulta *[cantConsultas];
+    for (int i = 0; i < cantConsultas; ++i) {
+        if (this->listaConsultas->get(i)->getFecha() < f) {
+            res[i] = this->listaConsultas->get(i)->getDataConsulta();
         }
     };
     return res;
@@ -82,7 +102,7 @@ DataConsulta** Socio::getConsultasAntesDeFecha(Fecha f) {
 
 DataMascota **Socio::getListaMascotas() {
     int cantMascotasSocio = this->listaMascotas->getlength();
-    DataMascota **res = new DataMascota*[cantMascotasSocio];
+    DataMascota **res = new DataMascota *[cantMascotasSocio];
     for (int i = 0; i < cantMascotasSocio; ++i) {
         res[i] = this->listaMascotas->get(i)->getDataMascota();
     };
@@ -91,7 +111,7 @@ DataMascota **Socio::getListaMascotas() {
 
 DataConsulta **Socio::getListaConsultas() {
     int cantConsultas = this->listaConsultas->getlength();
-    DataConsulta **res = new DataConsulta*[cantConsultas];
+    DataConsulta **res = new DataConsulta *[cantConsultas];
     for (int i = 0; i < cantConsultas; ++i) {
         res[i] = this->listaConsultas->get(i)->getDataConsulta();
     };

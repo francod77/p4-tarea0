@@ -1,6 +1,7 @@
+#include <iostream>
 #include "DataPerro.h"
 
-DataPerro::DataPerro() {}
+DataPerro::DataPerro(): DataMascota() {}
 
 DataPerro::DataPerro(std::string nombre, Genero genero, float peso, float racionDiaria, RazaPerro raza,
                      bool vacunaCachorro) : DataMascota(nombre, genero, peso, racionDiaria), raza(raza),
@@ -24,4 +25,17 @@ bool DataPerro::isVacunaCachorro() const {
 
 void DataPerro::setVacunaCachorro(bool vacunaCachorro) {
     DataPerro::vacunaCachorro = vacunaCachorro;
+}
+
+void DataPerro::print(){
+    if(this->vacunaCachorro){
+        std::cout << "- Tiene vacuna del Cachorro: Si" << std::endl;
+    }else{
+        std::cout << "- Tiene vacuna del Cachorro: No" << std::endl;
+    }
+
+}
+
+std::ostream& operator<< (std::ostream& stream, DataPerro dataPerro){
+    dataPerro.print();
 }

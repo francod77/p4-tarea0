@@ -2,8 +2,16 @@
 #define VETERINARIA_MENU_H
 
 
-class Menu {
+#include "../../Cross-Cutting/DataTypes/DataMascota.h"
 
+class Menu {
+private:
+public:
+    Menu();
+    ~Menu();
+    void showGeneralMenu();
+    int getMenuOption();
+    void leerOpcionRegistrarSocio(std::string &ci,std::string &nombre, DataMascota* &dataMascota);
 };
 
 
