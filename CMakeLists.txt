@@ -42,4 +42,4 @@ add_executable(p4_tarea0
         Veterinaria/CMakeLists.txt
         Veterinaria/main.cpp
         Veterinaria/Makefile
-        README.md)
+        README.md Veterinaria/Cross-Cutting/const.cpp)

@@ -67,17 +67,15 @@ void Socio::agregar_Mascota(DataMascota mascota) {
     }
 }
 
-DataConsulta **Socio::getConsultasAntesDeFecha(Fecha f){
-    int cantConsultas = 0;
-    for (int i = 0; i < cantConsultas; ++i) {
-        if(this->listaConsultas->get(i)->getFecha() < f) {
-            cantConsultas++;
-        }
-    };
-    DataConsulta **res = new DataConsulta*[cantConsultas];
-    for (int i = 0; i < cantConsultas; ++i) {
-        if(this->listaConsultas->get(i)->getFecha() < f) {
-            res[i] = this->listaConsultas->get(i)->getDataConsulta();
+
+DataConsulta** Socio::getConsultasAntesDeFecha(Fecha f) {
+    int cant = 0;
+    DataConsulta **res = new DataConsulta*[cant];
+    for (int i = 0; i < cant; ++i) {
+        //esta comparacion se puede hacer??
+        if (this->listaConsultas->get(i)->getFecha() < f) {
+            res[cant] = this->listaConsultas->get(i)->getDataConsulta();
+            cant++;
         }
     };
     return res;

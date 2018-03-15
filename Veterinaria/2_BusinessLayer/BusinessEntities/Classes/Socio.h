@@ -45,7 +45,7 @@ public:
 
     void agregar_Mascota(DataMascota);
 
-    DataConsulta **getConsultasAntesDeFecha(Fecha f);
+    DataConsulta ** getConsultasAntesDeFecha(Fecha f);
 
     /*devuelve array de punteros datamascota sin comparrtir memoria!! es para usarse en obtener mascotas*/
     DataMascota **getListaMascotas();
