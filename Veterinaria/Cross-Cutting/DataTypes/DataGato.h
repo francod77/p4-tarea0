@@ -5,6 +5,7 @@
 #include "DataMascota.h"
 #include "../Enums/TipoPelo.h"
 
+
 class DataGato: public DataMascota {
 private:
     TipoPelo tipoPelo;
@@ -18,6 +19,8 @@ public:
     TipoPelo getTipoPelo() const;
 
     void setTipoPelo(TipoPelo tipoPelo);
+
+    void print();
 };
 
 

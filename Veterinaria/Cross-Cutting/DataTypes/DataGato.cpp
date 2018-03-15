@@ -1,3 +1,4 @@
+#include <iostream>
 #include "DataGato.h"
 
 DataGato::DataGato(): DataMascota() {}
@@ -15,4 +16,8 @@ TipoPelo DataGato::getTipoPelo() const {
 
 void DataGato::setTipoPelo(TipoPelo tipoPelo) {
     DataGato::tipoPelo = tipoPelo;
+}
+
+void DataGato::print() {
+    std::cout << this->getTipoPelo() << std::endl;
 }

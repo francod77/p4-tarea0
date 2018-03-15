@@ -32,8 +32,8 @@ int main() {
             }
             case 2: {
                 menu.leerOpcionAgregarMascota(ci, dataMascota);
-                administration->registrarSocio(ci, nombre, *dataMascota);
-                std::cout << "Se agrego una masconta nueva la socio con éxito." << std::endl;
+                administration->agregarMascota(ci, *dataMascota);
+                std::cout << "Se agrego una mascota nueva la socio con éxito." << std::endl;
                 break;
             }
             case 3: {
@@ -57,6 +57,7 @@ int main() {
                 menu.leerOpcionEliminarSocio(ci);
                 try {
                     administration->eliminar_socio(ci);
+                    std:: cout << "elimando correctamente" <<std::endl;
                 }
                 catch (std::invalid_argument error) {
 

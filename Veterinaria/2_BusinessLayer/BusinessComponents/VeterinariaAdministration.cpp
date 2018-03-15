@@ -14,14 +14,14 @@ VeterinariaAdministration::~VeterinariaAdministration() {};
 
 Socio *VeterinariaAdministration::busqueda(std::string ci) {
     int i = 0;
-    while (i < this->cantsocios && this->socios[i]->getCi()==ci) {
+    while (i < this->cantsocios && this->socios[i]->getCi()!=ci) {
         i++;
-    }
+    };
     if (i < this->cantsocios) {
         return this->socios[i];
     } else {
         throw std::invalid_argument("No existe un socio registrado con esa cédula");
-    }
+    };
 };
 
 void VeterinariaAdministration::registrarSocio(std::string ci, std::string nombre, const DataMascota &dtMascota) {
@@ -34,7 +34,7 @@ void VeterinariaAdministration::registrarSocio(std::string ci, std::string nombr
 
 void VeterinariaAdministration::eliminar_socio(std::string ci) {
     int i = 0;
-    while (i < this->cantsocios && this->socios[i]->getCi()==ci) {
+    while (i < this->cantsocios && this->socios[i]->getCi()!=ci) {
         i++;
     };
     if (i < this->cantsocios) {

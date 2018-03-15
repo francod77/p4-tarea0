@@ -47,6 +47,7 @@ void DataMascota:: print(){
     std::cout << "- Ración Diaria: ";
     std::cout << this->peso;
     std::cout << " kg"<< std::endl;
+
 }
 
 std::ostream& operator<< (std::ostream& stream, DataMascota dataMascota){

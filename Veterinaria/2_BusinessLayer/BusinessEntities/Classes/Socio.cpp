@@ -11,6 +11,7 @@
 #include "../../../Cross-Cutting/DataTypes/DataGato.h"
 #include "Gato.h"
 
+
 Socio::Socio() {
     this->listaMascotas = new ListaMascotas(MAX_MASCOTAS);
     this->listaConsultas = new ListaConsultas(MAX_CONSULTAS);
@@ -102,9 +103,15 @@ DataConsulta **Socio::getConsultasAntesDeFecha(Fecha f, int maxConsultas) {
 
 DataMascota **Socio::getListaMascotas() {
     int cantMascotasSocio = this->listaMascotas->getlength();
+    Mascota* m;
     DataMascota **res = new DataMascota *[cantMascotasSocio];
     for (int i = 0; i < cantMascotasSocio; ++i) {
-        res[i] = this->listaMascotas->get(i)->getDataMascota();
+        m=this->listaMascotas->get(i);
+        if(typeid(m) == typeid(Perro&)) {
+            res[i] = ((Perro *) m)->getDataMascota();
+        } else {
+            res[i] = ((Gato *) m)->getDataMascota();
+        }
     };
     return res;
 };
