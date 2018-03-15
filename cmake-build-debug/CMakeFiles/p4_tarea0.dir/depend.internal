@@ -4,9 +4,11 @@
 CMakeFiles/p4_tarea0.dir/Veterinaria/1_PresentationLayer/Controls/Menu.cpp.o
  /Users/franco/Documents/p4-tarea0/Veterinaria/1_PresentationLayer/Controls/Menu.cpp
  /Users/franco/Documents/p4-tarea0/Veterinaria/1_PresentationLayer/Controls/Menu.h
+ /Users/franco/Documents/p4-tarea0/Veterinaria/Cross-Cutting/DataTypes/DataConsulta.h
  /Users/franco/Documents/p4-tarea0/Veterinaria/Cross-Cutting/DataTypes/DataGato.h
  /Users/franco/Documents/p4-tarea0/Veterinaria/Cross-Cutting/DataTypes/DataMascota.h
  /Users/franco/Documents/p4-tarea0/Veterinaria/Cross-Cutting/DataTypes/DataPerro.h
+ /Users/franco/Documents/p4-tarea0/Veterinaria/Cross-Cutting/DataTypes/Fecha.h
  /Users/franco/Documents/p4-tarea0/Veterinaria/Cross-Cutting/Enums/Genero.h
  /Users/franco/Documents/p4-tarea0/Veterinaria/Cross-Cutting/Enums/RazaPerro.h
  /Users/franco/Documents/p4-tarea0/Veterinaria/Cross-Cutting/Enums/TipoPelo.h

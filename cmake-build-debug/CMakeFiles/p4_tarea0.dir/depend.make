@@ -3,9 +3,11 @@
 
 CMakeFiles/p4_tarea0.dir/Veterinaria/1_PresentationLayer/Controls/Menu.cpp.o: ../Veterinaria/1_PresentationLayer/Controls/Menu.cpp
 CMakeFiles/p4_tarea0.dir/Veterinaria/1_PresentationLayer/Controls/Menu.cpp.o: ../Veterinaria/1_PresentationLayer/Controls/Menu.h
+CMakeFiles/p4_tarea0.dir/Veterinaria/1_PresentationLayer/Controls/Menu.cpp.o: ../Veterinaria/Cross-Cutting/DataTypes/DataConsulta.h
 CMakeFiles/p4_tarea0.dir/Veterinaria/1_PresentationLayer/Controls/Menu.cpp.o: ../Veterinaria/Cross-Cutting/DataTypes/DataGato.h
 CMakeFiles/p4_tarea0.dir/Veterinaria/1_PresentationLayer/Controls/Menu.cpp.o: ../Veterinaria/Cross-Cutting/DataTypes/DataMascota.h
 CMakeFiles/p4_tarea0.dir/Veterinaria/1_PresentationLayer/Controls/Menu.cpp.o: ../Veterinaria/Cross-Cutting/DataTypes/DataPerro.h
+CMakeFiles/p4_tarea0.dir/Veterinaria/1_PresentationLayer/Controls/Menu.cpp.o: ../Veterinaria/Cross-Cutting/DataTypes/Fecha.h
 CMakeFiles/p4_tarea0.dir/Veterinaria/1_PresentationLayer/Controls/Menu.cpp.o: ../Veterinaria/Cross-Cutting/Enums/Genero.h
 CMakeFiles/p4_tarea0.dir/Veterinaria/1_PresentationLayer/Controls/Menu.cpp.o: ../Veterinaria/Cross-Cutting/Enums/RazaPerro.h
 CMakeFiles/p4_tarea0.dir/Veterinaria/1_PresentationLayer/Controls/Menu.cpp.o: ../Veterinaria/Cross-Cutting/Enums/TipoPelo.h

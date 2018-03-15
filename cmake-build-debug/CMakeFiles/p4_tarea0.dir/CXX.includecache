@@ -21,10 +21,16 @@ Menu.h
 /Users/franco/Documents/p4-tarea0/Veterinaria/Cross-Cutting/DataTypes/DataGato.h
 ../../Cross-Cutting/DataTypes/DataPerro.h
 /Users/franco/Documents/p4-tarea0/Veterinaria/Cross-Cutting/DataTypes/DataPerro.h
+../../Cross-Cutting/DataTypes/DataConsulta.h
+/Users/franco/Documents/p4-tarea0/Veterinaria/Cross-Cutting/DataTypes/DataConsulta.h
 
 /Users/franco/Documents/p4-tarea0/Veterinaria/1_PresentationLayer/Controls/Menu.h
 ../../Cross-Cutting/DataTypes/DataMascota.h
 /Users/franco/Documents/p4-tarea0/Veterinaria/Cross-Cutting/DataTypes/DataMascota.h
+../../Cross-Cutting/DataTypes/Fecha.h
+/Users/franco/Documents/p4-tarea0/Veterinaria/Cross-Cutting/DataTypes/Fecha.h
+../../Cross-Cutting/DataTypes/DataConsulta.h
+/Users/franco/Documents/p4-tarea0/Veterinaria/Cross-Cutting/DataTypes/DataConsulta.h
 
 /Users/franco/Documents/p4-tarea0/Veterinaria/2_BusinessLayer/BusinessComponents/VeterinariaAdministration.cpp
 stdexcept
@@ -208,6 +214,8 @@ DataConsulta.h
 Fecha.h
 /Users/franco/Documents/p4-tarea0/Veterinaria/Cross-Cutting/DataTypes/Fecha.h
 string
+-
+iostream
 -
 
 /Users/franco/Documents/p4-tarea0/Veterinaria/Cross-Cutting/DataTypes/DataGato.cpp
