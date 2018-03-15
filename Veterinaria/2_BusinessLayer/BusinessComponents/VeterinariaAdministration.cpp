@@ -12,7 +12,7 @@ VeterinariaAdministration::VeterinariaAdministration() {
 
 VeterinariaAdministration::~VeterinariaAdministration() {};
 
-Socio *VeterinariaAdministration::busqueda(std::string ci,) {
+Socio *VeterinariaAdministration::busqueda(std::string ci) {
     int i = 0;
     while (i < this->cantsocios && this->socios[i]->getCi()==ci) {
         i++;
@@ -59,7 +59,7 @@ void VeterinariaAdministration::agregarMascota(std::string ci, DataMascota dtmas
 
 void VeterinariaAdministration::ingresarConsulta(std::string motivo, std::string ci) {
     Socio *elsocio = busqueda(ci);
-    Fecha *f(14, 3, 2018);
+    Fecha *f = new Fecha(14, 3, 2018);
     elsocio->agregar_Consulta(motivo, *f);
 };
 

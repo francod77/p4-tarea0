@@ -14,7 +14,7 @@ private:
     Consulta **consultas;
     int length;
 public:
-    ListaConsultas();
+    ListaConsultas(int length);
 
     ~ListaConsultas();
 

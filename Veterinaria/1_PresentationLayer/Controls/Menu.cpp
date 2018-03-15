@@ -73,7 +73,7 @@ void Menu::leerOpcionRegistrarSocio(std::string &ci,std::string &nombre, DataMas
     }
 
     //Lectura del nombre de la mascota
-    std::cout << "\tIngrese el nombre de la mascota del socio: ";
+    std::cout << "\tIngrese el nombre de la mascota del socio (masculino o femenino): ";
     std::cin >> dato;
     dataMascota->setNombre(dato);
 

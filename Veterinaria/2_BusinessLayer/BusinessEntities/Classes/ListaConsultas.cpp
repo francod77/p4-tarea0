@@ -5,9 +5,9 @@
 #include "ListaConsultas.h"
 #include "Consulta.h"
 
-ListaConsultas::ListaConsultas() {
-    this->consultas = new Consulta *[MAX_CONSULTAS];
-    for (int i = 0; i < MAX_CONSULTAS; i++) {
+ListaConsultas::ListaConsultas(int length) {
+    this->consultas = new Consulta *[length];
+    for (int i = 0; i < length; i++) {
         this->consultas[i] = nullptr;
     }
     this->length = 0;//Reserve el tamaño en memoria pero no tengo ningún objeto
