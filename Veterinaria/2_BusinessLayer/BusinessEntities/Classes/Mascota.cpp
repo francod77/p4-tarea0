@@ -39,6 +39,7 @@ float Mascota::getRacionDiaria() const {
     return racionDiaria;
 }
 
+//hay que ver si aca nos pasan la racion diaria o el peso
 void Mascota::setRacionDiaria(float racionDiaria) {
     Mascota::racionDiaria = racionDiaria;
 }

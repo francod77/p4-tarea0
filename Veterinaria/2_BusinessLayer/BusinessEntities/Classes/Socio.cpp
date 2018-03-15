@@ -67,7 +67,6 @@ void Socio::agregar_Mascota(DataMascota mascota) {
     }
 }
 
-
 DataConsulta** Socio::getConsultasAntesDeFecha(Fecha f) {
     int cant = 0;
     DataConsulta **res = new DataConsulta*[cant];

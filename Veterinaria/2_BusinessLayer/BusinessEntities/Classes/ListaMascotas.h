@@ -11,10 +11,10 @@
 
 class ListaMascotas {
 private:
-    Mascota **mascotas;
+    Mascota ** mascotas;
     int length;
 public:
-    ListaMascotas(int length);
+    ListaMascotas();
 
     ~ListaMascotas();
 

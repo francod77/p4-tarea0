@@ -5,16 +5,16 @@
 VeterinariaAdministration::VeterinariaAdministration() {
     this->socios = new Socio *[MAX_SOCIOS];
     for (int i = 0; i < MAX_SOCIOS; i++) {
-        this->socios[i] = NULL;
+        this->socios[i] = nullptr;
     }
     this->cantsocios = 0;
 };
 
 VeterinariaAdministration::~VeterinariaAdministration() {};
 
-Socio *VeterinariaAdministration::busqueda(std::string ci) {
+Socio *VeterinariaAdministration::busqueda(std::string ci,) {
     int i = 0;
-    while (i < this->cantsocios && ci.compare(this->socios[i]->getCi()) == 0) {
+    while (i < this->cantsocios && this->socios[i]->getCi()==ci) {
         i++;
     }
     if (i < this->cantsocios) {
@@ -30,17 +30,17 @@ void VeterinariaAdministration::registrarSocio(std::string ci, std::string nombr
     nuevo->agregar_Mascota(dtMascota);//agregamos la primer mascota
     this->socios[this->cantsocios] = nuevo;
     this->cantsocios++;
-}
+};
 
 void VeterinariaAdministration::eliminar_socio(std::string ci) {
     int i = 0;
-    while (i < this->cantsocios && ci.compare(this->socios[i]->getCi()) == 0) {
+    while (i < this->cantsocios && this->socios[i]->getCi()==ci) {
         i++;
-    }
+    };
     if (i < this->cantsocios) {
         Socio *elsocio = this->socios[i];
         this->socios[i] = this->socios[this->cantsocios - 1];
-        this->socios[this->cantsocios - 1] = NULL;
+        this->socios[this->cantsocios - 1] = nullptr;
         this->cantsocios--;
         delete elsocio;
     } else {
@@ -59,12 +59,11 @@ void VeterinariaAdministration::agregarMascota(std::string ci, DataMascota dtmas
 
 void VeterinariaAdministration::ingresarConsulta(std::string motivo, std::string ci) {
     Socio *elsocio = busqueda(ci);
-    Fecha *f = new Fecha(14, 3, 2018);
+    Fecha *f(14, 3, 2018);
     elsocio->agregar_Consulta(motivo, *f);
 };
 
 DataConsulta ** VeterinariaAdministration::verConsultasAntesDeFecha(const Fecha &Fecha, std::string ci, int &cantConsultas) {
-    DataConsulta ** res = new DataConsulta[cantConsultas];
     Socio *cliente = busqueda(ci);
     return cliente->getConsultasAntesDeFecha(Fecha);
 };

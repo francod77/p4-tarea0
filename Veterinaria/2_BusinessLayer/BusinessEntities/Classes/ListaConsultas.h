@@ -7,13 +7,14 @@
 
 
 #include "Consulta.h"
+#include "../../../Cross-Cutting/Const.h"
 
 class ListaConsultas {
 private:
     Consulta **consultas;
     int length;
 public:
-    ListaConsultas(int length);
+    ListaConsultas();
 
     ~ListaConsultas();
 
