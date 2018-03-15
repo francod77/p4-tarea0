@@ -34,6 +34,12 @@ int Menu::getMenuOption(){
     return option;
 }
 
+void Menu::leerOpcionEliminarSocio(std::string &ci){
+    std::cout<< "Eliminar socio"<<std::endl;
+    std::cout << "\tIngrese el número de documento del socio: ";
+    std::cin >> ci;
+}
+
 void Menu::leerOpcionRegistrarSocio(std::string &ci,std::string &nombre, DataMascota* &dataMascota){
 
     bool datoValido;
