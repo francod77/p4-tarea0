@@ -24,3 +24,12 @@ const std::string &DataConsulta::getMotivo() const {
 void DataConsulta::setMotivo(const std::string &motivo) {
     DataConsulta::motivo = motivo;
 }
+
+void DataConsulta::imprimir_data() {
+    std::cout << "\t fecha: /n ";
+    std::cout << this->fechaConsulta.getDia() + "/";
+    std::cout << this->fechaConsulta.getMes() + "/";
+    std::cout << this->fechaConsulta.getAnio() + "/n" ;
+    std::cout << "\t motivo: /n ";
+    std::cout << this->getMotivo() + "/n";
+}

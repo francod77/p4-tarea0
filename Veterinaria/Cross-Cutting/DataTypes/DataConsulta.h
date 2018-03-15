@@ -4,6 +4,7 @@
 
 #include "Fecha.h"
 #include <string>
+#include <iostream>
 
 class DataConsulta {
 private:
@@ -23,6 +24,9 @@ public:
     const std::string &getMotivo() const;
 
     void setMotivo(const std::string &motivo);
+
+    void imprimir_data();
+
 };
 
 

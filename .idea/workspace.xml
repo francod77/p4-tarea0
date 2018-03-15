@@ -14,6 +14,11 @@
     <list default="true" id="d7dbefc7-ee5b-4d6c-b779-492e35171e68" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/Veterinaria/1_PresentationLayer/Controls/Menu.cpp" afterPath="$PROJECT_DIR$/Veterinaria/1_PresentationLayer/Controls/Menu.cpp" />
+      <change beforePath="$PROJECT_DIR$/Veterinaria/1_PresentationLayer/Controls/Menu.h" afterPath="$PROJECT_DIR$/Veterinaria/1_PresentationLayer/Controls/Menu.h" />
+      <change beforePath="$PROJECT_DIR$/Veterinaria/2_BusinessLayer/BusinessComponents/VeterinariaAdministration.cpp" afterPath="$PROJECT_DIR$/Veterinaria/2_BusinessLayer/BusinessComponents/VeterinariaAdministration.cpp" />
+      <change beforePath="$PROJECT_DIR$/Veterinaria/Cross-Cutting/DataTypes/DataConsulta.cpp" afterPath="$PROJECT_DIR$/Veterinaria/Cross-Cutting/DataTypes/DataConsulta.cpp" />
+      <change beforePath="$PROJECT_DIR$/Veterinaria/Cross-Cutting/DataTypes/DataConsulta.h" afterPath="$PROJECT_DIR$/Veterinaria/Cross-Cutting/DataTypes/DataConsulta.h" />
+      <change beforePath="$PROJECT_DIR$/Veterinaria/main.cpp" afterPath="$PROJECT_DIR$/Veterinaria/main.cpp" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,12 +30,12 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="Menu.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Veterinaria/1_PresentationLayer/Controls/Menu.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1395">
-              <caret line="98" column="0" lean-forward="true" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+            <state relative-caret-position="632">
+              <caret line="154" column="2" lean-forward="false" selection-start-line="154" selection-start-column="2" selection-end-line="154" selection-end-column="2" />
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
               </folding>
@@ -38,11 +43,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Veterinaria/main.cpp">
+      <file leaf-file-name="DataMascota.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Veterinaria/Cross-Cutting/DataTypes/DataMascota.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DataMascota.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Veterinaria/Cross-Cutting/DataTypes/DataMascota.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="467">
+              <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -50,11 +65,45 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Menu.h" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Veterinaria/main.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="497">
+              <caret line="47" column="62" lean-forward="false" selection-start-line="47" selection-start-column="62" selection-end-line="47" selection-end-column="62" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Menu.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Veterinaria/1_PresentationLayer/Controls/Menu.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state relative-caret-position="330">
+              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+              <folding>
+                <element signature="e#56#110#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VeterinariaAdministration.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Veterinaria/2_BusinessLayer/BusinessComponents/VeterinariaAdministration.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="423">
+              <caret line="65" column="16" lean-forward="false" selection-start-line="65" selection-start-column="16" selection-end-line="65" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VeterinariaAdministration.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Veterinaria/2_BusinessLayer/BusinessComponents/VeterinariaAdministration.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="18" column="36" lean-forward="false" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -73,11 +122,14 @@
         <option value="$PROJECT_DIR$/Veterinaria/2_BusinessLayer/BusinessEntities/Classes/ListaMascotas.cpp" />
         <option value="$PROJECT_DIR$/Veterinaria/2_BusinessLayer/BusinessEntities/Classes/ListaMascotas.h" />
         <option value="$PROJECT_DIR$/Veterinaria/2_BusinessLayer/BusinessEntities/Classes/ListaConsultas.h" />
-        <option value="$PROJECT_DIR$/Veterinaria/2_BusinessLayer/BusinessComponents/VeterinariaAdministration.cpp" />
         <option value="$PROJECT_DIR$/Veterinaria/2_BusinessLayer/BusinessEntities/Classes/ListaConsultas.cpp" />
         <option value="$PROJECT_DIR$/Veterinaria/2_BusinessLayer/BusinessEntities/Classes/Mascota.cpp" />
-        <option value="$PROJECT_DIR$/Veterinaria/1_PresentationLayer/Controls/Menu.cpp" />
+        <option value="$PROJECT_DIR$/Veterinaria/2_BusinessLayer/BusinessComponents/VeterinariaAdministration.cpp" />
+        <option value="$PROJECT_DIR$/Veterinaria/Cross-Cutting/DataTypes/DataConsulta.h" />
+        <option value="$PROJECT_DIR$/Veterinaria/Cross-Cutting/DataTypes/DataConsulta.cpp" />
         <option value="$PROJECT_DIR$/Veterinaria/main.cpp" />
+        <option value="$PROJECT_DIR$/Veterinaria/1_PresentationLayer/Controls/Menu.h" />
+        <option value="$PROJECT_DIR$/Veterinaria/1_PresentationLayer/Controls/Menu.cpp" />
       </list>
     </option>
   </component>
@@ -131,6 +183,47 @@
               <item name="1_PresentationLayer" type="462c0819:PsiDirectoryNode" />
               <item name="Controls" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="p4_tarea0" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="p4-tarea0" type="462c0819:PsiDirectoryNode" />
+              <item name="Veterinaria" type="462c0819:PsiDirectoryNode" />
+              <item name="2_BusinessLayer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="p4_tarea0" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="p4-tarea0" type="462c0819:PsiDirectoryNode" />
+              <item name="Veterinaria" type="462c0819:PsiDirectoryNode" />
+              <item name="2_BusinessLayer" type="462c0819:PsiDirectoryNode" />
+              <item name="BusinessComponents" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="p4_tarea0" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="p4-tarea0" type="462c0819:PsiDirectoryNode" />
+              <item name="Veterinaria" type="462c0819:PsiDirectoryNode" />
+              <item name="2_BusinessLayer" type="462c0819:PsiDirectoryNode" />
+              <item name="BusinessEntities" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="p4_tarea0" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="p4-tarea0" type="462c0819:PsiDirectoryNode" />
+              <item name="Veterinaria" type="462c0819:PsiDirectoryNode" />
+              <item name="2_BusinessLayer" type="462c0819:PsiDirectoryNode" />
+              <item name="BusinessEntities" type="462c0819:PsiDirectoryNode" />
+              <item name="Classes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="p4_tarea0" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="p4-tarea0" type="462c0819:PsiDirectoryNode" />
+              <item name="Veterinaria" type="462c0819:PsiDirectoryNode" />
+              <item name="Cross-Cutting" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="p4_tarea0" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="p4-tarea0" type="462c0819:PsiDirectoryNode" />
+              <item name="Veterinaria" type="462c0819:PsiDirectoryNode" />
+              <item name="Cross-Cutting" type="462c0819:PsiDirectoryNode" />
+              <item name="DataTypes" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -180,23 +273,25 @@
       <updated>1520991392265</updated>
       <workItem from="1520991393870" duration="1585000" />
       <workItem from="1521078920715" duration="2309000" />
-      <workItem from="1521114038121" duration="727000" />
+      <workItem from="1521114038121" duration="907000" />
+      <workItem from="1521140516404" duration="3994000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4621000" />
+    <option name="totallyTimeSpent" value="8795000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23984376" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13671875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933334" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933334" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933334" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -223,12 +318,45 @@
           <url>file://$PROJECT_DIR$/Veterinaria/2_BusinessLayer/BusinessComponents/VeterinariaAdministration.cpp</url>
           <line>48</line>
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Veterinaria/Cross-Cutting/DataTypes/DataConsulta.h</url>
+          <line>4</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Veterinaria/1_PresentationLayer/Controls/Menu.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1470">
+          <caret line="98" column="0" lean-forward="true" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Veterinaria/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Veterinaria/1_PresentationLayer/Controls/Menu.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Veterinaria/2_BusinessLayer/BusinessEntities/Classes/Socio.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1080">
@@ -294,39 +422,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Veterinaria/Cross-Cutting/DataTypes/DataMascota.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Veterinaria/Cross-Cutting/const.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Veterinaria/2_BusinessLayer/BusinessEntities/Classes/Consulta.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Veterinaria/2_BusinessLayer/BusinessComponents/VeterinariaAdministration.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="18" column="36" lean-forward="false" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Veterinaria/2_BusinessLayer/BusinessComponents/VeterinariaAdministration.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="38" column="6" lean-forward="true" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -379,20 +478,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Veterinaria/2_BusinessLayer/BusinessEntities/Classes/Socio.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="47" column="20" lean-forward="false" selection-start-line="47" selection-start-column="20" selection-end-line="47" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Veterinaria/Cross-Cutting/DataTypes/Fecha.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Veterinaria/Cross-Cutting/DataTypes/Fecha.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -400,20 +485,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Veterinaria/1_PresentationLayer/Controls/Menu.cpp">
+    <entry file="file://$PROJECT_DIR$/Veterinaria/2_BusinessLayer/BusinessEntities/Classes/Socio.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1395">
-          <caret line="98" column="0" lean-forward="true" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+        <state relative-caret-position="497">
+          <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Veterinaria/2_BusinessLayer/BusinessComponents/VeterinariaAdministration.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="18" column="36" lean-forward="false" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Veterinaria/2_BusinessLayer/BusinessEntities/Classes/Consulta.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Veterinaria/Cross-Cutting/DataTypes/Fecha.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Veterinaria/2_BusinessLayer/BusinessComponents/VeterinariaAdministration.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="423">
+          <caret line="65" column="16" lean-forward="false" selection-start-line="65" selection-start-column="16" selection-end-line="65" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Veterinaria/Cross-Cutting/DataTypes/DataConsulta.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding>
-            <element signature="e#0#17#0" expanded="true" />
+            <element signature="e#72#90#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Veterinaria/main.cpp">
+    <entry file="file://$PROJECT_DIR$/Veterinaria/Cross-Cutting/DataTypes/DataConsulta.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+        <state relative-caret-position="390">
+          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Veterinaria/Cross-Cutting/DataTypes/DataMascota.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
@@ -422,9 +555,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Veterinaria/1_PresentationLayer/Controls/Menu.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state relative-caret-position="330">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <element signature="e#56#110#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Veterinaria/Cross-Cutting/DataTypes/DataMascota.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Veterinaria/1_PresentationLayer/Controls/Menu.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="632">
+          <caret line="154" column="2" lean-forward="false" selection-start-line="154" selection-start-column="2" selection-end-line="154" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Veterinaria/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="497">
+          <caret line="47" column="62" lean-forward="false" selection-start-line="47" selection-start-column="62" selection-end-line="47" selection-end-column="62" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

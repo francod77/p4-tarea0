@@ -5,6 +5,7 @@
 #include "../../Cross-Cutting/DataTypes/DataMascota.h"
 #include "../../Cross-Cutting/DataTypes/DataGato.h"
 #include "../../Cross-Cutting/DataTypes/DataPerro.h"
+#include "../../Cross-Cutting/DataTypes/DataConsulta.h"
 
 Menu::Menu(){
 
@@ -19,8 +20,8 @@ void Menu::showGeneralMenu(){
     menu += "2) Agregar mascota\n";
     menu += "3) Ingresar consulta\n";
     menu += "4) Ver Consulta antes de fecha\n";
-    menu += "6) Eliminar socio\n";
-    menu += "7) Obtener Mascotas\n";
+    menu += "5) Eliminar socio\n";
+    menu += "6) Obtener Mascotas\n";
     menu += "0) Salir\n\n";
     menu += "Opción:";
     std::cout << menu << std::endl;
@@ -95,7 +96,60 @@ void Menu::leerOpcionRegistrarSocio(std::string &ci,std::string &nombre, DataMas
             std::cout << "\tDato Incorrecto!!!"<< std::endl;
         }
     }
-
-
-
 }
+
+void Menu::leer_consulta_nueva(std::string &motivo, std::string &ci) {
+    std::cout << "Ingresar Consulta:" << std::endl;
+
+    //Lectura del documento del socio
+    std::cout << "\tIngrese el número de documento del socio: ";
+    std::cin >> ci;
+    //Lectura del motivo de consulta
+    std::cout << "\tIngrese el motivo de la consulta: ";
+    std::cin >> motivo;
+
+};
+void Menu::leer_verantesdefecha(Fecha & fecha, std::string & ci, int & cantconsultas) {
+    int dia,mes,anio;
+    std::cout << "Ver Consultas Antes de Fecha:" << std::endl;
+    //Lectura del documento del socio
+    std::cout << "\tIngrese el número de documento del socio: ";
+    std::cin >> ci;
+
+    //Lectura de la fecha limite
+    std::cout << "\tIngrese el dia de la fecha limite: ";
+    std::cin >> dia;
+    std::cout << "\tIngrese el mes de la fecha limite: ";
+    std::cin >> mes;
+    std::cout << "\tIngrese el año de la fecha limite: ";
+    std::cin >> anio;
+    fecha.setDia(dia);
+    fecha.setMes(mes);
+    fecha.setAnio(anio);
+
+    std::cout << "\tIngrese la cantidad de consultas maxima: ";
+    std::cin >> cantconsultas;
+}
+
+void Menu::imprimir_dtconsulta(DataConsulta **dtcons,int cantconsultas) {
+    for (int i = 0; i < cantconsultas ;++i) {
+        dtcons[i]->imprimir_data();
+    }
+}
+
+void Menu::leer_obtenermascotas(std::string &ci, int &cantmascotas) {
+    std::cout << "Obtener Mascotas:" << std::endl;
+
+    //Lectura del documento del socio
+    std::cout << "\tIngrese el número de documento del socio: ";
+    std::cin >> ci;
+    //Lectura  cantmascotas
+    std::cout << "\tIngrese la cantidad de mascotas: ";
+    std::cin >> cantmascotas;
+}
+
+void Menu::imprimir_dtmascotas(DataMascota **dtmascotas, int cant) {
+    for (int i = 0; i < cant ;++i) {
+        dtmascotas[i]->print();
+    }
+};

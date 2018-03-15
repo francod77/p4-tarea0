@@ -63,8 +63,7 @@ void VeterinariaAdministration::ingresarConsulta(std::string motivo, std::string
     elsocio->agregar_Consulta(motivo, *f);
 };
 
-DataConsulta **
-VeterinariaAdministration::verConsultasAntesDeFecha(const Fecha &Fecha, std::string ci, int &cantConsultas) {
+DataConsulta ** VeterinariaAdministration::verConsultasAntesDeFecha(const Fecha &Fecha, std::string ci, int &cantConsultas) {
     Socio *cliente = busqueda(ci);
     return cliente->getConsultasAntesDeFecha(Fecha, cantConsultas);
 };

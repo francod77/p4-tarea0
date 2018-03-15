@@ -24,6 +24,29 @@ int main() {
                 menu.leerOpcionRegistrarSocio(ci, nombre, dataMascota);
                 administration->registrarSocio(ci, nombre, *dataMascota);
                 break;
+            case 3:
+                std::string ci;
+                std::string motivo;
+                menu.leer_consulta_nueva(motivo,ci);
+                administration->ingresarConsulta(motivo,ci);
+                break;
+            case 4:
+                std::string ci;
+                int cantconsultas;
+                Fecha fecha;
+                fecha = *new Fecha();
+                menu.leer_verantesdefecha(fecha,ci,cantconsultas);
+                DataConsulta** lista= administration->verConsultasAntesDeFecha(fecha,ci,cantconsultas);
+                //implementar excepcion
+                menu.imprimir_dtconsulta(lista,cantconsultas);
+                break;
+            case 6:
+                std::string ci;
+                int cantmascotas;
+                menu.leer_obtenermascotas(ci,cantmascotas);
+                DataMascota** mascotas=administration->obtenerMascotas(ci,cantmascotas);
+                menu.imprimir_dtmascotas(mascotas,cantmascotas);
+
         }
         if (option == 0){
             std::cout << "Bye." << std::endl;
