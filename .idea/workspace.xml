@@ -12,13 +12,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d7dbefc7-ee5b-4d6c-b779-492e35171e68" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/Veterinaria/2_BusinessLayer/BusinessComponents/VeterinariaAdministration.cpp" afterPath="$PROJECT_DIR$/Veterinaria/2_BusinessLayer/BusinessComponents/VeterinariaAdministration.cpp" />
-      <change beforePath="$PROJECT_DIR$/Veterinaria/2_BusinessLayer/BusinessEntities/Classes/ListaConsultas.cpp" afterPath="$PROJECT_DIR$/Veterinaria/2_BusinessLayer/BusinessEntities/Classes/ListaConsultas.cpp" />
-      <change beforePath="$PROJECT_DIR$/Veterinaria/2_BusinessLayer/BusinessEntities/Classes/ListaConsultas.h" afterPath="$PROJECT_DIR$/Veterinaria/2_BusinessLayer/BusinessEntities/Classes/ListaConsultas.h" />
-      <change beforePath="$PROJECT_DIR$/Veterinaria/2_BusinessLayer/BusinessEntities/Classes/ListaMascotas.cpp" afterPath="$PROJECT_DIR$/Veterinaria/2_BusinessLayer/BusinessEntities/Classes/ListaMascotas.cpp" />
-      <change beforePath="$PROJECT_DIR$/Veterinaria/2_BusinessLayer/BusinessEntities/Classes/ListaMascotas.h" afterPath="$PROJECT_DIR$/Veterinaria/2_BusinessLayer/BusinessEntities/Classes/ListaMascotas.h" />
-      <change beforePath="$PROJECT_DIR$/Veterinaria/2_BusinessLayer/BusinessEntities/Classes/Mascota.cpp" afterPath="$PROJECT_DIR$/Veterinaria/2_BusinessLayer/BusinessEntities/Classes/Mascota.cpp" />
-      <change beforePath="$PROJECT_DIR$/Veterinaria/2_BusinessLayer/BusinessEntities/Classes/Socio.cpp" afterPath="$PROJECT_DIR$/Veterinaria/2_BusinessLayer/BusinessEntities/Classes/Socio.cpp" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/Veterinaria/1_PresentationLayer/Controls/Menu.cpp" afterPath="$PROJECT_DIR$/Veterinaria/1_PresentationLayer/Controls/Menu.cpp" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,12 +25,36 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Menu.cpp" pinned="false" current-in-tab="true">
+    <leaf>
+      <file leaf-file-name="Menu.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Veterinaria/1_PresentationLayer/Controls/Menu.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="1395">
+              <caret line="98" column="0" lean-forward="true" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#17#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Veterinaria/main.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Menu.h" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Veterinaria/1_PresentationLayer/Controls/Menu.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -57,6 +76,8 @@
         <option value="$PROJECT_DIR$/Veterinaria/2_BusinessLayer/BusinessComponents/VeterinariaAdministration.cpp" />
         <option value="$PROJECT_DIR$/Veterinaria/2_BusinessLayer/BusinessEntities/Classes/ListaConsultas.cpp" />
         <option value="$PROJECT_DIR$/Veterinaria/2_BusinessLayer/BusinessEntities/Classes/Mascota.cpp" />
+        <option value="$PROJECT_DIR$/Veterinaria/1_PresentationLayer/Controls/Menu.cpp" />
+        <option value="$PROJECT_DIR$/Veterinaria/main.cpp" />
       </list>
     </option>
   </component>
@@ -110,19 +131,6 @@
               <item name="1_PresentationLayer" type="462c0819:PsiDirectoryNode" />
               <item name="Controls" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="p4_tarea0" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="p4-tarea0" type="462c0819:PsiDirectoryNode" />
-              <item name="Veterinaria" type="462c0819:PsiDirectoryNode" />
-              <item name="2_BusinessLayer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="p4_tarea0" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="p4-tarea0" type="462c0819:PsiDirectoryNode" />
-              <item name="Veterinaria" type="462c0819:PsiDirectoryNode" />
-              <item name="2_BusinessLayer" type="462c0819:PsiDirectoryNode" />
-              <item name="BusinessEntities" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -146,7 +154,7 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.p4_tarea0">
-    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" EXPLICIT_BUILD_TARGET_NAME="all">
+    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="p4_tarea0" RUN_TARGET_NAME="p4_tarea0" EXPLICIT_BUILD_TARGET_NAME="all">
       <envs />
     </configuration>
     <configuration name="p4_tarea0" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="p4_tarea0" TARGET_NAME="p4_tarea0" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="p4_tarea0" RUN_TARGET_NAME="p4_tarea0">
@@ -171,12 +179,13 @@
       <option name="presentableId" value="Default" />
       <updated>1520991392265</updated>
       <workItem from="1520991393870" duration="1585000" />
-      <workItem from="1521078920715" duration="1860000" />
+      <workItem from="1521078920715" duration="2309000" />
+      <workItem from="1521114038121" duration="727000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3445000" />
+    <option name="totallyTimeSpent" value="4621000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="6" />
@@ -186,12 +195,12 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933334" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -224,9 +233,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1080">
           <caret line="72" column="2" lean-forward="true" selection-start-line="72" selection-start-column="2" selection-end-line="72" selection-end-column="2" />
-          <folding>
-            <element signature="e#41#61#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -234,7 +240,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -242,7 +247,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -250,9 +254,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
           <caret line="31" column="32" lean-forward="false" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
-          <folding>
-            <element signature="e#41#67#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -260,7 +261,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -268,7 +268,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -276,7 +275,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="38" lean-forward="true" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -300,7 +298,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -308,7 +305,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -316,7 +312,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -324,7 +319,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="18" column="36" lean-forward="false" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -340,7 +334,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
           <caret line="32" column="24" lean-forward="true" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -348,9 +341,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="19" lean-forward="false" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
-          <folding>
-            <element signature="e#115#136#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -358,9 +348,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="e#41#67#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -368,9 +355,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="18" lean-forward="false" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-          <folding>
-            <element signature="e#113#133#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -378,7 +362,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -386,7 +369,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="615">
           <caret line="41" column="57" lean-forward="false" selection-start-line="41" selection-start-column="57" selection-end-line="41" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -394,9 +376,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1215">
           <caret line="81" column="0" lean-forward="true" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-          <folding>
-            <element signature="e#41#61#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -404,7 +383,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="514">
           <caret line="47" column="20" lean-forward="false" selection-start-line="47" selection-start-column="20" selection-end-line="47" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -412,7 +390,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -420,14 +397,33 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Veterinaria/1_PresentationLayer/Controls/Menu.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="1395">
+          <caret line="98" column="0" lean-forward="true" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Veterinaria/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Veterinaria/1_PresentationLayer/Controls/Menu.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
