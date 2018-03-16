@@ -23,5 +23,4 @@ public:
     void print();
 };
 
-
 #endif //VETERINARIA_DATAGATO_H

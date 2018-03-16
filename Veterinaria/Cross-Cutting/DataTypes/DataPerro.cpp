@@ -35,7 +35,3 @@ void DataPerro::print(){
     }
 
 }
-
-std::ostream& operator<< (std::ostream& stream, DataPerro dataPerro){
-    dataPerro.print();
-}

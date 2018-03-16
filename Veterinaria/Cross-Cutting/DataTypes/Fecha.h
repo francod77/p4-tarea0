@@ -10,7 +10,7 @@ private:
 public:
     Fecha();
 
-    Fecha(int dia, int mes, int anio);
+    Fecha(const int dia,const  int mes,const  int anio);
 
     virtual ~Fecha();
 

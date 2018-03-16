@@ -35,7 +35,7 @@ public:
 
     void setRacionDiaria(float racionDiaria);
 
-    DataMascota* getDataMascota();
+    virtual DataMascota* getDataMascota();
 };
 
 

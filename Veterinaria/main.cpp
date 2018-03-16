@@ -33,7 +33,7 @@ int main() {
             case 2: {
                 menu.leerOpcionAgregarMascota(ci, dataMascota);
                 administration->agregarMascota(ci, *dataMascota);
-                std::cout << "Se agrego una mascota nueva la socio con éxito." << std::endl;
+                std::cout << "Se agrego una masconta nueva la socio con éxito." << std::endl;
                 break;
             }
             case 3: {
@@ -62,7 +62,6 @@ int main() {
                 catch (std::invalid_argument error) {
 
                     std::cout << error.what() << std::endl;
-                    std::cout << "error 5" << std::endl;
                 }
                 break;
             }

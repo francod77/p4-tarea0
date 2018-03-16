@@ -50,6 +50,6 @@ void DataMascota:: print(){
 
 }
 
-std::ostream& operator<< (std::ostream& stream, DataMascota dataMascota){
+std::ostream& operator<< (std::ostream& stream, DataMascota &dataMascota){
     dataMascota.print();
 }

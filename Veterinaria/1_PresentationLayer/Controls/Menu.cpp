@@ -156,7 +156,7 @@ void Menu::leerOpcionRegistrarSocio(std::string &ci,std::string &nombre, DataMas
         //Lectura vacuna mascota
         datoValido = false;
         while (!datoValido){
-            std::cout << "\tIndique el tipo de pelo del gato: ";
+            std::cout << "\tIndique el tipo de pelo del gato (largo, mediano o corto): ";
             std::cin >> dato;
             std::regex  r("\\s*(largo|mediano|corto)\\s*");
             if(regex_match(dato,match,r)){
@@ -354,16 +354,18 @@ void Menu::leer_obtenermascotas(std::string &ci, int &cantmascotas) {
     std::cin >> cantmascotas;
 }
 
-void Menu::imprimir_dtmascotas(DataMascota **dtmascotas, int cant) {
+void Menu::imprimir_dtmascotas(DataMascota **&dtmascotas, int cant) {
 
     for (int i = 0; i < cant ;++i) {
-        if(typeid(dtmascotas[i]) == typeid(DataPerro)) {
-            DataPerro dp = (DataPerro &) dtmascotas[i] ;
+        /*if(typeid(dtmascotas[i]) == typeid(DataPerro)) {
+            DataPerro dp = (DataPerro&) dtmascotas[i] ;
             std::cout << dp <<std::endl;
         } else {
 
-            DataGato dg = (DataGato &) dtmascotas[i];
+            DataGato dg = (DataGato&) dtmascotas[i];
             std::cout << dg << std::endl;
-        }
+        }*/
+        std::cout << dtmascotas[i]  << std::endl;
     }
+
 };

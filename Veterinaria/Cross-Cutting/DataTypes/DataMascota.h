@@ -36,6 +36,6 @@ public:
 
     virtual void print();
 };
-std::ostream& operator<< (std::ostream& stream, DataMascota dataMascota);
+std::ostream& operator<< (std::ostream& stream, DataMascota& dataMascota);
 
 #endif //VETERINARIA_DATAMASCOTA_H

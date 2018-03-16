@@ -108,9 +108,9 @@ DataMascota **Socio::getListaMascotas() {
     for (int i = 0; i < cantMascotasSocio; ++i) {
         m=this->listaMascotas->get(i);
         if(typeid(m) == typeid(Perro&)) {
-            res[i] = ((Perro *) m)->getDataMascota();
+            res[i] = (DataPerro*)(((Perro*) m)->getDataMascota());
         } else {
-            res[i] = ((Gato *) m)->getDataMascota();
+            res[i] = (DataGato*)(((Gato*) m)->getDataMascota());
         }
     };
     return res;

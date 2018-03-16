@@ -8,7 +8,7 @@
 ListaConsultas::ListaConsultas(int length) {
     this->consultas = new Consulta *[length];
     for (int i = 0; i < length; i++) {
-        this->consultas[i] = nullptr;
+        this->consultas[i] = NULL;
     }
     this->length = 0;//Reserve el tamaño en memoria pero no tengo ningún objeto
 };

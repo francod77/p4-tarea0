@@ -28,6 +28,5 @@ public:
     void print();
 };
 
-std::ostream &operator<<(std::ostream &stream, DataPerro dataPerro);
 
 #endif //VETERINARIA_DATAPERRO_H
