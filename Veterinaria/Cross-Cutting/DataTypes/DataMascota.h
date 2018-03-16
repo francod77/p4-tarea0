@@ -35,6 +35,8 @@ public:
     void setRacionDiaria(float racionDiaria);
 
     virtual void print();
+
+
 };
 std::ostream& operator<< (const std::ostream& stream, const DataMascota& dataMascota);
 

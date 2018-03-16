@@ -77,7 +77,7 @@ void VeterinariaAdministration::ingresarConsulta(std::string motivo, std::string
     Fecha f(timePtr->tm_mday, timePtr->tm_mon, timePtr->tm_year);
     //delete timePtr;
     elsocio->agregar_Consulta(motivo, f);
-    std:: cout << "la consulta se ingreso con exito!!" <<std::endl;
+    std:: cout << "La consulta se ingreso con exito!!" <<std::endl;
 };
 
 DataConsulta ** VeterinariaAdministration::verConsultasAntesDeFecha(const Fecha &Fecha, std::string ci, int &cantConsultas) {

@@ -85,10 +85,10 @@ void Menu::leerOpcionRegistrarSocio(std::string &ci,std::string &nombre, DataMas
     //Lectura del genero de la mascota
     datoValido = false;
     while (!datoValido){
-        std::cout << "\tIndique el genero de la mascota (masculino o femenino): ";
+        std::cout << "\tIndique el genero de la mascota (m o f): ";
         std::cin >> dato;
-        if(regex_match(dato,match,std::regex ("\\s*(masculino|femenino)\\s*"))){
-            if(regex_match(dato,match,std::regex ("\\s*masculino\\s*"))){
+        if(regex_match(dato,match,std::regex ("\\s*(m|f)\\s*"))){
+            if(regex_match(dato,match,std::regex ("\\s*m\\s*"))){
                 dataMascota->setGenero(masculino);
             }else{
                 dataMascota->setGenero(femenino);
@@ -109,7 +109,7 @@ void Menu::leerOpcionRegistrarSocio(std::string &ci,std::string &nombre, DataMas
         //Lectura raza del perro
         datoValido = false;
         while (!datoValido){
-            std::cout << "\tIndique la raza del perro (labrador, ovejero, bulldog, pitbull, collie, pekines u otro: ";
+            std::cout << "\tIndique la raza del perro (labrador, ovejero, bulldog, pitbull, collie, pekines u otro): ";
             std::cin >> dato;
             std::regex  r("\\s*(labrador|ovejero|bulldog|pitbull|collie|pekines|otro)\\s*");
             if(regex_match(dato,match,r)){
@@ -215,10 +215,10 @@ void Menu::leerOpcionAgregarMascota(std::string &ci, DataMascota* &dataMascota){
     //Lectura del genero de la mascota
     datoValido = false;
     while (!datoValido){
-        std::cout << "\tIndique el genero de la mascota (masculino o femenino): ";
+        std::cout << "\tIndique el genero de la mascota (m o f): ";
         std::cin >> dato;
-        if(regex_match(dato,match,std::regex ("\\s*(masculino|femenino)\\s*"))){
-            if(regex_match(dato,match,std::regex ("\\s*masculino\\s*"))){
+        if(regex_match(dato,match,std::regex ("\\s*(m|f)\\s*"))){
+            if(regex_match(dato,match,std::regex ("\\s*m\\s*"))){
                 dataMascota->setGenero(masculino);
             }else{
                 dataMascota->setGenero(femenino);
@@ -340,6 +340,7 @@ void Menu::leer_verantesdefecha(Fecha & fecha, std::string & ci, int & cantconsu
 void Menu::imprimir_dtconsulta(DataConsulta **dtcons,int cantconsultas) {
     for (int i = 0; i < cantconsultas ;++i) {
         dtcons[i]->imprimir_data();
+        std::cout<<"-----------------------------"<<std::endl;
     }
 }
 

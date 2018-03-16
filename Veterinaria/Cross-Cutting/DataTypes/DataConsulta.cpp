@@ -26,10 +26,16 @@ void DataConsulta::setMotivo(const std::string &motivo) {
 }
 
 void DataConsulta::imprimir_data() {
-    std::cout << "\t fecha: \n ";
-    std::cout << this->fechaConsulta.getDia() + "\n";
-    std::cout << this->fechaConsulta.getMes() + "\n";
-    std::cout << this->fechaConsulta.getAnio() + "\n" ;
-    std::cout << "\t motivo: ";
-    std::cout << this->getMotivo() + "\n";
+    std::cout << "\t Fecha:  " ;
+    int a,b,c;
+    a = this->fechaConsulta.getDia();
+    b=this->fechaConsulta.getMes();
+    c=this->fechaConsulta.getAnio();
+    std::cout <<  a ;
+    std::cout <<"/"  ;
+    std::cout <<b ;
+    std::cout <<"/";
+    std::cout <<c << std::endl;
+    std::cout << "\t Motivo: ";
+    std::cout << this->getMotivo() <<std::endl;
 }

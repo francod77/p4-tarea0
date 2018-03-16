@@ -83,24 +83,33 @@ void Socio::agregar_Mascota(const DataMascota &mascota) {
 }
 
 DataConsulta **Socio::getConsultasAntesDeFecha(Fecha f, int maxConsultas) {
-    int cantConsultas = 0;
-    for (int i = 0; i < this->listaConsultas->getlength(); ++i) {
-        if (this->listaConsultas->get(i)->getFecha() < f) {
-            cantConsultas++;
-        }
-    };
-    if (cantConsultas > maxConsultas) {
-        cantConsultas = maxConsultas;
-    }
-    DataConsulta **res = new DataConsulta *[cantConsultas];
+    DataConsulta **res = new DataConsulta *[maxConsultas];
     int j=0;
-    for (int i = 0; i < cantConsultas; ++i) {
+    for (int i = 0; i < this->listaConsultas->getlength() && j<maxConsultas; ++i) {
         if (this->listaConsultas->get(i)->getFecha() < f) {
             res[j] = this->listaConsultas->get(i)->getDataConsulta();
             j++;
         }
-    };
+   };
     return res;
+//    int cantConsultas = 0;
+//    for (int i = 0; i < this->listaConsultas->getlength(); ++i) {
+//        if (this->listaConsultas->get(i)->getFecha() < f) {
+//            cantConsultas++;
+//        }
+//    };
+//    if (cantConsultas > maxConsultas) {
+//        cantConsultas = maxConsultas;
+//    }
+//    DataConsulta **res = new DataConsulta *[cantConsultas];
+//    int j=0;
+//    for (int i = 0; i < cantConsultas; ++i) {
+//        if (this->listaConsultas->get(i)->getFecha() < f) {
+//            res[j] = this->listaConsultas->get(i)->getDataConsulta();
+//            j++;
+//        }
+//    };
+//    return res;
 }
 
 DataMascota **Socio::getListaMascotas() {

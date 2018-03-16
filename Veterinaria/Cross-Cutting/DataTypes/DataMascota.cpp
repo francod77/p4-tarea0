@@ -41,15 +41,15 @@ void DataMascota::setRacionDiaria(float racionDiaria) {
     DataMascota::racionDiaria = racionDiaria;
 }
 
-void DataMascota:: print(){
+ void DataMascota:: print(){
     std::cout << "- Nombre: "+this->nombre << std::endl;
     std::cout << "- Género: "+this->genero << std::endl;
     std::cout << "- Ración Diaria: ";
     std::cout << this->peso;
     std::cout << " kg"<< std::endl;
-
 }
 
 std::ostream& operator<< (std::ostream& stream, DataMascota &dataMascota){
     dataMascota.print();
 }
+
