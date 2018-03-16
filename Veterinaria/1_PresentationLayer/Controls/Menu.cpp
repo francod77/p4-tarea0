@@ -286,7 +286,7 @@ void Menu::leerOpcionAgregarMascota(std::string &ci, DataMascota* &dataMascota){
         //Lectura vacuna mascota
         datoValido = false;
         while (!datoValido){
-            std::cout << "\tIndique si el tipo de pelo del gato: ";
+            std::cout << "\tIndique el tipo de pelo del gato(largo,mediano o corto): ";
             std::cin >> dato;
             std::regex  r("\\s*(largo|mediano|corto)\\s*");
             if(regex_match(dato,match,r)){

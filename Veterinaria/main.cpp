@@ -25,31 +25,50 @@ int main() {
                 break;
             }
             case 1: {
-                menu.leerOpcionRegistrarSocio(ci, nombre, dataMascota);
-                administration->registrarSocio(ci, nombre, *dataMascota);
-                std::cout << "El socio se registro con éxito." << std::endl;
+                try {
+                    menu.leerOpcionRegistrarSocio(ci, nombre, dataMascota);
+
+                    administration->registrarSocio(ci, nombre, *dataMascota);
+                    std::cout << "El socio se registro con éxito." << std::endl;
+                }
+                catch(std::invalid_argument &error){
+                    std::cout << error.what() << std::endl;
+                }
                 break;
             }
             case 2: {
                 menu.leerOpcionAgregarMascota(ci, dataMascota);
-                administration->agregarMascota(ci, *dataMascota);
-                std::cout << "Se agrego una masconta nueva la socio con éxito." << std::endl;
+                try {
+                    administration->agregarMascota(ci, *dataMascota);
+                    std::cout << "Se agrego una mascota nueva al socio con éxito." << std::endl;
+                }catch(std::invalid_argument &error){
+                    std::cout << error.what() << std::endl;
+                }
                 break;
             }
             case 3: {
                 std::string motivo;
-                menu.leer_consulta_nueva(motivo, ci);
+                try{
+                    menu.leer_consulta_nueva(motivo, ci);
                 administration->ingresarConsulta(motivo, ci);
+                }
+                catch(std::invalid_argument &error){
+                    std::cout << error.what() << std::endl;
+                }
                 break;
             }
             case 4: {
                 int cantconsultas;
                 Fecha fecha;
                 fecha = *new Fecha();
-                menu.leer_verantesdefecha(fecha, ci, cantconsultas);
-                DataConsulta **lista = administration->verConsultasAntesDeFecha(fecha, ci, cantconsultas);
-                //implementar excepcion
-                menu.imprimir_dtconsulta(lista, cantconsultas);
+               try{
+                   menu.leer_verantesdefecha(fecha, ci, cantconsultas);
+                   DataConsulta **lista = administration->verConsultasAntesDeFecha(fecha, ci, cantconsultas);
+                   menu.imprimir_dtconsulta(lista, cantconsultas);
+                }
+                catch(std::invalid_argument &error){
+                    std::cout << error.what() << std::endl;
+                }
                 break;
             }
             case 5: {
@@ -59,7 +78,7 @@ int main() {
                     administration->eliminar_socio(ci);
                     std:: cout << "elimando correctamente" <<std::endl;
                 }
-                catch (std::invalid_argument error) {
+                catch (std::invalid_argument &error) {
 
                     std::cout << error.what() << std::endl;
                 }
@@ -67,9 +86,14 @@ int main() {
             }
             case 6: {
                 int cantmascotas;
-                menu.leer_obtenermascotas(ci, cantmascotas);
-                DataMascota **mascotas = administration->obtenerMascotas(ci, cantmascotas);
-                menu.imprimir_dtmascotas(mascotas, cantmascotas);
+                try {
+                    menu.leer_obtenermascotas(ci, cantmascotas);
+                    DataMascota **mascotas = administration->obtenerMascotas(ci, cantmascotas);
+                    menu.imprimir_dtmascotas(mascotas, cantmascotas);
+                }
+                catch(std::invalid_argument &error){
+                    std::cout << error.what() << std::endl;
+                }
                 break;
             }
         }
