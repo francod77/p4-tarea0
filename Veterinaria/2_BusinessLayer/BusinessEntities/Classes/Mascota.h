@@ -17,25 +17,27 @@ public:
 
     Mascota(const std::string &nombre, Genero genero, float peso, float racionDiaria);
 
-    virtual ~Mascota();
+    virtual ~Mascota()=0;
 
-    const std::string &getNombre() const;
+     const std::string &getNombre() const ;
 
-    void setNombre(const std::string &nombre);
+     void setNombre(const std::string &nombre);
 
-    Genero getGenero() const;
+     Genero getGenero() const ;
 
     void setGenero(Genero genero);
 
-    float getPeso() const;
+     float getPeso() const ;
 
     void setPeso(float peso);
 
-    float getRacionDiaria() const;
+     float getRacionDiaria() const ;
 
     DataMascota* getDataMascota();
 
     void setRacionDiaria(float racionDiaria);
+
+    virtual std::string getclase() = 0;
 
 
 };

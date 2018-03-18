@@ -7,9 +7,7 @@ DataPerro::DataPerro(std::string nombre, Genero genero, float peso, float racion
                      bool vacunaCachorro) : DataMascota(nombre, genero, peso, racionDiaria), raza(raza),
                                             vacunaCachorro(vacunaCachorro) {}
 
-DataPerro::~DataPerro() {
-
-}
+DataPerro::~DataPerro() = default;
 
 RazaPerro DataPerro::getRaza() const {
     return raza;
@@ -32,10 +30,24 @@ bool DataPerro::getvacunaCachorro() {
 }
 
 void DataPerro::print(){
-    if(this->vacunaCachorro){
-        std::cout << "- Tiene vacuna del Cachorro: Si" << std::endl;
-    }else{
-        std::cout << "- Tiene vacuna del Cachorro: No" << std::endl;
-    }
+    std::string aux=this->getNombre();
+    std::cout << "- Nombre: "<< aux << std::endl;
+
+    if ( this->getGenero()==masculino) aux="masculino";
+    else aux="femenino";
+    std::cout << "- Género: "<< aux << std::endl;
+
+    float a=this->getPeso();
+    std::cout << "- Peso: " <<  a << " kg"<< std::endl;
+
+    a=this->getRacionDiaria();
+    std::cout << "- Ración Diaria: " << a <<std::endl;
+
+    aux = std::to_string(this->raza);
+    std::cout << "- Raza: " << aux << std::endl;
+
+    if (this->vacunaCachorro)
+        std::cout << "- Tiene Vacuna Cachorro: si"  << std::endl;
+    else std::cout << "- Tiene Vacuna Cachorro: no"  << std::endl;
 
 }

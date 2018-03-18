@@ -48,7 +48,7 @@ public:
     DataConsulta **getConsultasAntesDeFecha(Fecha f, int maxConsultas);
 
     /*devuelve array de punteros datamascota sin comparrtir memoria!! es para usarse en obtener mascotas*/
-    DataMascota **getListaMascotas();
+    DataMascota **getListaMascotas(int tope);
 
     DataConsulta **getListaConsultas();
 

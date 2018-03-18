@@ -24,6 +24,8 @@ public:
     bool isVacunaCachorro() const;
 
     void setVacunaCachorro(bool vacunaCachorro);
+
+    std::string getclase();
 };
 
 

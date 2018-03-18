@@ -67,7 +67,7 @@ void Socio::agregar_Consulta(std::string motivo, Fecha fecha) {
 void Socio::agregar_Mascota( const DataMascota &mascota) {
     if (this->listaMascotas->getlength() < MAX_MASCOTAS) {
         Mascota *nuevo;
-       if(typeid(mascota) == typeid(DataPerro)){
+       if(typeid(DataPerro) == typeid(mascota)){
             DataPerro dp = (DataPerro&)mascota;
             nuevo = new Perro(mascota.getNombre(), mascota.getGenero(), mascota.getPeso(),
                                          mascota.getRacionDiaria(),dp.getRaza(), dp.isVacunaCachorro() );
@@ -76,7 +76,6 @@ void Socio::agregar_Mascota( const DataMascota &mascota) {
             nuevo = new Gato(mascota.getNombre(), mascota.getGenero(), mascota.getPeso(),
                               mascota.getRacionDiaria(),dg.getTipoPelo());
         }
-
         this->listaMascotas->add(nuevo);
     } else {
         throw std::invalid_argument("No puede agregar más mascotas");
@@ -113,14 +112,14 @@ DataConsulta **Socio::getConsultasAntesDeFecha(Fecha f, int maxConsultas) {
 //    return res;
 }
 
-DataMascota **Socio::getListaMascotas() {
-    int cantMascotasSocio = this->listaMascotas->getlength();
+DataMascota **Socio::getListaMascotas(int tope) {
     Mascota* m;
-    auto **res = new DataMascota *[cantMascotasSocio];
+    auto **res = new DataMascota *[tope];
     DataMascota* aux;
-    for (int i = 0; i < cantMascotasSocio; ++i) {
+    for (int i = 0; i < tope; ++i) {
         m=this->listaMascotas->get(i);
-        if(typeid(m) == typeid(Perro&)) {
+        //typeid(m) == typeid(Perro)
+        if(m->getclase()=="Perro") {
             aux=new DataPerro();
             aux->setNombre(m->getNombre());
             aux->setPeso(m->getPeso());

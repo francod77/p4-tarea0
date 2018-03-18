@@ -8,13 +8,14 @@
 
 ListaMascotas::ListaMascotas() {
     this->mascotas = new Mascota* [MAX_MASCOTAS];
-    for (int i = 0; i < length; i++) {
+    for (int i = 0; i < MAX_MASCOTAS; i++) {
         this->mascotas[i] = nullptr;
     }
     this->length = 0;//Reserve el tamaño en memoria pero no tengo ningún objeto
 };
 
 ListaMascotas::~ListaMascotas() {
+    //aca capaz que en vez de length va MAX_MASCOTAS
     for (int i = 0; i < this->length; ++i) {
         delete this->mascotas[i];
     }
@@ -29,7 +30,7 @@ int ListaMascotas::getlength() {
     return this->length;
 };
 
-void ListaMascotas::add(  Mascota *mascota) {
+void ListaMascotas::add( Mascota *mascota) {
     this->mascotas[this->length] =  mascota ;
     this->length++;
 };

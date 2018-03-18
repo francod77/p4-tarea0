@@ -88,8 +88,9 @@ DataConsulta ** VeterinariaAdministration::verConsultasAntesDeFecha(const Fecha 
 DataMascota **VeterinariaAdministration::obtenerMascotas(std::string ci, int &cantMascotas) {
     Socio *cliente = busqueda(ci);
     if (cliente != NULL) {
-        cantMascotas=cliente->getlargolistamascotas();
-        return cliente->getListaMascotas();
+        if (cantMascotas > cliente->getlargolistamascotas())
+             cantMascotas=cliente->getlargolistamascotas();
+        return cliente->getListaMascotas(cantMascotas);
     } else {
         throw std::invalid_argument("No existe un socio registrado con esa cédula");
     }

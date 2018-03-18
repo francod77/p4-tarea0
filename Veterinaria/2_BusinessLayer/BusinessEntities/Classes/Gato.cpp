@@ -16,3 +16,7 @@ TipoPelo Gato::getTipoPelo() const {
 void Gato::setTipoPelo(TipoPelo tipoPelo) {
     Gato::tipoPelo = tipoPelo;
 }
+
+std::string Gato::getclase() {
+    return std::string("Gato");
+}

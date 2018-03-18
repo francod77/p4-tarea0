@@ -25,3 +25,7 @@ bool Perro::isVacunaCachorro() const {
 void Perro::setVacunaCachorro(bool vacunaCachorro) {
     Perro::vacunaCachorro = vacunaCachorro;
 }
+
+std::string Perro::getclase() {
+    return std::string("Perro");
+}

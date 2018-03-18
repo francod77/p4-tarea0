@@ -17,6 +17,8 @@ public:
     TipoPelo getTipoPelo() const;
 
     void setTipoPelo(TipoPelo tipoPelo);
+
+    std::string getclase();
 };
 
 

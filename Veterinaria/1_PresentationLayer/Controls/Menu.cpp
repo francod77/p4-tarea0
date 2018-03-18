@@ -176,8 +176,7 @@ void Menu::leerOpcionRegistrarSocio(std::string &ci,std::string &nombre, DataMas
 }
 
 void Menu::leerOpcionAgregarMascota(std::string &ci, DataMascota* &dataMascota){
-    bool datoValido;
-    bool mascotaPerro;
+    bool mascotaPerro=0;
     std::string dato;
     float datoFloat;
     std::smatch match;
@@ -189,7 +188,7 @@ void Menu::leerOpcionAgregarMascota(std::string &ci, DataMascota* &dataMascota){
     std::cin >> ci;
 
     //Lectura del tipo de mascota del socio
-    datoValido = false;
+    bool datoValido = false;
     while (!datoValido){
         std::cout << "\tIndique que tipo de mascota va a registrar (gato o perro): ";
         std::cin >> dato;
@@ -239,7 +238,7 @@ void Menu::leerOpcionAgregarMascota(std::string &ci, DataMascota* &dataMascota){
         //Lectura raza del perro
         datoValido = false;
         while (!datoValido){
-            std::cout << "\tIndique la raza del perro (labrador, ovejero, bulldog, pitbull, collie, pekines u otro: ";
+            std::cout << "\tIndique la raza del perro (labrador, ovejero, bulldog, pitbull, collie, pekines u otro): ";
             std::cin >> dato;
             std::regex  r("\\s*(labrador|ovejero|bulldog|pitbull|collie|pekines|otro)\\s*");
             if(regex_match(dato,match,r)){
