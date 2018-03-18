@@ -4,6 +4,13 @@
 #include "Cross-Cutting/DataTypes/DataGato.h"
 #include "Cross-Cutting/DataTypes/DataPerro.h"
 
+template<typename T>
+std::ostream& operator<<(typename std::enable_if<std::is_enum<T>::value, std::ostream>::type& stream, const T& e)
+{
+    return stream << static_cast<typename std::underlying_type<T>::type>(e);
+}
+
+
 int main() {
     VeterinariaAdministration *administration = new VeterinariaAdministration();
     Menu menu = *new Menu();
@@ -11,7 +18,9 @@ int main() {
 
     std::string ci;
     std::string nombre;
-    DataMascota*  dataMascota;
+    DataMascota *dataMascota;
+
+
 
     std::cout << "-------------------------------------------------------" << std::endl;
     std::cout << "Bienvenido al sistema de administración de Veterinarias" << std::endl;
@@ -34,7 +43,7 @@ int main() {
                     administration->registrarSocio(ci, nombre, *dataMascota);
                     std::cout << "El socio se registro con éxito." << std::endl;
                 }
-                catch(std::invalid_argument &error){
+                catch (std::invalid_argument &error) {
                     std::cout << error.what() << std::endl;
                 }
                 break;
@@ -44,18 +53,18 @@ int main() {
                 try {
                     administration->agregarMascota(ci, dataMascota);
                     std::cout << "Se agrego una mascota nueva al socio con éxito." << std::endl;
-                }catch(std::invalid_argument &error){
+                } catch (std::invalid_argument &error) {
                     std::cout << error.what() << std::endl;
                 }
                 break;
             }
             case 3: {
                 std::string motivo;
-                try{
+                try {
                     menu.leer_consulta_nueva(motivo, ci);
-                 administration->ingresarConsulta(motivo, ci);
+                    administration->ingresarConsulta(motivo, ci);
                 }
-                catch(std::invalid_argument &error){
+                catch (std::invalid_argument &error) {
                     std::cout << error.what() << std::endl;
                 }
                 break;
@@ -64,12 +73,16 @@ int main() {
                 int cantconsultas;
                 Fecha fecha;
                 fecha = *new Fecha();
-               try{
-                   menu.leer_verantesdefecha(fecha, ci, cantconsultas);
-                   DataConsulta **lista = administration->verConsultasAntesDeFecha(fecha, ci, cantconsultas);
-                   menu.imprimir_dtconsulta(lista, cantconsultas);
+                try {
+                    menu.leer_verantesdefecha(fecha, ci, cantconsultas);
+                    DataConsulta **lista = administration->verConsultasAntesDeFecha(fecha, ci, cantconsultas);
+                    for (int i = 0; i < cantconsultas; ++i) {
+                        //std::cout<<*lista[i]<<std::endl;
+                        lista[i]->print();
+                        std::cout << "-----------------------------" << std::endl;
+                    }
                 }
-                catch(std::invalid_argument &error){
+                catch (std::invalid_argument &error) {
                     std::cout << error.what() << std::endl;
                 }
                 break;
@@ -79,7 +92,7 @@ int main() {
                 menu.leerOpcionEliminarSocio(ci);
                 try {
                     administration->eliminar_socio(ci);
-                    std:: cout << "elimando correctamente" <<std::endl;
+                    std::cout << "elimando correctamente" << std::endl;
                 }
                 catch (std::invalid_argument &error) {
 
@@ -91,27 +104,36 @@ int main() {
                 int cantmascotas;
                 try {
                     menu.leer_obtenermascotas(ci, cantmascotas);//en cantmascotas queda valor ingresado por user
-                    DataMascota ** mascotas = administration->obtenerMascotas(ci, cantmascotas);
+                    DataMascota **mascotas = administration->obtenerMascotas(ci, cantmascotas);
 
-                    for (int i = 0; i < cantmascotas ;++i) {
-                        //std::cout << *mascotas[i]  << std::endl;
+                    for (int i = 0; i < cantmascotas; ++i) {
+                        //std::cout << *mascotas[i] << std::endl;
                         mascotas[i]->print();
+                        std::cout << "-----------------------------" << std::endl;
                     };
                 }
-                catch(std::invalid_argument &error){
+                catch (std::invalid_argument &error) {
                     std::cout << error.what() << std::endl;
                 }
                 break;
             }
             case 7: {
                 //primer socio
-                administration->registrarSocio("1","Pedro",DataGato("Arenita", femenino, 5.0, 5.0*FACTOR_ALIMENTO_GATO, largo));
+                administration->registrarSocio("1", "Pedro",
+                                               DataGato("Arenita", femenino, 5.0, 5.0 * FACTOR_ALIMENTO_GATO, largo));
                 //segundo socio
-                administration->registrarSocio("2","Roberta",DataGato("Calamardo", masculino, 25.0, 5.0*FACTOR_ALIMENTO_GATO, mediano));
+                administration->registrarSocio("2", "Roberta",
+                                               DataGato("Calamardo", masculino, 25.0, 5.0 * FACTOR_ALIMENTO_GATO,
+                                                        mediano));
                 //tercer socio
-                administration->registrarSocio("3","Anacleto",DataGato("SirenoMan", masculino, 5.0, 5.0*FACTOR_ALIMENTO_GATO, largo));
-                administration->agregarMascota("3",new DataPerro("ChicoPercebe", masculino, 30.0, 10.0*FACTOR_ALIMENTO_PERRO, labrador, true));
-                administration->agregarMascota("3",new DataPerro("Triton", masculino, 150.0, 10.0*FACTOR_ALIMENTO_PERRO, pitbull, true));
+                administration->registrarSocio("3", "Anacleto",
+                                               DataGato("SirenoMan", masculino, 5.0, 5.0 * FACTOR_ALIMENTO_GATO,
+                                                        largo));
+                administration->agregarMascota("3", new DataPerro("ChicoPercebe", masculino, 30.0,
+                                                                  10.0 * FACTOR_ALIMENTO_PERRO, labrador, true));
+                administration->agregarMascota("3",
+                                               new DataPerro("Triton", masculino, 150.0, 10.0 * FACTOR_ALIMENTO_PERRO,
+                                                             pitbull, true));
             }
         }
     }

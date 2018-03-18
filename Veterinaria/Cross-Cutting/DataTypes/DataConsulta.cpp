@@ -40,6 +40,6 @@ void DataConsulta::print() {
     std::cout << this->getMotivo() <<std::endl;
 }
 
-std::ostream& operator<< (std::ostream& stream, DataConsulta &dataConsulta){
+std::ostream& operator<< (const std::ostream& stream, DataConsulta &dataConsulta){
     dataConsulta.print();
 }

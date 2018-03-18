@@ -25,29 +25,50 @@ void DataPerro::setVacunaCachorro(bool vacunaCachorro) {
     DataPerro::vacunaCachorro = vacunaCachorro;
 }
 
-bool DataPerro::getvacunaCachorro() {
-    return vacunaCachorro;
-}
-
 void DataPerro::print(){
-    std::string aux=this->getNombre();
-    std::cout << "- Nombre: "<< aux << std::endl;
+    std::cout << "\t\t- Nombre: "<< this->getNombre() << std::endl;
+    std::string salida = "";
+    switch ((int)this->getGenero()){
+        case 0:
+            salida= "Masculino";
+            break;
+        case 1:
+            salida= "Femenino";
+            break;
+    };
+    std::cout << "\t\t- Género: "<< salida << std::endl;
+    std::cout << "\t\t- Peso: " <<  this->getPeso() << " kg"<< std::endl;
+    std::cout << "\t\t- Ración Diaria: " << this->getRacionDiaria() <<std::endl;
+    switch ((int)this->raza){
+        case 0:
+            salida= "Labrador";
+            break;
+        case 1:
+            salida= "Ovejero";
+            break;
+        case 2:
+            salida= "Bulldog";
+            break;
+        case 3:
+            salida= "Pitbull";
+            break;
+        case 4:
+            salida= "Collie";
+            break;
+        case 5:
+            salida= "Pekines";
+            break;
+        case 6:
+            salida= "Otro";
+            break;
+    };
+    std::cout << "\t\t- Raza: " << salida << std::endl;
 
-    if ( this->getGenero()==masculino) aux="masculino";
-    else aux="femenino";
-    std::cout << "- Género: "<< aux << std::endl;
-
-    float a=this->getPeso();
-    std::cout << "- Peso: " <<  a << " kg"<< std::endl;
-
-    a=this->getRacionDiaria();
-    std::cout << "- Ración Diaria: " << a <<std::endl;
-
-    aux = std::to_string(this->raza);
-    std::cout << "- Raza: " << aux << std::endl;
-
-    if (this->vacunaCachorro)
-        std::cout << "- Tiene Vacuna Cachorro: si"  << std::endl;
-    else std::cout << "- Tiene Vacuna Cachorro: no"  << std::endl;
+    if(this->vacunaCachorro){
+        salida = "Si";
+    } else{
+        salida = "No";
+    }
+    std::cout << "\t\t- Tiene Vacuna Cachorro: " << salida << std::endl;
 
 }

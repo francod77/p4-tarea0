@@ -17,7 +17,6 @@ public:
     void leerOpcionAgregarMascota(std::string &ci, DataMascota* &dataMascota);
     void leer_consulta_nueva(std::string &motivo, std::string &ci);
     void leer_verantesdefecha(Fecha & fecha,std::string & ci,int &cantconsulta);
-    void imprimir_dtconsulta(DataConsulta** dtcons,int cantconsultas);
     void leer_obtenermascotas(std::string &ci,int &cantmascotas);
     void leerOpcionEliminarSocio(std::string &ci);
 };

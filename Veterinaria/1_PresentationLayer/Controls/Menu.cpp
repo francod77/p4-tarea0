@@ -337,13 +337,6 @@ void Menu::leer_verantesdefecha(Fecha & fecha, std::string & ci, int & cantconsu
     std::cin >> cantconsultas;
 }
 
-void Menu::imprimir_dtconsulta(DataConsulta **dtcons,int cantconsultas) {
-    for (int i = 0; i < cantconsultas ;++i) {
-        std::cout<<dtcons[i]<<std::endl;
-        std::cout<<"-----------------------------"<<std::endl;
-    }
-}
-
 void Menu::leer_obtenermascotas(std::string &ci, int &cantmascotas) {
     std::cout << "Obtener Mascotas:" << std::endl;
 

@@ -1,6 +1,6 @@
 #ifndef VETERINARIA_GENERO_H
 #define VETERINARIA_GENERO_H
-enum Genero{
+enum Genero {
     masculino = 0,
     femenino = 1
 };

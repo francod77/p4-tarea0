@@ -19,29 +19,29 @@ void DataGato::setTipoPelo(TipoPelo tipoPelo) {
 }
 
 void DataGato::print() {
-    std::string aux=this->getNombre();
-    std::cout << " - Nombre: "<< aux << std::endl;
-
-    if ( this->getGenero()==masculino)
-        aux="masculino";
-    else
-        aux="femenino";
-    std::cout << "- Género: "<< aux << std::endl;
-
-    float a=this->getPeso();
-    std::cout << "- Peso: " <<  a << " kg"<< std::endl;
-
-    a=this->getRacionDiaria();
-    std::cout << "- Ración Diaria: " << a <<std::endl;
-
-    switch (this->tipoPelo) {
+    std::cout << "\t\t- Nombre: "<< this->getNombre() << std::endl;
+    std::string salida = "";
+    switch ((int)this->getGenero()){
         case 0:
-            std::cout << "- TipoPelo: corto " << std::endl;
+            salida= "Masculino";
             break;
         case 1:
-            std::cout << "- TipoPelo: mediano " << std::endl;
+            salida= "Femenino";
             break;
-        case 2: std::cout << "- TipoPelo: largo " << std::endl;
+    };
+    std::cout << "\t\t- Género: "<< salida << std::endl;
+    std::cout << "\t\t- Peso: " <<  this->getPeso() << " kg"<< std::endl;
+    std::cout << "\t\t- Ración Diaria: " << this->getRacionDiaria() <<std::endl;
+    switch ((int)this->getTipoPelo()){
+        case 0:
+            salida= "Corto";
             break;
-    }
+        case 1:
+            salida= "Mediano";
+            break;
+        case 2:
+            salida= "Largo";
+            break;
+    };
+    std::cout << "\t\t- TipoPelo: " << salida << std::endl;
 }

@@ -1,6 +1,6 @@
 #ifndef VETERINARIA_RAZAPERRO_H
 #define VETERINARIA_RAZAPERRO_H
-enum RazaPerro{
+enum RazaPerro {
     labrador = 0,
     ovejero = 1,
     bulldog = 2,
