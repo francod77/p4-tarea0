@@ -23,6 +23,7 @@ void Menu::showGeneralMenu(){
     menu += "4) Ver Consulta antes de fecha\n";
     menu += "5) Eliminar socio\n";
     menu += "6) Obtener Mascotas\n";
+    menu += "7) Cargar datos dummy\n";
     menu += "0) Salir\n\n";
     menu += "Opción:";
     std::cout << menu << std::endl;
@@ -338,7 +339,7 @@ void Menu::leer_verantesdefecha(Fecha & fecha, std::string & ci, int & cantconsu
 
 void Menu::imprimir_dtconsulta(DataConsulta **dtcons,int cantconsultas) {
     for (int i = 0; i < cantconsultas ;++i) {
-        dtcons[i]->imprimir_data();
+        std::cout<<dtcons[i]<<std::endl;
         std::cout<<"-----------------------------"<<std::endl;
     }
 }
@@ -354,19 +355,3 @@ void Menu::leer_obtenermascotas(std::string &ci, int &cantmascotas) {
     std::cin >> cantmascotas;
 }
 
-void Menu::imprimir_dtmascotas(DataMascota **&dtmascotas, int cant) {
-
-    for (int i = 0; i < cant ;++i) {
-        /*if(typeid(dtmascotas[i]) == typeid(DataPerro)) {
-            DataPerro dp = (DataPerro&) dtmascotas[i] ;
-            std::cout << dp <<std::endl;
-        } else {
-
-            DataGato dg = (DataGato&) dtmascotas[i];
-            std::cout << dg << std::endl;
-        }*/
-        dtmascotas[i]->print();
-        //std::cout << dtmascotas[i]  << std::endl;
-    };
-
-};

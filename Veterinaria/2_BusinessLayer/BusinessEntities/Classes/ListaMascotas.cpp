@@ -6,16 +6,15 @@
 #include "Mascota.h"
 #include "../../../Cross-Cutting/Const.h"
 
-ListaMascotas::ListaMascotas() {
-    this->mascotas = new Mascota* [MAX_MASCOTAS];
-    for (int i = 0; i < MAX_MASCOTAS; i++) {
-        this->mascotas[i] = nullptr;
+ListaMascotas::ListaMascotas(int lenght) {
+    this->mascotas = new Mascota* [lenght];
+    for (int i = 0; i < lenght; i++) {
+        this->mascotas[i] = NULL;
     }
     this->length = 0;//Reserve el tamaño en memoria pero no tengo ningún objeto
 };
 
 ListaMascotas::~ListaMascotas() {
-    //aca capaz que en vez de length va MAX_MASCOTAS
     for (int i = 0; i < this->length; ++i) {
         delete this->mascotas[i];
     }

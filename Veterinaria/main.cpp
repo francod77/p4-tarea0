@@ -1,6 +1,8 @@
 #include <iostream>
 #include "1_PresentationLayer/Controls/Menu.h"
 #include "2_BusinessLayer/BusinessComponents/VeterinariaAdministration.h"
+#include "Cross-Cutting/DataTypes/DataGato.h"
+#include "Cross-Cutting/DataTypes/DataPerro.h"
 
 int main() {
     VeterinariaAdministration *administration = new VeterinariaAdministration();
@@ -20,6 +22,7 @@ int main() {
         std::string ci;
         switch (option) {
             case 0: {
+                delete administration;
                 std::cout << "Bye." << std::endl;
                 return 0;
                 break;
@@ -89,13 +92,26 @@ int main() {
                 try {
                     menu.leer_obtenermascotas(ci, cantmascotas);//en cantmascotas queda valor ingresado por user
                     DataMascota ** mascotas = administration->obtenerMascotas(ci, cantmascotas);
-                    //ahora cantmascotas tiene el largo de la lista de mascotas del socio dado
-                    menu.imprimir_dtmascotas(mascotas, cantmascotas);
+
+                    for (int i = 0; i < cantmascotas ;++i) {
+                        //std::cout << *mascotas[i]  << std::endl;
+                        mascotas[i]->print();
+                    };
                 }
                 catch(std::invalid_argument &error){
                     std::cout << error.what() << std::endl;
                 }
                 break;
+            }
+            case 7: {
+                //primer socio
+                administration->registrarSocio("1","Pedro",DataGato("Arenita", femenino, 5.0, 5.0*FACTOR_ALIMENTO_GATO, largo));
+                //segundo socio
+                administration->registrarSocio("2","Roberta",DataGato("Calamardo", masculino, 25.0, 5.0*FACTOR_ALIMENTO_GATO, mediano));
+                //tercer socio
+                administration->registrarSocio("3","Anacleto",DataGato("SirenoMan", masculino, 5.0, 5.0*FACTOR_ALIMENTO_GATO, largo));
+                administration->agregarMascota("3",new DataPerro("ChicoPercebe", masculino, 30.0, 10.0*FACTOR_ALIMENTO_PERRO, labrador, true));
+                administration->agregarMascota("3",new DataPerro("Triton", masculino, 150.0, 10.0*FACTOR_ALIMENTO_PERRO, pitbull, true));
             }
         }
     }

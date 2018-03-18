@@ -25,7 +25,7 @@ void DataConsulta::setMotivo(const std::string &motivo) {
     DataConsulta::motivo = motivo;
 }
 
-void DataConsulta::imprimir_data() {
+void DataConsulta::print() {
     std::cout << "\t Fecha:  " ;
     int a,b,c;
     a = this->fechaConsulta.getDia();
@@ -38,4 +38,8 @@ void DataConsulta::imprimir_data() {
     std::cout <<c << std::endl;
     std::cout << "\t Motivo: ";
     std::cout << this->getMotivo() <<std::endl;
+}
+
+std::ostream& operator<< (std::ostream& stream, DataConsulta &dataConsulta){
+    dataConsulta.print();
 }

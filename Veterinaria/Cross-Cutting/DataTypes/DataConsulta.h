@@ -25,9 +25,8 @@ public:
 
     void setMotivo(const std::string &motivo);
 
-    void imprimir_data();
-
+    void print();
 };
 
-
+std::ostream &operator<<(const std::ostream &stream, DataConsulta &dataMascota);
 #endif //VETERINARIA_DATACONSULTA_H

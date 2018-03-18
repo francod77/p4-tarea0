@@ -14,7 +14,7 @@ private:
     Mascota ** mascotas;
     int length;
 public:
-    ListaMascotas();
+    ListaMascotas(int length);
 
     ~ListaMascotas();
 

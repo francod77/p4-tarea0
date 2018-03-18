@@ -18,7 +18,7 @@ public:
 
     void setTipoPelo(TipoPelo tipoPelo);
 
-    std::string getclase();
+    DataMascota *getDataMascota();
 };
 
 

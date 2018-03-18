@@ -11,7 +11,12 @@ VeterinariaAdministration::VeterinariaAdministration() {
     this->cantsocios = 0;
 };
 
-VeterinariaAdministration::~VeterinariaAdministration() {};
+VeterinariaAdministration::~VeterinariaAdministration() {
+    for (int i = 0; i < this->cantsocios; i++) {
+        delete this->socios[i];
+    }
+    delete this->socios;
+};
 
 Socio *VeterinariaAdministration::busqueda(std::string ci) {
     int i = 0;
@@ -87,11 +92,5 @@ DataConsulta ** VeterinariaAdministration::verConsultasAntesDeFecha(const Fecha 
 
 DataMascota **VeterinariaAdministration::obtenerMascotas(std::string ci, int &cantMascotas) {
     Socio *cliente = busqueda(ci);
-    if (cliente != NULL) {
-        if (cantMascotas > cliente->getlargolistamascotas())
-             cantMascotas=cliente->getlargolistamascotas();
-        return cliente->getListaMascotas(cantMascotas);
-    } else {
-        throw std::invalid_argument("No existe un socio registrado con esa cédula");
-    }
+    return cliente->getListaMascotas(cantMascotas);
 };

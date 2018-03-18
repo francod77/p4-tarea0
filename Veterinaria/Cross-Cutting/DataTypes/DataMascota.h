@@ -18,25 +18,26 @@ public:
 
     virtual ~DataMascota();
 
-     const std::string &getNombre() const;
+    const std::string &getNombre() const;
 
-     void setNombre(const std::string &nombre);
+    void setNombre(const std::string &nombre);
 
-    Genero getGenero() const ;
+    Genero getGenero() const;
 
-     void setGenero(Genero genero);
+    void setGenero(Genero genero);
 
     float getPeso() const;
 
-     void setPeso(float peso);
+    void setPeso(float peso);
 
-    float getRacionDiaria() const ;
+    float getRacionDiaria() const;
 
-     void setRacionDiaria(float racionDiaria);
+    void setRacionDiaria(float racionDiaria);
 
-    virtual void print()=0;
+    virtual void print() = 0;
 
 };
-std::ostream& operator<< (const std::ostream& stream, const DataMascota& dataMascota);
+
+std::ostream &operator<<(const std::ostream &stream, DataMascota &dataMascota);
 
 #endif //VETERINARIA_DATAMASCOTA_H

@@ -1,4 +1,5 @@
 #include "Gato.h"
+#include "../../../Cross-Cutting/DataTypes/DataGato.h"
 
 Gato::Gato() {}
 
@@ -17,6 +18,8 @@ void Gato::setTipoPelo(TipoPelo tipoPelo) {
     Gato::tipoPelo = tipoPelo;
 }
 
-std::string Gato::getclase() {
-    return std::string("Gato");
+
+DataMascota *Gato::getDataMascota() {
+    return new DataGato(this->getNombre(), this->getGenero(), this->getPeso(), this->getRacionDiaria(),
+                        this->getTipoPelo());
 }

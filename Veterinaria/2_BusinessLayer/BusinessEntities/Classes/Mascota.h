@@ -33,13 +33,9 @@ public:
 
      float getRacionDiaria() const ;
 
-    DataMascota* getDataMascota();
+    virtual DataMascota* getDataMascota() = 0;
 
     void setRacionDiaria(float racionDiaria);
-
-    virtual std::string getclase() = 0;
-
-
 };
 
 

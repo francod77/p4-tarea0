@@ -45,32 +45,6 @@ float DataMascota::getRacionDiaria() const  {
     DataMascota::racionDiaria = racionDiaria;
 }
 
-//si es virtual puro no tiene que ser implementado
-// void DataMascota::print(){
-//     std::string aux=this->nombre;
-//    std::cout << "- Nombre: "<< aux << std::endl;
-//
-//     if ( this->genero==masculino) aux="masculino";
-//     else aux="femenino";
-//    std::cout << "- Género: "<< aux << std::endl;
-//     float a=this->peso;
-//     std::cout << "- Peso: " <<  a << " kg"<< std::endl;
-//     a=this->racionDiaria;
-//    std::cout << "- Ración Diaria: " << a <<std::endl;
-//
-//     if(typeid(this)== typeid(DataPerro&)) {//si es perro
-//         auto *Dtaux = dynamic_cast<DataPerro *> (this);
-//         aux = std::to_string(Dtaux->getRaza());
-//         std::cout << "- Raza: " << aux << std::endl;
-//
-//         aux= Dtaux->getvacunaCachorro();
-//         std::cout << "- Tiene Vacuna Cachorro: " << aux << std::endl;
-//     }else{//es gato
-//         auto * Dtaux=dynamic_cast<DataGato *> (this);
-//         aux = std::to_string(Dtaux->getTipoPelo());
-//         std::cout << "- TipoPelo: " << aux << std::endl;
-//     }
-//}
 
 std::ostream& operator<< (std::ostream& stream, DataMascota &dataMascota){
     dataMascota.print();

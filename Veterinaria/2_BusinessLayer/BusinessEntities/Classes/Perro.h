@@ -25,7 +25,7 @@ public:
 
     void setVacunaCachorro(bool vacunaCachorro);
 
-    std::string getclase();
+    DataMascota* getDataMascota();
 };
 
 

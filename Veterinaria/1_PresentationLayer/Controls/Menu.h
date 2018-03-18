@@ -19,7 +19,6 @@ public:
     void leer_verantesdefecha(Fecha & fecha,std::string & ci,int &cantconsulta);
     void imprimir_dtconsulta(DataConsulta** dtcons,int cantconsultas);
     void leer_obtenermascotas(std::string &ci,int &cantmascotas);
-    void imprimir_dtmascotas(DataMascota** &dtmascotas,int cant);
     void leerOpcionEliminarSocio(std::string &ci);
 };
 
