@@ -1,7 +1,8 @@
 all: main
 
+WARNING= -Wall
 CC = g++
-
+CLS= Menu.o Main.o VeterinariaAdministracion.o Consulta.o Gato.o ListaConsultas.o ListaMascotas.o Mascota.o Perro.o Socio.o DataConsulta.o DataGato.o Datamascota.o DataPerro.o Fecha.o Const.o
 DIR_clases = 2_BusinessLayer/BusinessEntities/Classes
 DIR_adm = 2_BusinessLayer/BusinessComponents
 DIR_control = 1_PresentationLayer/Controls
@@ -45,6 +46,8 @@ obj/TipoPelo.o:  $(DIR_enum)/TipoPelo.h
 obj/Const.o: Cross-Cutting/Const.h Cross-Cutting/Const.cpp
 	g++ -c const.cpp
 
-main: obj/VeterinariaAdministration.o main.cpp obj/Menu.o
-	$(CC) -c main.cpp -o main.exe
-	
+main.o: obj/VeterinariaAdministration.o main.cpp obj/Menu.o
+	$(CC)  $(CLS)-c main.cpp $(Warning)
+
+main.exe: $(CLS)
+	$(CC) $(CLS) -o main.exe $(LIB)
