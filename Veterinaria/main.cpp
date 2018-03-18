@@ -3,14 +3,6 @@
 #include "2_BusinessLayer/BusinessComponents/VeterinariaAdministration.h"
 #include "Cross-Cutting/DataTypes/DataGato.h"
 #include "Cross-Cutting/DataTypes/DataPerro.h"
-
-template<typename T>
-std::ostream& operator<<(typename std::enable_if<std::is_enum<T>::value, std::ostream>::type& stream, const T& e)
-{
-    return stream << static_cast<typename std::underlying_type<T>::type>(e);
-}
-
-
 int main() {
     VeterinariaAdministration *administration = new VeterinariaAdministration();
     Menu menu = *new Menu();
