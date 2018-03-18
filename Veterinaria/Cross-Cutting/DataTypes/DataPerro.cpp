@@ -27,6 +27,10 @@ void DataPerro::setVacunaCachorro(bool vacunaCachorro) {
     DataPerro::vacunaCachorro = vacunaCachorro;
 }
 
+bool DataPerro::getvacunaCachorro() {
+    return vacunaCachorro;
+}
+
 void DataPerro::print(){
     if(this->vacunaCachorro){
         std::cout << "- Tiene vacuna del Cachorro: Si" << std::endl;

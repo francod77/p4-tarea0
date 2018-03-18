@@ -61,10 +61,10 @@ void VeterinariaAdministration::eliminar_socio(std::string ci) {
     }
 };
 
-void VeterinariaAdministration::agregarMascota(std::string ci, DataMascota dtmascota) {
+void VeterinariaAdministration::agregarMascota(std::string ci, DataMascota* dtmascota) {
     Socio *cliente = busqueda(ci);
     if (cliente != NULL) {
-        cliente->agregar_Mascota(dtmascota);
+        cliente->agregar_Mascota(*dtmascota);
     } else {
         throw std::invalid_argument("No existe un socio registrado con esa cédula");
     }
@@ -87,8 +87,8 @@ DataConsulta ** VeterinariaAdministration::verConsultasAntesDeFecha(const Fecha 
 
 DataMascota **VeterinariaAdministration::obtenerMascotas(std::string ci, int &cantMascotas) {
     Socio *cliente = busqueda(ci);
-    //falta implementar la excepcion
     if (cliente != NULL) {
+        cantMascotas=cliente->getlargolistamascotas();
         return cliente->getListaMascotas();
     } else {
         throw std::invalid_argument("No existe un socio registrado con esa cédula");

@@ -1,7 +1,7 @@
 #ifndef VETERINARIA_VETERINARIAADMINISTRATION_H
 #define VETERINARIA_VETERINARIAADMINISTRATION_H
 
-#include "../BusinessEntities/classes/Socio.h"
+#include "../BusinessEntities/Classes/Socio.h"
 #include <string>
 #include "../../Cross-Cutting/DataTypes/DataConsulta.h"
 #include "../../Cross-Cutting/DataTypes/DataMascota.h"
@@ -22,7 +22,7 @@ public:
 
     void eliminar_socio(std::string ci);
 
-    void agregarMascota(std::string ci, DataMascota dtmascota);
+    void agregarMascota(std::string ci,  DataMascota* dtmascota);
 
     void ingresarConsulta(std::string motivo, std::string ci);
 

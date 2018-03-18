@@ -65,10 +65,10 @@ void Menu::leerOpcionRegistrarSocio(std::string &ci,std::string &nombre, DataMas
         std::cin >> dato;
         if(regex_match(dato,match,std::regex("\\s*(perro|gato)\\s*"))){
             if(regex_match(dato,match,std::regex("\\s*gato\\s*"))){
-                dataMascota = new DataGato();
+                dataMascota = new  DataGato();
                 mascotaPerro = false;
             }else{
-                dataMascota = new DataPerro();
+                dataMascota = new  DataPerro();
                 mascotaPerro = true;
             }
             datoValido = true;
@@ -170,7 +170,7 @@ void Menu::leerOpcionRegistrarSocio(std::string &ci,std::string &nombre, DataMas
                 datoValido = true;
             }else{
                 std::cout << "\tDato Incorrecto!!!"<< std::endl;
-            }
+            };
         }
     }
 }
@@ -366,7 +366,8 @@ void Menu::imprimir_dtmascotas(DataMascota **&dtmascotas, int cant) {
             DataGato dg = (DataGato&) dtmascotas[i];
             std::cout << dg << std::endl;
         }*/
-        std::cout << dtmascotas[i]  << std::endl;
-    }
+        dtmascotas[i]->print();
+        //std::cout << dtmascotas[i]  << std::endl;
+    };
 
 };

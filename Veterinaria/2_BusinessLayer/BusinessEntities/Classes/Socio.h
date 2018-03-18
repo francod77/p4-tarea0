@@ -51,6 +51,8 @@ public:
     DataMascota **getListaMascotas();
 
     DataConsulta **getListaConsultas();
+
+    int getlargolistamascotas();
 };
 
 

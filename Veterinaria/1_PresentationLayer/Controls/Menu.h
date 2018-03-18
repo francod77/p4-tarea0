@@ -13,7 +13,7 @@ public:
     ~Menu();
     void showGeneralMenu();
     int getMenuOption();
-    void leerOpcionRegistrarSocio(std::string &ci,std::string &nombre, DataMascota* &dataMascota);
+    void leerOpcionRegistrarSocio(std::string &ci,std::string &nombre,  DataMascota* &dataMascota);
     void leerOpcionAgregarMascota(std::string &ci, DataMascota* &dataMascota);
     void leer_consulta_nueva(std::string &motivo, std::string &ci);
     void leer_verantesdefecha(Fecha & fecha,std::string & ci,int &cantconsulta);

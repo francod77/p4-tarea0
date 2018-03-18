@@ -17,6 +17,8 @@ public:
 
     virtual ~DataPerro();
 
+    bool getvacunaCachorro();
+
     RazaPerro getRaza() const;
 
     void setRaza(RazaPerro raza);

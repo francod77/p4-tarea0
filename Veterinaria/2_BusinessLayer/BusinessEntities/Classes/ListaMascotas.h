@@ -14,7 +14,7 @@ private:
     Mascota ** mascotas;
     int length;
 public:
-    ListaMascotas(int length);
+    ListaMascotas();
 
     ~ListaMascotas();
 
@@ -22,7 +22,7 @@ public:
 
     int getlength();
 
-    void add(Mascota *mascota);
+    void add(  Mascota *mascota);
 };
 
 

@@ -33,9 +33,11 @@ public:
 
     float getRacionDiaria() const;
 
+    DataMascota* getDataMascota();
+
     void setRacionDiaria(float racionDiaria);
 
-    virtual DataMascota* getDataMascota();
+
 };
 
 

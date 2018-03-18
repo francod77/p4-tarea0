@@ -7,21 +7,22 @@
 #include "Socio.h"
 #include "../../../Cross-Cutting/Const.h"
 #include "../../../Cross-Cutting/DataTypes/DataPerro.h"
+#include "../../../Cross-Cutting/DataTypes/DataMascota.h"
 #include "Perro.h"
 #include "../../../Cross-Cutting/DataTypes/DataGato.h"
 #include "Gato.h"
 
 
 Socio::Socio() {
-    this->listaMascotas = new ListaMascotas(MAX_MASCOTAS);
-    this->listaConsultas = new ListaConsultas(MAX_CONSULTAS);
+    this->listaMascotas = new ListaMascotas();
+    this->listaConsultas = new ListaConsultas();
 }
 
 Socio::Socio(const std::string &ci, const std::string &nombre, const Fecha &fechaIngreso) : ci(ci), nombre(nombre),
                                                                                             fechaIngreso(
                                                                                                     fechaIngreso) {
-    this->listaMascotas = new ListaMascotas(MAX_MASCOTAS);
-    this->listaConsultas = new ListaConsultas(MAX_CONSULTAS);
+    this->listaMascotas = new ListaMascotas();
+    this->listaConsultas = new ListaConsultas();
 }
 
 
@@ -56,17 +57,17 @@ void Socio::setFechaIngreso(const Fecha &fechaIngreso) {
 
 void Socio::agregar_Consulta(std::string motivo, Fecha fecha) {
     if (this->listaConsultas->getlength() < MAX_CONSULTAS) {
-        Consulta *nuevacons = new Consulta(motivo, fecha);
+        auto *nuevacons = new Consulta(motivo, fecha);
         this->listaConsultas->add(nuevacons);
     } else {
         throw std::invalid_argument("No puede agregar más consultas");
     }
 }
 
-void Socio::agregar_Mascota(const DataMascota &mascota) {
+void Socio::agregar_Mascota( const DataMascota &mascota) {
     if (this->listaMascotas->getlength() < MAX_MASCOTAS) {
         Mascota *nuevo;
-        if(typeid(mascota) == typeid(DataPerro)){
+       if(typeid(mascota) == typeid(DataPerro)){
             DataPerro dp = (DataPerro&)mascota;
             nuevo = new Perro(mascota.getNombre(), mascota.getGenero(), mascota.getPeso(),
                                          mascota.getRacionDiaria(),dp.getRaza(), dp.isVacunaCachorro() );
@@ -83,7 +84,7 @@ void Socio::agregar_Mascota(const DataMascota &mascota) {
 }
 
 DataConsulta **Socio::getConsultasAntesDeFecha(Fecha f, int maxConsultas) {
-    DataConsulta **res = new DataConsulta *[maxConsultas];
+    auto **res = new DataConsulta *[maxConsultas];
     int j=0;
     for (int i = 0; i < this->listaConsultas->getlength() && j<maxConsultas; ++i) {
         if (this->listaConsultas->get(i)->getFecha() < f) {
@@ -115,23 +116,41 @@ DataConsulta **Socio::getConsultasAntesDeFecha(Fecha f, int maxConsultas) {
 DataMascota **Socio::getListaMascotas() {
     int cantMascotasSocio = this->listaMascotas->getlength();
     Mascota* m;
-    DataMascota **res = new DataMascota *[cantMascotasSocio];
+    auto **res = new DataMascota *[cantMascotasSocio];
+    DataMascota* aux;
     for (int i = 0; i < cantMascotasSocio; ++i) {
         m=this->listaMascotas->get(i);
         if(typeid(m) == typeid(Perro&)) {
-            res[i] = (DataPerro*)(((Perro*) m)->getDataMascota());
+            aux=new DataPerro();
+            aux->setNombre(m->getNombre());
+            aux->setPeso(m->getPeso());
+            aux->setGenero(m->getGenero());
+            aux->setRacionDiaria(m->getRacionDiaria());
+            ((DataPerro*)aux)->setRaza(((Perro*)m)->getRaza());
+            ((DataPerro*)aux)->setVacunaCachorro(((Perro*)m)->isVacunaCachorro());
+            res[i] = aux;
         } else {
-            res[i] = (DataGato*)(((Gato*) m)->getDataMascota());
-        }
+            aux=new DataGato();
+            aux->setNombre(m->getNombre());
+            aux->setPeso(m->getPeso());
+            aux->setGenero(m->getGenero());
+            aux->setRacionDiaria(m->getRacionDiaria());
+            ((DataGato*)aux)->setTipoPelo(((Gato*)m)->getTipoPelo());
+            res[i] = aux;
+        };
     };
     return res;
 };
 
 DataConsulta **Socio::getListaConsultas() {
     int cantConsultas = this->listaConsultas->getlength();
-    DataConsulta **res = new DataConsulta *[cantConsultas];
+    auto **res = new DataConsulta *[cantConsultas];
     for (int i = 0; i < cantConsultas; ++i) {
         res[i] = this->listaConsultas->get(i)->getDataConsulta();
     };
     return res;
 }
+
+int Socio::getlargolistamascotas(){
+    return this->listaMascotas->getlength();
+};

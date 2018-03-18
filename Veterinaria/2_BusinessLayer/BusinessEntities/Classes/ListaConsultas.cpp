@@ -5,8 +5,8 @@
 #include "ListaConsultas.h"
 #include "Consulta.h"
 
-ListaConsultas::ListaConsultas(int length) {
-    this->consultas = new Consulta *[length];
+ListaConsultas::ListaConsultas() {
+    this->consultas = new Consulta *[MAX_CONSULTAS];
     for (int i = 0; i < length; i++) {
         this->consultas[i] = NULL;
     }

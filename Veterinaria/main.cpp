@@ -9,7 +9,7 @@ int main() {
 
     std::string ci;
     std::string nombre;
-    DataMascota *dataMascota;
+    DataMascota*  dataMascota;
 
     std::cout << "-------------------------------------------------------" << std::endl;
     std::cout << "Bienvenido al sistema de administración de Veterinarias" << std::endl;
@@ -39,7 +39,7 @@ int main() {
             case 2: {
                 menu.leerOpcionAgregarMascota(ci, dataMascota);
                 try {
-                    administration->agregarMascota(ci, *dataMascota);
+                    administration->agregarMascota(ci, dataMascota);
                     std::cout << "Se agrego una mascota nueva al socio con éxito." << std::endl;
                 }catch(std::invalid_argument &error){
                     std::cout << error.what() << std::endl;
@@ -50,7 +50,7 @@ int main() {
                 std::string motivo;
                 try{
                     menu.leer_consulta_nueva(motivo, ci);
-                administration->ingresarConsulta(motivo, ci);
+                 administration->ingresarConsulta(motivo, ci);
                 }
                 catch(std::invalid_argument &error){
                     std::cout << error.what() << std::endl;
@@ -87,8 +87,9 @@ int main() {
             case 6: {
                 int cantmascotas;
                 try {
-                    menu.leer_obtenermascotas(ci, cantmascotas);
-                    DataMascota **mascotas = administration->obtenerMascotas(ci, cantmascotas);
+                    menu.leer_obtenermascotas(ci, cantmascotas);//en cantmascotas queda valor ingresado por user
+                    DataMascota ** mascotas = administration->obtenerMascotas(ci, cantmascotas);
+                    //ahora cantmascotas tiene el largo de la lista de mascotas del socio dado
                     menu.imprimir_dtmascotas(mascotas, cantmascotas);
                 }
                 catch(std::invalid_argument &error){
