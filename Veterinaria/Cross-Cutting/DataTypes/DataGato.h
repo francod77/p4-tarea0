@@ -20,7 +20,7 @@ public:
 
     void setTipoPelo(TipoPelo tipoPelo);
 
-    void print();
+    void print() const;
 };
 
 #endif //VETERINARIA_DATAGATO_H

@@ -76,10 +76,11 @@ int main() {
                 try {
                     menu.leer_verantesdefecha(fecha, ci, cantconsultas);
                     DataConsulta **lista = administration->verConsultasAntesDeFecha(fecha, ci, cantconsultas);
-                    for (int i = 0; i < cantconsultas; ++i) {
-                        //std::cout<<*lista[i]<<std::endl;
-                        lista[i]->print();
-                        std::cout << "-----------------------------" << std::endl;
+                    std::cout << "\t-----------------------------" << std::endl;
+                    for (int i = 0; i < cantconsultas; i++) {
+                        std::cout<<*lista[i]<<std::endl;
+                        //lista[i]->print();
+                        std::cout << "\t-----------------------------" << std::endl;
                     }
                 }
                 catch (std::invalid_argument &error) {
@@ -105,11 +106,11 @@ int main() {
                 try {
                     menu.leer_obtenermascotas(ci, cantmascotas);//en cantmascotas queda valor ingresado por user
                     DataMascota **mascotas = administration->obtenerMascotas(ci, cantmascotas);
-
-                    for (int i = 0; i < cantmascotas; ++i) {
-                        //std::cout << *mascotas[i] << std::endl;
-                        mascotas[i]->print();
-                        std::cout << "-----------------------------" << std::endl;
+                    std::cout << "\t-----------------------------" << std::endl;
+                    for (int i = 0; i < cantmascotas; i++) {
+                        std::cout << *mascotas[i] << std::endl;
+                        //mascotas[i]->print();
+                        std::cout << "\t-----------------------------" << std::endl;
                     };
                 }
                 catch (std::invalid_argument &error) {
@@ -121,10 +122,17 @@ int main() {
                 //primer socio
                 administration->registrarSocio("1", "Pedro",
                                                DataGato("Arenita", femenino, 5.0, 5.0 * FACTOR_ALIMENTO_GATO, largo));
+                administration->ingresarConsulta("Porque sí", "1");
+                administration->ingresarConsulta("Porque tenía ganas", "1");
+                administration->ingresarConsulta("Porque se me antojo", "1");
+
                 //segundo socio
                 administration->registrarSocio("2", "Roberta",
                                                DataGato("Calamardo", masculino, 25.0, 5.0 * FACTOR_ALIMENTO_GATO,
                                                         mediano));
+                administration->ingresarConsulta("No te importa", "2");
+                administration->ingresarConsulta("Estaba lloviendo", "2");
+                administration->ingresarConsulta("Estaba aburrido", "2");
                 //tercer socio
                 administration->registrarSocio("3", "Anacleto",
                                                DataGato("SirenoMan", masculino, 5.0, 5.0 * FACTOR_ALIMENTO_GATO,

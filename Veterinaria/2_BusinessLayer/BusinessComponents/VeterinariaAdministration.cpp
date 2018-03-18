@@ -33,8 +33,8 @@ Socio *VeterinariaAdministration::busqueda(std::string ci) {
 void VeterinariaAdministration::registrarSocio(std::string ci, std::string nombre, const DataMascota &dtMascota) {
     time_t t = time(0);
     tm* timePtr = localtime(&t);
-    Fecha f(timePtr->tm_mday, timePtr->tm_mon, timePtr->tm_year);
-    //delete timePtr;
+    Fecha f(timePtr->tm_mday, timePtr->tm_mon, timePtr->tm_year + 1900);
+
     Socio *nuevo = new Socio(ci, nombre, f);
 
     int i = 0;
@@ -79,8 +79,8 @@ void VeterinariaAdministration::ingresarConsulta(std::string motivo, std::string
     Socio *elsocio = busqueda(ci);
     time_t t = time(0);
     tm* timePtr = localtime(&t);
-    Fecha f(timePtr->tm_mday, timePtr->tm_mon, timePtr->tm_year);
-    //delete timePtr;
+    Fecha f(timePtr->tm_mday, timePtr->tm_mon, timePtr->tm_year + 1900);
+
     elsocio->agregar_Consulta(motivo, f);
     std:: cout << "La consulta se ingreso con exito!!" <<std::endl;
 };

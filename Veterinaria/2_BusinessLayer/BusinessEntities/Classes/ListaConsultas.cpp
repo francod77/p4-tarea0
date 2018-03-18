@@ -14,7 +14,7 @@ ListaConsultas::ListaConsultas(int length) {
 };
 
 ListaConsultas::~ListaConsultas() {
-    for (int i = 0; i < this->length; ++i) {
+    for (int i = 0; i < this->length; i++) {
         delete this->consultas[i];
     }
     delete this->consultas;

@@ -25,7 +25,7 @@ void DataPerro::setVacunaCachorro(bool vacunaCachorro) {
     DataPerro::vacunaCachorro = vacunaCachorro;
 }
 
-void DataPerro::print(){
+void DataPerro::print() const{
     std::cout << "\t\t- Nombre: "<< this->getNombre() << std::endl;
     std::string salida = "";
     switch ((int)this->getGenero()){

@@ -66,17 +66,17 @@ void Socio::agregar_Consulta(std::string motivo, Fecha fecha) {
     }
 }
 
-void Socio::agregar_Mascota( const DataMascota &mascota) {
+void Socio::agregar_Mascota(const DataMascota &mascota) {
     if (this->listaMascotas->getlength() < MAX_MASCOTAS) {
         Mascota *nuevo;
-       if(typeid(DataPerro) == typeid(mascota)){
-            DataPerro dp = (DataPerro&)mascota;
+        if (typeid(DataPerro) == typeid(mascota)) {
+            DataPerro dp = (DataPerro &) mascota;
             nuevo = new Perro(mascota.getNombre(), mascota.getGenero(), mascota.getPeso(),
-                                         mascota.getRacionDiaria(),dp.getRaza(), dp.isVacunaCachorro() );
-        }else{
-            DataGato dg = (DataGato&)mascota;
+                              mascota.getRacionDiaria(), dp.getRaza(), dp.isVacunaCachorro());
+        } else {
+            DataGato dg = (DataGato &) mascota;
             nuevo = new Gato(mascota.getNombre(), mascota.getGenero(), mascota.getPeso(),
-                              mascota.getRacionDiaria(),dg.getTipoPelo());
+                             mascota.getRacionDiaria(), dg.getTipoPelo());
         }
         this->listaMascotas->add(nuevo);
     } else {
@@ -84,19 +84,19 @@ void Socio::agregar_Mascota( const DataMascota &mascota) {
     }
 }
 
-DataConsulta **Socio::getConsultasAntesDeFecha(Fecha f, int maxConsultas) {
+DataConsulta **Socio::getConsultasAntesDeFecha(Fecha f, int &maxConsultas) {
     int cantConsultas = 0;
-    for (int i = 0; i < this->listaConsultas->getlength(); ++i) {
+    for (int i = 0; i < this->listaConsultas->getlength(); i++) {
         if (this->listaConsultas->get(i)->getFecha() < f) {
             cantConsultas++;
         }
     };
-    if (cantConsultas > maxConsultas) {
-        cantConsultas = maxConsultas;
+    if (cantConsultas < maxConsultas) {
+        maxConsultas = cantConsultas;
     }
-    DataConsulta **res = new DataConsulta *[cantConsultas];
-    int j=0;
-    for (int i = 0; i < cantConsultas; ++i) {
+    DataConsulta **res = new DataConsulta *[maxConsultas];
+    int j = 0;
+    for (int i = 0; i < maxConsultas; i++) {
         if (this->listaConsultas->get(i)->getFecha() < f) {
             res[j] = this->listaConsultas->get(i)->getDataConsulta();
             j++;
@@ -106,11 +106,11 @@ DataConsulta **Socio::getConsultasAntesDeFecha(Fecha f, int maxConsultas) {
 }
 
 DataMascota **Socio::getListaMascotas(int &tope) {
-    if(this->listaMascotas->getlength() < tope){
+    if (this->listaMascotas->getlength() < tope) {
         tope = this->listaMascotas->getlength();
     }
-    DataMascota ** lista = new DataMascota *[tope];
-    for(int i = 0; i < tope; i++){
+    DataMascota **lista = new DataMascota *[tope];
+    for (int i = 0; i < tope; i++) {
         lista[i] = this->listaMascotas->get(i)->getDataMascota();
     }
     return lista;
@@ -119,7 +119,7 @@ DataMascota **Socio::getListaMascotas(int &tope) {
 DataConsulta **Socio::getListaConsultas() {
     int cantConsultas = this->listaConsultas->getlength();
     auto **res = new DataConsulta *[cantConsultas];
-    for (int i = 0; i < cantConsultas; ++i) {
+    for (int i = 0; i < cantConsultas; i++) {
         res[i] = this->listaConsultas->get(i)->getDataConsulta();
     };
     return res;

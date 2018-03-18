@@ -25,8 +25,9 @@ public:
 
     void setMotivo(const std::string &motivo);
 
-    void print();
+    void print() const;
 };
 
-std::ostream &operator<<(const std::ostream &stream, DataConsulta &dataMascota);
+std::ostream &operator<<(std::ostream &stream, const DataConsulta &dataConsulta);
+
 #endif //VETERINARIA_DATACONSULTA_H

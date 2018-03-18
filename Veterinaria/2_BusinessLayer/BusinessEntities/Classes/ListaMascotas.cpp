@@ -15,7 +15,7 @@ ListaMascotas::ListaMascotas(int lenght) {
 };
 
 ListaMascotas::~ListaMascotas() {
-    for (int i = 0; i < this->length; ++i) {
+    for (int i = 0; i < this->length; i++) {
         delete this->mascotas[i];
     }
     delete this->mascotas;

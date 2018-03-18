@@ -18,7 +18,7 @@ void DataGato::setTipoPelo(TipoPelo tipoPelo) {
     DataGato::tipoPelo = tipoPelo;
 }
 
-void DataGato::print() {
+void DataGato::print() const {
     std::cout << "\t\t- Nombre: "<< this->getNombre() << std::endl;
     std::string salida = "";
     switch ((int)this->getGenero()){

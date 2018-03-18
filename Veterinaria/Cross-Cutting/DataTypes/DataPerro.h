@@ -25,7 +25,7 @@ public:
 
     void setVacunaCachorro(bool vacunaCachorro);
 
-    void print();
+    void print() const;
 };
 
 

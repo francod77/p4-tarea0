@@ -25,21 +25,22 @@ void DataConsulta::setMotivo(const std::string &motivo) {
     DataConsulta::motivo = motivo;
 }
 
-void DataConsulta::print() {
-    std::cout << "\t Fecha:  " ;
-    int a,b,c;
+void DataConsulta::print() const {
+    std::cout << "\t Fecha:  ";
+    int a, b, c;
     a = this->fechaConsulta.getDia();
-    b=this->fechaConsulta.getMes();
-    c=this->fechaConsulta.getAnio();
-    std::cout <<  a ;
-    std::cout <<"/"  ;
-    std::cout <<b ;
-    std::cout <<"/";
-    std::cout <<c << std::endl;
+    b = this->fechaConsulta.getMes();
+    c = this->fechaConsulta.getAnio();
+    std::cout << a;
+    std::cout << "/";
+    std::cout << b;
+    std::cout << "/";
+    std::cout << c << std::endl;
     std::cout << "\t Motivo: ";
-    std::cout << this->getMotivo() <<std::endl;
+    std::cout << this->getMotivo() << std::endl;
 }
 
-std::ostream& operator<< (const std::ostream& stream, DataConsulta &dataConsulta){
+std::ostream &operator<<(std::ostream &stream, const DataConsulta &dataConsulta) {
     dataConsulta.print();
+    return stream;
 }

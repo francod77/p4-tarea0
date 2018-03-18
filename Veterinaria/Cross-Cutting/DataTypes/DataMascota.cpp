@@ -47,7 +47,8 @@ float DataMascota::getRacionDiaria() const  {
 
 
 
-std::ostream& operator<< (const std::ostream& stream, DataMascota &dataMascota){
+std::ostream& operator<< (std::ostream& stream, const DataMascota &dataMascota){
     dataMascota.print();
+    return stream;
 }
 
