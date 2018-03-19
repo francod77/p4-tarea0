@@ -3,14 +3,14 @@
 #ifndef EJERCICIO2_C_H
 #define EJERCICIO2_C_H
 
-#include "B.h"
-#include "A.h"
+class A;
+class B;
 
 class C {
 private:
     int c;
-    A claseA;
-    B claseB
+    A *unA;
+    B *unb;
 public:
     C();
     ~C();
@@ -21,5 +21,6 @@ public:
     void print();
 };
 
-
-#endif //P4_TAREA0_EJ2_C_H
++#include "A.h"
++#include "B.h"
++#endif //EJERCICIO2_C_H
