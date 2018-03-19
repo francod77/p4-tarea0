@@ -1,4 +1,4 @@
-all: main
+all: main run
 
 obj/A.o: obj/B.o obj/C.o Clases/A.cpp Clases/A.h
 	g++ -c Clases/A.cpp -o obj/A.o 
