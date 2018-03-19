@@ -21,6 +21,6 @@ public:
     void print();
 };
 
-+#include "A.h"
-+#include "B.h"
-+#endif //EJERCICIO2_C_H
+#include "A.h"
+#include "B.h"
+#endif //EJERCICIO2_C_H
