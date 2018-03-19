@@ -1,5 +1,3 @@
-
-
 #ifndef EJERCICIO2_A_H
 #define EJERCICIO2_A_H
 
@@ -12,7 +10,12 @@ private:
     B *unB;
     C *unC;
 public:
-    A(int);
+    A();
+    A(int,B,C);
+    int geta();
+    B getB();
+    C getC();
+    void set(int a);
     void print();
 };
 
