@@ -12,7 +12,13 @@ private:
     A *unA;
     C *unC;
 public:
-    B(int);
+    B();
+    B(int num,A claseA,C claseC);
+    ~B();
+    int getb();
+
+    void set(int num);
+
     void print();
 };
 
