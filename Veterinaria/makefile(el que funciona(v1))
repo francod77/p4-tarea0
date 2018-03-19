@@ -1,0 +1,59 @@
+all: main run
+
+WARNING= -Wall
+CC = g++
+puntoos = obj/Menu.o obj/VeterinariaAdministration.o obj/Consulta.o obj/Gato.o obj/ListaConsultas.o obj/ListaMascotas.o obj/Mascota.o obj/Perro.o obj/Socio.o obj/DataConsulta.o obj/DataGato.o obj/DataMascota.o obj/DataPerro.o obj/Fecha.o obj/Const.o 
+
+DIR_clases = 2_BusinessLayer/BusinessEntities/Classes
+DIR_adm = 2_BusinessLayer/BusinessComponents
+DIR_control = 1_PresentationLayer/Controls
+DIR_data = Cross-Cutting/DataTypes
+DIR_enum = Cross-Cutting/Enums
+ODIR = obj
+
+#CCFLAGS_control =  -Wall -Werror -I$(HDIR_control) -g
+
+obj/%.o: $(DIR_clases)/%.cpp $(DIR_clases)/%.h
+	$(CC) -c $< -o $@
+# obj/Consulta.o: $(DIR_clases)/Consulta.cpp $(DIR_clases)/Consulta.h obj/Fecha.o obj/DataConsulta.o
+# obj/Gato.o: $(DIR_clases)/Gato.cpp $(DIR_clases)/Gato.h obj/Mascota.o obj/TipoPelo.o
+# obj/ListaConsultas.o: $(DIR_clases)/ListaConsultas.cpp $(DIR_clases)/ListaConsultas.h obj/Consulta.o
+# obj/Mascota.o: $(DIR_clases)/Mascota.cpp $(DIR_clases)/Mascota.h obj/Genero.o obj/DataMascota.o
+# obj/ListaMascotas.o: $(DIR_clases)/ListaMascotas.cpp $(DIR_clases)/ListaMascotas.h obj/Mascota.o obj/DataMascota.o
+# obj/Perro.o: $(DIR_clases)/Perro.cpp $(DIR_clases)/Perro.h obj/RazaPerro.o obj/Mascota.o
+# obj/Socio.o: $(DIR_clases)/Socio.cpp $(DIR_clases)/Socio.h obj/Fecha.o obj/Consulta.o obj/Mascota.o obj/ListaConsultas.o obj/ListaMascotas.o obj/DataMascota.o obj/DataConsulta.o
+
+obj/%.o: $(DIR_adm)/%.cpp $(DIR_adm)/%.h
+	$(CC) -c $< -o $@
+# obj/VeterinariaAdministration.o: $(DIR_adm)/VeterinariaAdministration.cpp $(DIR_adm)/VeterinariaAdministration.h obj/Socio.o obj/DataConsulta.o obj/DataMascota.o
+
+obj/%.o: $(DIR_control)/%.cpp $(DIR_control)/%.h
+	$(CC) -c $< -o $@
+# obj/Menu.o: $(DIR_control)/Menu.cpp $(DIR_control)/Menu.h obj/DataMascota.o obj/Fecha.o obj/DataConsulta.o
+
+obj/%.o: $(DIR_data)/%.cpp $(DIR_data)/%.h
+	$(CC) -c $< -o $@
+#obj/DataConsulta.o: $(DIR_data)/DataConsulta.cpp $(DIR_data)/DataConsulta.h obj/Fecha.o 
+#obj/DataGato.o: $(DIR_data)/DataGato.cpp $(DIR_data)/DataGato.h obj/DataMascota.o obj/TipoPelo.o
+#obj/DataMascota.o: $(DIR_data)/DataMascota.cpp $(DIR_data)/DataMascota.h obj/Genero.o
+#obj/DataPerro.o: $(DIR_data)/DataPerro.cpp $(DIR_data)/DataPerro.h obj/DataMascota.o obj/RazaPerro.o
+#obj/Fecha.o: $(DIR_data)/Fecha.cpp $(DIR_data)/Fecha.h
+
+obj/%.o: $(DIR_enum)/%.cpp $(DIR_enum)/%.h
+	$(CC) -c $< -o $@
+# obj/Genero.o: $(DIR_enum)/Genero.h
+# obj/RazaPerro.o: $(DIR_enum)/RazaPerro.h
+# obj/TipoPelo.o:  $(DIR_enum)/TipoPelo.h
+
+obj/Const.o: Cross-Cutting/Const.h Cross-Cutting/Const.cpp
+	g++ -c Cross-Cutting/Const.cpp -o obj/Const.o
+
+main: $(puntoos) main.cpp 
+	g++ main.cpp $(puntoos) -o main.o
+	
+run:
+	./main.o
+
+clean: 
+	rm $(puntoos) main.o
+
