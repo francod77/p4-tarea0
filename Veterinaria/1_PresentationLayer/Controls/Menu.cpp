@@ -41,26 +41,31 @@ void Menu::leerOpcionEliminarSocio(std::string &ci){
     std::cin >> ci;
 }
 
-void Menu::leerOpcionRegistrarSocio(std::string &ci,std::string &nombre, DataMascota* &dataMascota){
+void Menu::leerOpcionRegistrarSocio(std::string &ci,std::string &nombre, DataMascota* &dataMascota) {
 
     bool datoValido;
     bool mascotaPerro;
     std::string dato;
     float datoFloat;
     std::smatch match;
+    std::string basura;
 
     std::cout << "Registrar socio:" << std::endl;
 
     //Lectura del documento del socio
+//    std::cin.ignore();
     std::cout << "\tIngrese el número de documento del socio: ";
-    std::cin >> ci;
+    std::getline(std::cin,ci);
+    std::cin >> basura;
 
     //Lectura del nombre del socio
+//    std::cin.ignore();
     std::cout << "\tIngrese el nombre del socio: ";
-    std::cin >> nombre;
-
+    std::getline(std::cin,nombre);
+    //std::cin >> basura;
     //Lectura del tipo de mascota del socio
     datoValido = false;
+    std::cin.ignore();
     while (!datoValido){
         std::cout << "\tIndique que tipo de mascota va a registrar (gato o perro): ";
         std::cin >> dato;
@@ -79,8 +84,9 @@ void Menu::leerOpcionRegistrarSocio(std::string &ci,std::string &nombre, DataMas
     }
 
     //Lectura del nombre de la mascota
+    std::cin.ignore();
     std::cout << "\tIngrese el nombre de la mascota del socio: ";
-    std::cin >> dato;
+    std::getline(std::cin,dato);
     dataMascota->setNombre(dato);
 
     //Lectura del genero de la mascota
@@ -119,7 +125,7 @@ void Menu::leerOpcionRegistrarSocio(std::string &ci,std::string &nombre, DataMas
                 }else if(regex_match(dato,match,std::regex ("\\s*ovejero\\s*"))){
                     ((DataPerro*)dataMascota)->setRaza(ovejero);
                 }else if(regex_match(dato,match,std::regex ("\\s*bulldog\\s*"))){
-                    ((DataPerro*)dataMascota)->setRaza(bulldog);
+                    (dynamic_cast<DataPerro*>(dataMascota))->setRaza(bulldog);
                 }else if(regex_match(dato,match,std::regex ("\\s*pitbull\\s*"))){
                     ((DataPerro*)dataMascota)->setRaza(pitbull);
                 }else if(regex_match(dato,match,std::regex ("\\s*collie\\s*"))){
@@ -232,6 +238,9 @@ void Menu::leerOpcionAgregarMascota(std::string &ci, DataMascota* &dataMascota){
     //Lectura del peso de la mascota
     std::cout << "\tIndique el peso de la mascota en kg: ";
     std::cin >> datoFloat;
+//    if (typeid(datoFloat)!=float){
+//        std::cout << "\tDato Incorrecto!!!"<< std::endl;
+//    }
     dataMascota->setPeso(datoFloat);
     if(mascotaPerro){
         dataMascota->setRacionDiaria(datoFloat * FACTOR_ALIMENTO_PERRO);

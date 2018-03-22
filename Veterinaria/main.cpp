@@ -135,6 +135,8 @@ int main() {
                                                new DataPerro("Triton", masculino, 150.0, 10.0 * FACTOR_ALIMENTO_PERRO,
                                                              pitbull, true));
             }
+            default:
+            std::cout<< "Dato incorrecto" << std::endl;
         }
     }
 }
