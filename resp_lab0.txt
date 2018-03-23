@@ -1,0 +1,9 @@
+2) a. La clase A tiene asociación con la clase B y C. B con A y C. C con A y B. 
+Esto significa que para compilar cualquier clase se necesitan de las otras 2, 
+lo cual genera dependencias circulares.
+
+b. Para solucionar las dependencias circulares utilizamos Forward declaration.
+Osea, definir las clases necesarias de forma provisoria para poder tener objetos de 
+esa clase sin acceder a la definicion real, y sin tener que incluir su ".h".
+Por ejemplo, en la clase C, definimos la clase A y B vacias, definimos la clase C y 
+finalmente incluimos "A.h" y "B.h".
